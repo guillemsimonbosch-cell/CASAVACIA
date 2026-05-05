@@ -1,0 +1,2121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OkupaTuCasa — Tu propiedad protegida 24/7 · Vallès · Desde 55€/mes</title>
+<meta name="description" content="Vigilancia presencial, gestión y protección de viviendas vacías en el Vallès. El servicio que Verisure no puede darte. Sin permanencia. Primera visita gratis.">
+<meta property="og:title" content="OkupaTuCasa — Tu propiedad vacía no debería estarlo">
+<meta property="og:description" content="Visitas presenciales, informe fotográfico GPS, gestor personal y respuesta real ante incidencias. Vallès Occidental. Desde 55€/mes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & VARS ── */
+:root{
+  --r:#C8281E;--r2:#a31d15;--r3:rgba(200,40,30,.09);
+  --k:#0A0A0A;--k2:#111;--k3:#181818;--k4:#1E1E1E;
+  --w:#FAFAFA;--w2:#F2EDE6;--w3:#E8E1D8;
+  --g:#888;--g2:#555;--g3:#333;
+  --bk:rgba(0,0,0,.07);--bw:rgba(255,255,255,.08);
+  --head:'Barlow Condensed',sans-serif;
+  --body:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--w);color:var(--k);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--k)}
+::-webkit-scrollbar-thumb{background:var(--r)}
+img{max-width:100%;height:auto}
+
+/* ── NOISE OVERLAY ── */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9990;
+  opacity:.018;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ── TOP ALERT BAR ── */
+.top-bar{background:var(--r);padding:9px 20px;text-align:center;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.top-bar-text{font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#fff}
+.top-bar-cta{background:#fff;color:var(--r);padding:4px 14px;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;transition:opacity .2s;white-space:nowrap}
+.top-bar-cta:hover{opacity:.85}
+.top-bar-close{background:none;border:none;color:rgba(255,255,255,.6);cursor:pointer;font-size:1rem;padding:0 0 0 8px;line-height:1}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:500;height:58px;background:var(--k);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 20px;gap:12px}
+@media(min-width:900px){nav{padding:0 56px}}
+.nav-logo{font-family:var(--head);font-weight:900;font-size:1.3rem;text-transform:uppercase;letter-spacing:-.01em;color:var(--w);flex-shrink:0}
+.nav-logo em{color:var(--r);font-style:normal}
+.nav-links{display:none;gap:28px}
+@media(min-width:960px){.nav-links{display:flex}}
+.nav-links a{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g);transition:color .2s}
+.nav-links a:hover{color:var(--w)}
+.nav-right{display:flex;gap:8px;align-items:center}
+.nav-portal-btn{background:none;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.55);padding:7px 14px;font-size:.67rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--body);transition:border-color .2s,color .2s}
+.nav-portal-btn:hover{border-color:var(--r);color:var(--w)}
+.nav-cta{background:var(--r);color:#fff;padding:9px 18px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;transition:background .2s}
+.nav-cta:hover{background:var(--r2)}
+
+/* ── HERO ── */
+.hero{background:var(--k);min-height:95svh;position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1fr;align-items:center;
+  padding:70px 20px 60px}
+@media(min-width:900px){.hero{padding:70px 56px 80px;grid-template-columns:1fr 1fr;gap:60px;align-items:center}}
+.hero-bg-img{position:absolute;inset:0;
+  background-image:url('https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1200&q=60&auto=format&fit=crop');
+  background-size:cover;background-position:center;
+  opacity:.08;filter:grayscale(60%)}
+.hero-grid{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(200,40,30,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,40,30,.03) 1px,transparent 1px);
+  background-size:72px 72px}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,.98) 0%,rgba(10,10,10,.75) 60%,rgba(10,10,10,.4) 100%)}
+.hero-left{position:relative;z-index:2}
+.hero-right{position:relative;z-index:2;margin-top:36px}
+@media(min-width:900px){.hero-right{margin-top:0}}
+
+.h-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;
+  border:1px solid rgba(200,40,30,.4);background:rgba(200,40,30,.08);
+  font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--r);
+  margin-bottom:18px}
+.h-badge-dot{width:5px;height:5px;border-radius:50%;background:var(--r);animation:pulse-dot 2s ease infinite}
+@keyframes pulse-dot{0%,100%{opacity:.4;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+
+.hero-title{font-family:var(--head);font-weight:900;text-transform:uppercase;
+  font-size:clamp(3.2rem,9vw,7.5rem);line-height:.88;letter-spacing:-.02em;color:var(--w);
+  margin-bottom:22px}
+.hero-title .r{color:var(--r)}
+.hero-title .stroke{-webkit-text-stroke:1.5px rgba(255,255,255,.3);color:transparent}
+
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.55);line-height:1.72;max-width:480px;margin-bottom:28px}
+.hero-sub strong{color:var(--w);font-weight:500}
+
+.hero-btns{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.btn-hero-main{background:var(--r);color:#fff;padding:14px 26px;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .15s}
+.btn-hero-main:hover{background:var(--r2);transform:translateY(-1px)}
+.btn-hero-out{border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);padding:13px 22px;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;transition:border-color .2s,color .2s}
+.btn-hero-out:hover{border-color:rgba(255,255,255,.5);color:var(--w)}
+
+.hero-micro{display:flex;flex-wrap:wrap;gap:14px}
+.hero-mic{display:flex;align-items:center;gap:6px;font-size:.68rem;color:rgba(255,255,255,.3)}
+.hero-mic-dot{width:4px;height:4px;border-radius:50%;background:var(--r);flex-shrink:0}
+
+/* HERO CARD — right side */
+.hero-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);padding:24px}
+.hero-card-title{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--r);margin-bottom:18px}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.07)}
+.hstat{background:var(--k2);padding:18px 14px}
+.hstat-n{font-family:var(--head);font-weight:900;font-size:2rem;color:var(--r);line-height:1;margin-bottom:4px}
+.hstat-l{font-size:.64rem;color:rgba(255,255,255,.38);line-height:1.35}
+.hstat.accent{background:var(--r)}
+.hstat.accent .hstat-n{color:#fff}
+.hstat.accent .hstat-l{color:rgba(255,255,255,.7)}
+.hero-vs{margin-top:14px;padding:13px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  display:flex;align-items:center;gap:10px}
+.hero-vs-text{font-size:.73rem;color:rgba(255,255,255,.45);line-height:1.5}
+.hero-vs-text strong{color:var(--w);font-weight:500}
+.hero-stars{display:flex;gap:2px;margin-bottom:4px}
+.star{color:var(--r);font-size:.75rem}
+
+/* ── TRUST STRIP ── */
+.trust-strip{background:var(--r);padding:14px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px}
+@media(min-width:900px){.trust-strip{padding:14px 56px;gap:32px}}
+.ts{display:flex;align-items:center;gap:8px;font-size:.69rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.ts-icon{width:16px;height:16px;flex-shrink:0;opacity:.8}
+.ts-divider{width:1px;height:16px;background:rgba(255,255,255,.25);flex-shrink:0;display:none}
+@media(min-width:700px){.ts-divider{display:block}}
+
+/* ── URGENCY / SCARCITY ── */
+.scarcity-bar{background:var(--k2);border-bottom:1px solid rgba(255,255,255,.06);padding:12px 20px}
+@media(min-width:900px){.scarcity-bar{padding:12px 56px}}
+.scarcity-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.scarcity-left{display:flex;align-items:center;gap:10px}
+.scarcity-dot{width:8px;height:8px;border-radius:50%;background:#28c840;animation:pulse-dot 1.5s ease infinite;flex-shrink:0}
+.scarcity-text{font-size:.74rem;color:rgba(255,255,255,.55)}
+.scarcity-text strong{color:var(--w)}
+.scarcity-bar-wrap{flex:1;max-width:200px;height:4px;background:rgba(255,255,255,.08);border-radius:2px}
+.scarcity-fill{height:100%;background:var(--r);border-radius:2px;transition:width 1s ease}
+
+/* ── SEC BASE ── */
+.s-dark{background:var(--k);color:var(--w)}
+.s-light{background:var(--w);color:var(--k)}
+.s-warm{background:var(--w2);color:var(--k)}
+.s-red{background:var(--r);color:#fff}
+.s-black{background:var(--k2);color:var(--w)}
+.sec{padding:72px 20px}
+@media(min-width:600px){.sec{padding:88px 36px}}
+@media(min-width:900px){.sec{padding:100px 56px}}
+.s-eye{font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.s-eye::before{content:'';width:20px;height:1px;flex-shrink:0}
+.s-dark .s-eye,.s-black .s-eye{color:var(--r)}
+.s-dark .s-eye::before,.s-black .s-eye::before{background:var(--r)}
+.s-light .s-eye,.s-warm .s-eye{color:var(--r)}
+.s-light .s-eye::before,.s-warm .s-eye::before{background:var(--r)}
+.s-h{font-family:var(--head);font-weight:900;text-transform:uppercase;
+  font-size:clamp(2rem,6vw,4.5rem);line-height:.9;letter-spacing:-.015em;margin-bottom:16px}
+.s-dark .s-h,.s-black .s-h{color:var(--w)}
+.s-light .s-h,.s-warm .s-h{color:var(--k)}
+.s-h .r{color:var(--r)}
+.s-body{font-size:.9rem;line-height:1.78;max-width:520px;margin-bottom:32px}
+.s-dark .s-body,.s-black .s-body{color:var(--g)}
+.s-dark .s-body strong,.s-black .s-body strong{color:var(--w);font-weight:500}
+.s-light .s-body,.s-warm .s-body{color:var(--g2)}
+.s-light .s-body strong,.s-warm .s-body strong{color:var(--k);font-weight:500}
+
+/* ── CITA STRIP ── */
+.cita{background:var(--w2);border-top:1px solid var(--bk);border-bottom:1px solid var(--bk);padding:32px 20px;text-align:center;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
+.cita-line{width:32px;height:1px;background:var(--r);opacity:.35;flex-shrink:0}
+.cita-q{font-family:var(--head);font-weight:300;font-style:italic;font-size:clamp(.95rem,2.5vw,1.35rem);color:var(--g2);letter-spacing:.03em;line-height:1.35}
+.cita-q strong{color:var(--r);font-weight:700;font-style:normal}
+.cita-who{display:block;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--g);margin-top:5px;font-style:normal;font-family:var(--body)}
+
+/* ── PROBLEM SECTION ── */
+.problem-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--bk);border:1px solid var(--bk);margin-top:36px}
+@media(min-width:700px){.problem-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.problem-grid{grid-template-columns:repeat(3,1fr)}}
+.prob-card{background:var(--w);padding:24px 20px;position:relative;overflow:hidden;transition:background .2s}
+.prob-card:hover{background:var(--w2)}
+.prob-n{font-family:var(--head);font-weight:900;font-size:3rem;color:rgba(200,40,30,.08);position:absolute;top:8px;right:12px;line-height:1}
+.prob-cost{font-family:var(--head);font-weight:900;font-size:1.6rem;color:var(--r);line-height:1;margin-bottom:6px}
+.prob-title{font-family:var(--head);font-weight:700;font-size:.96rem;letter-spacing:.04em;text-transform:uppercase;color:var(--k);margin-bottom:7px}
+.prob-desc{font-size:.78rem;color:var(--g2);line-height:1.62}
+
+/* ── VS VERISURE ── */
+.vs-grid{display:grid;grid-template-columns:1fr;gap:0;margin-top:36px}
+@media(min-width:700px){.vs-grid{grid-template-columns:1.2fr 1fr 1fr}}
+.vs-head-row{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06)}
+.vh-cell{padding:12px 14px;text-align:center}
+.vs-row{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.06)}
+.vs-cell{padding:11px 12px;font-size:.75rem;line-height:1.45}
+.vs-situation{color:rgba(255,255,255,.6);font-weight:500;background:var(--k3)}
+.vs-alarm{color:rgba(255,255,255,.35);background:var(--k2)}
+.vs-otc{color:#28c840;font-weight:500;background:rgba(40,200,64,.05)}
+.vs-row:nth-child(even) .vs-situation{background:var(--k2)}
+.vs-row:nth-child(even) .vs-alarm{background:var(--k3)}
+.vs-row:nth-child(even) .vs-otc{background:rgba(40,200,64,.03)}
+
+/* ── SERVICE CARDS ── */
+.serv-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--bk);border:1px solid var(--bk);margin-top:36px}
+@media(min-width:600px){.serv-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.serv-grid{grid-template-columns:repeat(4,1fr)}}
+.sv-card{background:var(--w);padding:26px 20px;position:relative;overflow:hidden;transition:background .2s,transform .2s}
+.sv-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--r);transform:scaleX(0);transition:transform .35s var(--ease);transform-origin:left}
+.sv-card:hover{background:var(--w2);transform:translateY(-2px)}
+.sv-card:hover::after{transform:scaleX(1)}
+.sv-num{font-family:var(--head);font-weight:900;font-size:2.8rem;color:rgba(0,0,0,.06);position:absolute;top:8px;right:12px;line-height:1}
+.sv-title{font-family:var(--head);font-weight:700;font-size:.98rem;letter-spacing:.04em;text-transform:uppercase;color:var(--k);margin-bottom:7px}
+.sv-desc{font-size:.76rem;color:var(--g2);line-height:1.62;margin-bottom:10px}
+.sv-badge{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;background:var(--r);color:#fff;display:inline-block}
+/* 4th service highlighted */
+.sv-card.fourth{background:var(--k)}
+.sv-card.fourth .sv-title{color:var(--w)}
+.sv-card.fourth .sv-desc{color:rgba(255,255,255,.45)}
+.sv-card.fourth .sv-num{color:rgba(255,255,255,.05)}
+.sv-card.fourth::after{transform:scaleX(1)}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--bk);border:1px solid var(--bk);margin-top:36px}
+@media(min-width:700px){.testi-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.testi-grid{grid-template-columns:repeat(3,1fr)}}
+.testi{background:var(--w);padding:24px 20px}
+.testi-stars{display:flex;gap:2px;margin-bottom:12px}
+.testi-text{font-size:.82rem;color:var(--g2);line-height:1.72;font-style:italic;margin-bottom:14px}
+.testi-name{font-size:.7rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--g3)}
+.testi-role{font-size:.66rem;color:var(--g)}
+
+/* ── PRICING ── */
+.price-wrap{display:grid;grid-template-columns:1fr;gap:0;margin-top:36px;position:relative}
+@media(min-width:700px){.price-wrap{grid-template-columns:1fr 1.12fr 1fr}}
+.pr-card{padding:28px 22px;position:relative;overflow:hidden;transition:transform .2s}
+.pr-card:hover{transform:translateY(-3px)}
+.pr-card.basic{background:var(--w2);border:1px solid var(--bk)}
+.pr-card.main{background:var(--w);border:1px solid var(--bk);border-top:4px solid var(--r)}
+@media(min-width:700px){.pr-card.main{box-shadow:0 -4px 30px rgba(200,40,30,.12)}}
+.pr-card.premium{background:var(--k);border:1px solid rgba(255,255,255,.08)}
+.pr-badge{font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:3px 10px;margin-bottom:12px;display:inline-block}
+.pr-card.basic .pr-badge{background:var(--k);color:var(--w)}
+.pr-card.main .pr-badge{background:var(--r);color:#fff}
+.pr-card.premium .pr-badge{border:1px solid rgba(200,40,30,.4);color:var(--r)}
+.pr-label{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}
+.pr-card.basic .pr-label{color:var(--g2)}
+.pr-card.main .pr-label{color:var(--g2)}
+.pr-card.premium .pr-label{color:rgba(255,255,255,.4)}
+.pr-price{font-family:var(--head);font-weight:900;font-size:3.6rem;line-height:1;margin-bottom:4px}
+.pr-card.basic .pr-price{color:var(--k)}
+.pr-card.main .pr-price{color:var(--r)}
+.pr-card.premium .pr-price{color:var(--w)}
+.pr-per{font-size:.74rem;margin-bottom:18px}
+.pr-card.basic .pr-per{color:var(--g)}
+.pr-card.main .pr-per{color:var(--g)}
+.pr-card.premium .pr-per{color:rgba(255,255,255,.4)}
+.pr-anchor{font-size:.72rem;font-weight:600;margin-bottom:18px;display:block}
+.pr-card.basic .pr-anchor{color:var(--g2)}
+.pr-card.main .pr-anchor{color:var(--r)}
+.pr-card.premium .pr-anchor{color:rgba(255,255,255,.4)}
+.pr-feats{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+.pr-feat{font-size:.76rem;display:flex;align-items:flex-start;gap:8px;line-height:1.4}
+.pr-feat::before{content:'—';color:var(--r);font-weight:700;flex-shrink:0}
+.pr-card.basic .pr-feat{color:var(--g2)}
+.pr-card.main .pr-feat{color:var(--g2)}
+.pr-card.premium .pr-feat{color:rgba(255,255,255,.5)}
+.pr-card.premium .pr-feat::before{color:var(--r)}
+.pr-cta{display:block;text-align:center;padding:13px;font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;transition:background .2s,color .2s}
+.pr-card.basic .pr-cta{background:var(--k);color:var(--w)}
+.pr-card.basic .pr-cta:hover{background:var(--g3)}
+.pr-card.main .pr-cta{background:var(--r);color:#fff}
+.pr-card.main .pr-cta:hover{background:var(--r2)}
+.pr-card.premium .pr-cta{background:var(--r);color:#fff}
+.pr-card.premium .pr-cta:hover{background:var(--r2)}
+.pr-popular-tag{position:absolute;top:-1px;left:50%;transform:translateX(-50%);
+  background:var(--r);color:#fff;font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:4px 14px;white-space:nowrap}
+.pr-note{font-size:.68rem;color:var(--g2);margin-top:10px;font-style:italic;line-height:1.5}
+
+/* ── CALCULATOR ── */
+.calc-wrap{background:var(--k2);border:1px solid rgba(255,255,255,.08);padding:28px;margin-top:36px;max-width:640px}
+.calc-title{font-family:var(--head);font-weight:700;font-size:1.1rem;letter-spacing:.04em;text-transform:uppercase;color:var(--w);margin-bottom:6px}
+.calc-sub{font-size:.78rem;color:var(--g);margin-bottom:24px}
+.calc-row{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.calc-label{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.calc-select{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:var(--w);
+  padding:11px 14px;font-family:var(--body);font-size:.82rem;outline:none;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23666' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;cursor:pointer;width:100%}
+.calc-select option{background:var(--k)}
+.calc-select:focus{border-color:var(--r)}
+.calc-result{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:none}
+.calc-result.show{display:block}
+.calc-cost-label{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:6px}
+.calc-cost{font-family:var(--head);font-weight:900;font-size:2.8rem;color:var(--r);line-height:1;margin-bottom:8px}
+.calc-msg{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.65}
+.calc-btn{background:var(--r);color:#fff;border:none;padding:12px 24px;font-family:var(--body);font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:14px;width:100%;transition:background .2s}
+.calc-btn:hover{background:var(--r2)}
+
+/* ── PROCESS STEPS ── */
+.steps{display:grid;grid-template-columns:1fr;gap:0;border:1px solid var(--bk);margin-top:36px}
+@media(min-width:860px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{padding:26px 20px;background:var(--w);border-bottom:1px solid var(--bk);position:relative}
+@media(min-width:860px){.step{border-bottom:none;border-right:1px solid var(--bk)}}
+.step:last-child{border:none}
+.step::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--r);transition:height .4s var(--ease)}
+.step:hover::before{height:100%}
+.step-n{font-family:var(--head);font-weight:900;font-size:2.4rem;color:rgba(0,0,0,.07);line-height:1;margin-bottom:8px}
+.step-t{font-family:var(--head);font-weight:700;font-size:.96rem;letter-spacing:.04em;text-transform:uppercase;color:var(--k);margin-bottom:7px}
+.step-d{font-size:.76rem;color:var(--g2);line-height:1.62}
+.step-tag{display:inline-block;margin-top:12px;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;background:var(--r);color:#fff}
+
+/* ── FAQ ── */
+.faq-list{border:1px solid var(--bk);margin-top:36px}
+.faq-item{border-bottom:1px solid var(--bk)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--w);transition:background .15s;cursor:pointer;border:none;width:100%;text-align:left;font-family:var(--body)}
+.faq-q:hover{background:var(--w2)}
+.faq-qt{font-family:var(--head);font-weight:700;font-size:.96rem;letter-spacing:.02em;text-transform:uppercase;color:var(--k);line-height:1.2}
+.faq-ch{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1px solid var(--bk);display:flex;align-items:center;justify-content:center;font-size:.62rem;color:var(--g);transition:transform .2s,background .2s,border-color .2s}
+.faq-item.open .faq-ch{transform:rotate(180deg);background:var(--r);border-color:var(--r);color:#fff}
+.faq-a{display:none;padding:0 18px 16px;background:var(--w)}
+.faq-item.open .faq-a{display:block}
+.faq-a p{font-size:.82rem;color:var(--g2);line-height:1.76;max-width:640px}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:48px}
+@media(min-width:900px){.contact-grid{grid-template-columns:1fr 1fr;align-items:start;gap:64px}}
+.contact-info{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.ci{display:flex;gap:12px;align-items:flex-start;padding:13px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
+.ci-bar{width:2px;flex-shrink:0;align-self:stretch;background:var(--r);min-height:36px}
+.ci-lbl{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:2px}
+.ci-val{font-size:.82rem;color:var(--w)}
+.trust-badges{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:22px}
+.tb{padding:11px 13px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03)}
+.tb-lbl{font-size:.57rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:3px}
+.tb-val{font-size:.76rem;color:var(--w);font-weight:500}
+.cform{display:flex;flex-direction:column;gap:9px}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.cform input,.cform select,.cform textarea{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+  color:var(--w);padding:12px 14px;font-family:var(--body);font-size:.8rem;
+  outline:none;transition:border-color .2s;resize:none;width:100%}
+.cform input::placeholder,.cform textarea::placeholder{color:rgba(255,255,255,.22)}
+.cform select{color:rgba(255,255,255,.35);cursor:pointer;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23666' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center}
+.cform select option{background:var(--k);color:var(--w)}
+.cform input:focus,.cform select:focus,.cform textarea:focus{border-color:var(--r)}
+.cform select.has-val{color:var(--w)}
+.cf-radios{display:flex;flex-direction:column;gap:5px}
+.cf-radio{display:flex;align-items:center;gap:9px;cursor:pointer;padding:9px 12px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.02);transition:border-color .15s}
+.cf-radio:hover{border-color:rgba(255,255,255,.18)}
+.cf-radio input[type=radio]{accent-color:var(--r);width:15px;height:15px;cursor:pointer;flex-shrink:0}
+.cf-radio-label{font-size:.76rem;color:rgba(255,255,255,.55)}
+.cf-radio:has(input:checked){border-color:var(--r);background:rgba(200,40,30,.06)}
+.cf-radio:has(input:checked) .cf-radio-label{color:var(--w)}
+.cf-label{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:4px}
+.cf-submit{background:var(--r);color:#fff;border:none;padding:14px;font-family:var(--body);font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.cf-submit:hover{background:var(--r2)}
+.cf-submit:disabled{opacity:.5;cursor:default}
+.cf-note{font-size:.66rem;color:rgba(255,255,255,.2);text-align:center;margin-top:6px;line-height:1.5}
+
+/* ── LEAD MAGNET ── */
+.lm-wrap{background:var(--k3);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:44px 20px}
+@media(min-width:900px){.lm-wrap{padding:44px 56px}}
+.lm-inner{max-width:620px;margin:0 auto;text-align:center}
+.lm-h{font-family:var(--head);font-weight:900;font-size:clamp(1.6rem,4vw,2.4rem);text-transform:uppercase;letter-spacing:-.01em;color:var(--w);margin-bottom:10px;line-height:.96}
+.lm-h .r{color:var(--r)}
+.lm-row{display:flex;gap:8px;max-width:420px;margin:20px auto 0;flex-wrap:wrap;justify-content:center}
+.lm-tel{flex:1;min-width:180px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:var(--w);padding:12px 14px;font-family:var(--body);font-size:.8rem;outline:none}
+.lm-tel:focus{border-color:var(--r)}
+.lm-btn{background:var(--r);color:#fff;border:none;padding:12px 20px;font-family:var(--body);font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background .2s}
+.lm-btn:hover{background:var(--r2)}
+
+/* ── CAREERS ── */
+.careers-grid{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);margin-top:36px}
+.career-item{background:var(--k2);padding:22px 20px;display:flex;align-items:flex-start;gap:16px;transition:background .2s;border-bottom:1px solid rgba(255,255,255,.05)}
+.career-item:last-child{border-bottom:none}
+.career-item:hover{background:var(--k3)}
+.career-icon{width:40px;height:40px;background:rgba(200,40,30,.1);border:1px solid rgba(200,40,30,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:900;font-size:1rem;color:var(--r)}
+.career-name{font-family:var(--head);font-weight:700;font-size:.96rem;letter-spacing:.05em;text-transform:uppercase;color:var(--w);margin-bottom:4px}
+.career-desc{font-size:.76rem;color:rgba(255,255,255,.42);line-height:1.62;margin-bottom:8px}
+.career-tags{display:flex;flex-wrap:wrap;gap:6px}
+.career-tag{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.35)}
+.career-tag.open{border-color:rgba(200,40,30,.35);color:var(--r)}
+
+/* ── ZONE ── */
+.zone-grid{display:grid;grid-template-columns:1fr;gap:36px}
+@media(min-width:900px){.zone-grid{grid-template-columns:1fr 1fr;align-items:start}}
+.zone-map{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);padding:22px}
+.zone-head{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--r);margin-bottom:12px;font-weight:600}
+.zone-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.77rem;color:var(--g)}
+.zone-row:last-child{border-bottom:none}
+.zdot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.zdot.on{background:var(--r)}
+.zdot.soon{background:var(--g2)}
+.zbadge{margin-left:auto;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;border:1px solid}
+.zbadge.on{border-color:rgba(200,40,30,.35);color:var(--r)}
+.zbadge.soon{border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.3)}
+.zone-why{display:flex;flex-direction:column;gap:12px}
+.zw{display:flex;gap:12px;align-items:flex-start;padding:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);transition:border-color .2s}
+.zw:hover{border-color:rgba(255,255,255,.1)}
+.zw-bar{width:2px;flex-shrink:0;align-self:stretch;background:var(--r);min-height:36px}
+.zw h4{font-family:var(--head);font-weight:700;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase;color:var(--w);margin-bottom:4px}
+.zw p{font-size:.75rem;color:var(--g);line-height:1.62}
+
+/* ── FOOTER ── */
+footer{background:var(--k);border-top:1px solid rgba(255,255,255,.06);padding:18px 20px;display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center}
+@media(min-width:700px){footer{flex-direction:row;justify-content:space-between;padding:18px 56px}}
+.f-logo{font-family:var(--head);font-weight:800;font-size:.9rem;color:rgba(255,255,255,.22);text-transform:uppercase}
+.f-logo em{color:var(--r);font-style:normal}
+.f-copy{font-size:.6rem;color:rgba(255,255,255,.18);letter-spacing:.04em}
+.f-links{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.f-links a{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.18);transition:color .2s}
+.f-links a:hover{color:rgba(255,255,255,.45)}
+
+/* ── WA BTN ── */
+#wabtn{position:fixed;bottom:22px;right:22px;z-index:400;width:50px;height:50px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.3);transition:transform .2s}
+#wabtn:hover{transform:scale(1.1)}
+#wabtn svg{width:24px;height:24px;fill:#fff}
+
+/* ── STICKY CTA BAR ── */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:300;background:var(--r);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(100%);transition:transform .35s var(--ease)}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta-text{font-size:.78rem;color:rgba(255,255,255,.8)}
+.sticky-cta-text strong{color:#fff}
+.sticky-cta-btn{background:#fff;color:var(--r);padding:10px 20px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;transition:opacity .2s}
+.sticky-cta-btn:hover{opacity:.9}
+.sticky-cta-close{background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;font-size:1.1rem;padding:0;flex-shrink:0}
+
+/* ── EXIT INTENT POPUP ── */
+.exit-popup{position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.exit-popup.show{opacity:1;visibility:visible}
+.exit-box{background:var(--k2);border:1px solid rgba(255,255,255,.1);border-top:4px solid var(--r);max-width:480px;width:100%;padding:32px;position:relative}
+.exit-close{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--g);cursor:pointer;font-size:1.2rem}
+.exit-h{font-family:var(--head);font-weight:900;font-size:clamp(1.6rem,4vw,2.2rem);text-transform:uppercase;letter-spacing:-.01em;color:var(--w);line-height:.94;margin-bottom:10px}
+.exit-h .r{color:var(--r)}
+.exit-sub{font-size:.82rem;color:var(--g);line-height:1.65;margin-bottom:22px}
+.exit-tel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:var(--w);padding:12px 14px;font-family:var(--body);font-size:.82rem;outline:none;width:100%;margin-bottom:8px}
+.exit-tel:focus{border-color:var(--r)}
+.exit-btn{background:var(--r);color:#fff;border:none;padding:13px;font-family:var(--body);font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;width:100%;transition:background .2s}
+.exit-btn:hover{background:var(--r2)}
+.exit-skip{display:block;text-align:center;margin-top:12px;font-size:.7rem;color:var(--g);cursor:pointer}
+.exit-skip:hover{color:var(--w)}
+
+/* ── INTRO ── */
+#intro{position:fixed;inset:0;z-index:9500;background:var(--k);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:opacity .6s ease,visibility .6s}
+#intro.out{opacity:0;visibility:hidden;pointer-events:none}
+.i-logo{font-family:var(--head);font-weight:900;text-transform:uppercase;font-size:clamp(2.6rem,8vw,5.5rem);line-height:.9;color:var(--w);text-align:center;animation:fadeUp .6s ease both}
+.i-logo em{color:var(--r);font-style:normal;display:block}
+.i-rule{width:52px;height:1px;background:var(--r);margin:20px 0;animation:grow .7s .3s ease both}
+.i-sub{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--g);animation:fadeUp .5s .35s ease both;text-align:center}
+.i-btn{margin-top:24px;background:var(--r);color:#fff;padding:13px 30px;font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;cursor:pointer;font-family:var(--body);animation:fadeUp .5s .48s ease both;transition:background .2s}
+.i-btn:hover{background:var(--r2)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes grow{from{width:0}to{width:52px}}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.rv.in{opacity:1;transform:none}
+.rv2{opacity:0;transform:translateX(-24px);transition:opacity .6s .1s ease,transform .6s .1s ease}
+.rv2.in{opacity:1;transform:none}
+
+/* ── SECTION PILL HIGHLIGHT ── */
+.pill{display:inline-block;background:var(--r);color:#fff;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;margin-left:8px;vertical-align:middle}
+
+/* ── GUARANTEE STRIP ── */
+.guarantee-strip{background:var(--k2);border-top:1px solid rgba(255,255,255,.06);padding:22px 20px}
+@media(min-width:900px){.guarantee-strip{padding:22px 56px}}
+.guarantee-inner{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:700px){.guarantee-inner{grid-template-columns:repeat(4,1fr)}}
+.gu-item{display:flex;gap:10px;align-items:flex-start}
+.gu-bar{width:2px;flex-shrink:0;align-self:stretch;background:var(--r);min-height:32px}
+.gu-title{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:2px;font-weight:600}
+.gu-val{font-size:.8rem;color:var(--w);font-weight:500}
+</style>
+</head>
+<body>
+
+<!-- INTRO -->
+<div id="intro" onclick="closeIntro()">
+  <div class="i-logo">OKUPA<em>TU CASA</em></div>
+  <div class="i-rule"></div>
+  <div class="i-sub">Vigilancia presencial · Valles · Desde 55€/mes</div>
+  <button class="i-btn" onclick="event.stopPropagation();closeIntro()">Ver el servicio →</button>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar" id="topbar">
+  <div class="top-bar-text">Solo quedan <strong id="plazas-n">4 plazas</strong> disponibles en el Valles Occidental este mes</div>
+  <a href="#contacto" class="top-bar-cta">Reservar mi plaza</a>
+  <button class="top-bar-close" onclick="document.getElementById('topbar').style.display='none'">x</button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">OKUPA<em>TU</em>CASA</a>
+  <div class="nav-links">
+    <a href="#servicio">Servicio</a>
+    <a href="#complemento">vs Alarma</a>
+    <a href="#inmobiliarias">Inmobiliarias</a>
+    <a href="#precio">Precios</a>
+    <a href="#zona">Zona</a>
+    <a href="#trabaja">Empleo</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <div class="nav-right">
+    <button class="nav-portal-btn" onclick="portalOpen()">Area cliente</button>
+    <a href="#contacto" class="nav-cta">Visita gratis →</a>
+  </div>
+</nav>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sticky-cta-text"><strong>Primera visita gratis y sin compromiso</strong> — Vallès Occidental</div>
+  <a href="#contacto" class="sticky-cta-btn">Quiero la visita →</a>
+  <button class="sticky-cta-close" onclick="hideStickyBar()">x</button>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-left">
+    <div class="h-badge"><span class="h-badge-dot"></span>Vallès Occidental — Servicio activo</div>
+    <h1 class="hero-title">
+      LA ALARMA<br>AVISA.<br>NOSOTROS<br><span class="r">ACTUAMOS.</span>
+    </h1>
+    <p class="hero-sub">
+      Personas reales que visitan, cuidan y documentan tu propiedad vacía.
+      <strong>Lo que Verisure no puede darte.</strong> Gestión presencial, informe fotográfico con GPS y un gestor personal que responde cuando lo necesitas.
+    </p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn-hero-main">Primera visita gratis →</a>
+      <a href="#complemento" class="btn-hero-out">Tengo alarma. Y ahora que?</a>
+    </div>
+    <div class="hero-micro">
+      <div class="hero-mic"><span class="hero-mic-dot"></span>Compatible con cualquier alarma</div>
+      <div class="hero-mic"><span class="hero-mic-dot"></span>Sin permanencia</div>
+      <div class="hero-mic"><span class="hero-mic-dot"></span>Seguro RC incluido</div>
+      <div class="hero-mic"><span class="hero-mic-dot"></span>Desde 55€/mes</div>
+    </div>
+  </div>
+  <div class="hero-right rv">
+    <div class="hero-card">
+      <div class="hero-card-title">La situacion en Cataluna ahora mismo</div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-n">1/3</div><div class="hstat-l">casas vacias sufren intento de intrusión</div></div>
+        <div class="hstat accent"><div class="hstat-n">48h</div><div class="hstat-l">ventana critica para actuar ante ocupacion</div></div>
+        <div class="hstat"><div class="hstat-n">42%</div><div class="hstat-l">de todas las ocupaciones de España son en Cataluna</div></div>
+        <div class="hstat"><div class="hstat-n">20k</div><div class="hstat-l">euros de coste medio por ocupacion ilegal</div></div>
+      </div>
+      <div class="hero-vs">
+        <div>
+          <div class="hero-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <div class="hero-vs-text"><strong>5.0 Google Reviews</strong> — Vallès Occidental</div>
+        </div>
+        <a href="#contacto" style="background:var(--r);color:#fff;padding:10px 16px;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;flex-shrink:0">Hablar ahora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="ts"><svg class="ts-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Seguro RC incluido</div>
+  <div class="ts-divider"></div>
+  <div class="ts"><svg class="ts-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Respuesta en 30 min</div>
+  <div class="ts-divider"></div>
+  <div class="ts"><svg class="ts-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Informe legal GPS</div>
+  <div class="ts-divider"></div>
+  <div class="ts"><svg class="ts-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Sin permanencia</div>
+  <div class="ts-divider"></div>
+  <div class="ts"><svg class="ts-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Personas, no camaras</div>
+</div>
+
+<!-- SCARCITY BAR -->
+<div class="scarcity-bar">
+  <div class="scarcity-inner">
+    <div class="scarcity-left">
+      <div class="scarcity-dot"></div>
+      <div class="scarcity-text"><strong>Capacidad limitada</strong> en el Valles — actualmente cubrimos la zona con <strong id="plazas-n2">4 plazas</strong> disponibles</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="scarcity-bar-wrap"><div class="scarcity-fill" style="width:78%"></div></div>
+      <div style="font-size:.66rem;color:var(--r);font-weight:600;white-space:nowrap">78% ocupado</div>
+    </div>
+  </div>
+</div>
+
+<!-- GUARANTEE STRIP -->
+<div class="guarantee-strip">
+  <div class="guarantee-inner">
+    <div class="gu-item"><div class="gu-bar"></div><div><div class="gu-title">Garantia</div><div class="gu-val">Informe en 2h o visita gratis</div></div></div>
+    <div class="gu-item"><div class="gu-bar"></div><div><div class="gu-title">Sin riesgo</div><div class="gu-val">Primera visita evaluacion gratis</div></div></div>
+    <div class="gu-item"><div class="gu-bar"></div><div><div class="gu-title">Flexibilidad</div><div class="gu-val">Cancelas con 15 dias de aviso</div></div></div>
+    <div class="gu-item"><div class="gu-bar"></div><div><div class="gu-title">Cobertura</div><div class="gu-val">Seguro RC activo en cada visita</div></div></div>
+  </div>
+</div>
+
+<!-- CITA -->
+<div class="cita">
+  <div class="cita-line"></div>
+  <p class="cita-q">La alarma avisa cuando alguien ya ha entrado. <strong>OkupaTuCasa evita que te elijan como objetivo.</strong> No somos lo mismo. Somos complementarios.<span class="cita-who">El servicio que Verisure y Prosegur no pueden darte</span></p>
+  <div class="cita-line"></div>
+</div>
+
+<!-- PROBLEMA — DARK -->
+<section class="s-dark sec" id="problema">
+  <p class="s-eye">El coste real de no actuar</p>
+  <h2 class="s-h">LO QUE CUESTA<br>NO HACER <span class="r">NADA.</span></h2>
+  <p class="s-body">No tener vigilancia activa no es gratis. Cada mes que tu propiedad esta vacia y sin supervision, acumula riesgo. Estos son los costes reales cuando algo sale mal.</p>
+  <div class="problem-grid">
+    <div class="prob-card rv">
+      <div class="prob-n">01</div>
+      <div class="prob-cost">20.000€+</div>
+      <div class="prob-title">Ocupacion ilegal</div>
+      <div class="prob-desc">Coste medio incluyendo abogados, proceso judicial, obras de recuperacion y perdida de renta durante el proceso. La ventana critica son las primeras 48h.</div>
+    </div>
+    <div class="prob-card rv">
+      <div class="prob-n">02</div>
+      <div class="prob-cost">3.000-15.000€</div>
+      <div class="prob-title">Fuga de agua no detectada</div>
+      <div class="prob-desc">Una fuga activa durante 2-3 semanas puede generar daños estructurales y reclamaciones de vecinos. La camara lo graba. Nadie lo para.</div>
+    </div>
+    <div class="prob-card rv">
+      <div class="prob-n">03</div>
+      <div class="prob-cost">5.000€+</div>
+      <div class="prob-title">Vandalismo no detectado</div>
+      <div class="prob-desc">Un inmueble que parece abandonado atrae vandalismo. Lo que empieza como grafitis termina en cristales rotos y daños estructurales.</div>
+    </div>
+    <div class="prob-card rv">
+      <div class="prob-n">04</div>
+      <div class="prob-cost">Meses de proceso</div>
+      <div class="prob-title">Sin documentacion legal</div>
+      <div class="prob-desc">Sin fotos con fecha y GPS del estado previo, demostrar ante el juzgado o la aseguradora es practicamente imposible. El tiempo es clave.</div>
+    </div>
+    <div class="prob-card rv">
+      <div class="prob-n">05</div>
+      <div class="prob-cost">-30% valor</div>
+      <div class="prob-title">Deterioro por abandono</div>
+      <div class="prob-desc">Una propiedad que no se visita regularmente pierde valor percibido y real. Las pequeñas averias sin resolver se convierten en problemas mayores.</div>
+    </div>
+    <div class="prob-card rv" style="background:var(--r);cursor:default">
+      <div class="prob-n" style="color:rgba(255,255,255,.1)">?</div>
+      <div class="prob-cost" style="color:#fff">75€/mes</div>
+      <div class="prob-title" style="color:#fff">El coste de OkupaTuCasa</div>
+      <div class="prob-desc" style="color:rgba(255,255,255,.75)">2,50 euros al dia. Menos que un cafe con leche. Para que ninguno de los 5 escenarios anteriores te cueste un euro.</div>
+    </div>
+  </div>
+</section>
+
+<!-- VS VERISURE/ALARMA — DARK -->
+<section class="s-dark sec" id="complemento" style="padding-top:0">
+  <p class="s-eye">La pregunta que todos hacen</p>
+  <h2 class="s-h">YA TENGO<br><span class="r">ALARMA.</span><br>Y AHORA QUE?</h2>
+  <p class="s-body">Verisure responde en 20 segundos. Prosegur manda un vigilante si hace falta. Su tecnologia es excelente. Y aun asi, no pueden hacer lo que nosotros hacemos. No somos rivales: somos la capa que les falta.</p>
+  <div style="border:1px solid rgba(255,255,255,.07);overflow:hidden;margin-top:32px">
+    <!-- Header -->
+    <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.06)">
+      <div style="background:var(--k3);padding:12px 14px"><div style="font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3)">Situacion real</div></div>
+      <div style="background:var(--k2);padding:12px 14px;text-align:center"><div style="font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4)">Solo alarma (Verisure / Prosegur)</div></div>
+      <div style="background:var(--r);padding:12px 14px;text-align:center"><div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.9);font-weight:700">Alarma + OkupaTuCasa</div></div>
+    </div>
+    <div id="vstable"></div>
+  </div>
+  <div style="margin-top:14px;background:var(--k2);padding:18px 20px;border-top:3px solid var(--r);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap">
+    <div>
+      <div style="font-family:var(--head);font-weight:900;font-size:1.05rem;text-transform:uppercase;letter-spacing:.04em;color:var(--w);margin-bottom:3px">La alarma es el hardware. OkupaTuCasa es el software humano.</div>
+      <div style="font-size:.76rem;color:rgba(255,255,255,.42)">Uno detecta. El otro actua. Juntos son imbatibles para una propiedad vacia.</div>
+    </div>
+    <a href="#contacto" class="btn-hero-main" style="flex-shrink:0">Añadir OkupaTuCasa →</a>
+  </div>
+</section>
+
+<!-- SERVICIO — LIGHT -->
+<section class="s-light sec" id="servicio">
+  <p class="s-eye">El servicio</p>
+  <h2 class="s-h">3 VISITAS<br>+ GESTION<br><span class="r">DIRECTA.</span></h2>
+  <p class="s-body">No es solo vigilancia. Es tener un gestor personal para tu propiedad. Tres visitas presenciales al mes, documentadas y con informe GPS, mas una linea de gestion directa que responde cuando tu alarma detecta algo y no hay nadie que actue.</p>
+  <div class="serv-grid">
+    <div class="sv-card rv">
+      <div class="sv-num">01</div>
+      <div class="sv-title">Inspeccion presencial completa</div>
+      <div class="sv-desc">Protocolo de 30 minutos: perimetro, interior, instalaciones, terraza. Siempre el mismo orden. Sin saltarse ningun paso. Detectamos lo que la camara no puede ver.</div>
+      <div class="sv-badge">3 veces al mes</div>
+    </div>
+    <div class="sv-card rv">
+      <div class="sv-num">02</div>
+      <div class="sv-title">Informe fotografico legal</div>
+      <div class="sv-desc">8-12 fotos con metadatos GPS y timestamp enviadas en menos de 2 horas. Si tardan mas, esa visita no se cobra. Valor legal ante aseguradoras y juzgados desde el dia 1.</div>
+      <div class="sv-badge">En menos de 2h</div>
+    </div>
+    <div class="sv-card rv">
+      <div class="sv-num">03</div>
+      <div class="sv-title">Simulacion de presencia activa</div>
+      <div class="sv-desc">Buzón vaciado, persianas variadas, correspondencia recogida. Horario variable e impredecible en cada visita. La casa siempre parece habitada. La incertidumbre disuade.</div>
+      <div class="sv-badge">Prevencion real</div>
+    </div>
+    <div class="sv-card fourth rv">
+      <div class="sv-num">04</div>
+      <div class="sv-title">Gestion directa entre visitas</div>
+      <div class="sv-desc">El 4 servicio que ninguna alarma puede dar. Tu gestor personal responde cuando tu alarma detecta algo, coordina tecnicos, gestiona incidencias y actua en tu nombre. Tus estas en Berlín — nosotros estamos aquí.</div>
+      <div class="sv-badge">El que lo cambia todo</div>
+    </div>
+  </div>
+  <div style="margin-top:20px;padding:16px 18px;background:var(--w2);border:1px solid var(--bk);border-left:3px solid var(--r)">
+    <p style="font-size:.8rem;color:var(--g2);line-height:1.7"><strong style="color:var(--k)">Garantia de tiempo.</strong> Si el informe fotografico no llega a tu WhatsApp en menos de 2 horas desde la salida de la propiedad, esa visita no se cobra. Sin excepciones. Es nuestra promesa.</p>
+  </div>
+</section>
+
+<!-- CALCULATOR — WARM -->
+<section class="s-warm sec" id="calculadora">
+  <p class="s-eye">Herramienta de analisis</p>
+  <h2 class="s-h">CUANTO TE<br>PUEDE <span class="r">COSTAR</span><br>NO ACTUAR.</h2>
+  <p class="s-body">Calcula el riesgo real de tu propiedad según sus características. Los datos son del informe de Seguridad Ciudadana 2024 y Sekdoor 2025.</p>
+  <div class="calc-wrap rv">
+    <div class="calc-title">Calculadora de riesgo de propiedad</div>
+    <div class="calc-sub">Selecciona las caracteristicas de tu inmueble y te mostramos el coste estimado de una incidencia no detectada a tiempo.</div>
+    <div class="cf-row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:0">
+      <div class="calc-row">
+        <div class="calc-label">Tipo de propiedad</div>
+        <select class="calc-select" id="calc-tipo" onchange="calcUpdate()">
+          <option value="">Seleccionar...</option>
+          <option value="piso">Piso o apartamento</option>
+          <option value="chalet">Chalet o casa unifamiliar</option>
+          <option value="local">Local comercial</option>
+          <option value="segunda">Segunda residencia</option>
+        </select>
+      </div>
+      <div class="calc-row">
+        <div class="calc-label">Tiempo vacia al mes</div>
+        <select class="calc-select" id="calc-tiempo" onchange="calcUpdate()">
+          <option value="">Seleccionar...</option>
+          <option value="15">1 a 2 semanas</option>
+          <option value="30">Todo el mes</option>
+          <option value="90">2 a 3 meses</option>
+          <option value="365">Todo el año</option>
+        </select>
+      </div>
+    </div>
+    <div class="calc-row" style="margin-top:12px">
+      <div class="calc-label">Zona del Valles</div>
+      <select class="calc-select" id="calc-zona" onchange="calcUpdate()">
+        <option value="">Seleccionar...</option>
+        <option value="alta">Alta incidencia (Sabadell norte, Terrassa Ca n'Anglada)</option>
+        <option value="media">Media incidencia (Sant Cugat, Cerdanyola, Rubi)</option>
+        <option value="baja">Baja incidencia (Urbanizaciones residenciales)</option>
+      </select>
+    </div>
+    <div class="calc-result" id="calc-result">
+      <div class="calc-cost-label">Coste estimado de incidencia no detectada</div>
+      <div class="calc-cost" id="calc-cost">0€</div>
+      <div class="calc-msg" id="calc-msg"></div>
+      <a href="#contacto" class="calc-btn">Proteger mi propiedad ahora →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTES TABS — LIGHT -->
+<section class="s-light sec" id="clientes">
+  <p class="s-eye">Para quien es</p>
+  <h2 class="s-h">TU CASO<br>ESTA <span class="r">AQUI.</span></h2>
+  <div style="display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--bk);background:var(--bk);margin-top:28px" role="tablist">
+    <button class="tab-btn on" onclick="setTab(0)">Particulares</button>
+    <button class="tab-btn" onclick="setTab(1)">Airbnb</button>
+    <button class="tab-btn" onclick="setTab(2)">Locales</button>
+    <button class="tab-btn" onclick="setTab(3)">Inmobiliarias</button>
+    <button class="tab-btn" onclick="setTab(4)">Fondos</button>
+  </div>
+  <div id="tab-panels"></div>
+</section>
+
+<!-- IMAGEN STRIP -->
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--k);height:220px;overflow:hidden">
+  <div style="overflow:hidden;position:relative">
+    <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=600&q=75&auto=format&fit=crop" alt="Chalet Valles" style="width:100%;height:100%;object-fit:cover;filter:brightness(.6) saturate(.7);transition:filter .4s" onmouseover="this.style.filter='brightness(.8) saturate(1)'" onmouseout="this.style.filter='brightness(.6) saturate(.7)'">
+    <div style="position:absolute;bottom:12px;left:12px;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5)">Chalet · Valles Occidental</div>
+  </div>
+  <div style="overflow:hidden;position:relative">
+    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=75&auto=format&fit=crop" alt="Bloque residencial" style="width:100%;height:100%;object-fit:cover;filter:brightness(.55) saturate(.7);transition:filter .4s" onmouseover="this.style.filter='brightness(.8) saturate(1)'" onmouseout="this.style.filter='brightness(.55) saturate(.7)'">
+    <div style="position:absolute;bottom:12px;left:12px;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5)">Residencial · Sabadell</div>
+  </div>
+  <div style="overflow:hidden;position:relative">
+    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=75&auto=format&fit=crop" alt="Segunda residencia" style="width:100%;height:100%;object-fit:cover;filter:brightness(.58) saturate(.7);transition:filter .4s" onmouseover="this.style.filter='brightness(.8) saturate(1)'" onmouseout="this.style.filter='brightness(.58) saturate(.7)'">
+    <div style="position:absolute;bottom:12px;left:12px;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5)">Segunda residencia · Terrassa</div>
+  </div>
+</div>
+
+<!-- CITA 2 -->
+<div class="cita">
+  <div class="cita-line"></div>
+  <p class="cita-q">«No se trata de vigilar. Se trata de <strong>estar</strong>. De conocer la propiedad, de que alguien responda, de que el propietario pueda irse sabiendo que hay alguien al otro lado.»<span class="cita-who">Aaron Plasencia, cofundador de OkupaTuCasa</span></p>
+  <div class="cita-line"></div>
+</div>
+
+<!-- PROCESO — WARM -->
+<section class="s-warm sec" id="como">
+  <p class="s-eye">El proceso</p>
+  <h2 class="s-h">DE CERO A<br><span class="r">PROTEGIDO</span><br>EN 4 PASOS.</h2>
+  <p class="s-body">Sin instalaciones, sin hardware, sin esperas. En menos de una semana tu propiedad tiene un equipo detras.</p>
+  <div class="steps">
+    <div class="step rv">
+      <div class="step-n">01</div>
+      <div class="step-t">Nos contactas</div>
+      <div class="step-d">Web, WhatsApp o telefono. Respondemos en menos de 30 minutos en horario laboral.</div>
+      <span class="step-tag">Gratis</span>
+    </div>
+    <div class="step rv">
+      <div class="step-n">02</div>
+      <div class="step-t">Visita de evaluacion</div>
+      <div class="step-d">Vamos a tu propiedad, evaluamos riesgos reales y te damos el presupuesto exacto. Sin compromiso.</div>
+      <span class="step-tag">Sin coste</span>
+    </div>
+    <div class="step rv">
+      <div class="step-n">03</div>
+      <div class="step-t">Firmamos y arrancamos</div>
+      <div class="step-d">Contrato de una pagina. Precio claro. Sin permanencia. Cancelas con 15 dias de aviso en cualquier momento.</div>
+      <span class="step-tag">Desde 55€/mes</span>
+    </div>
+    <div class="step rv">
+      <div class="step-n">04</div>
+      <div class="step-t">Informe en tu WhatsApp</div>
+      <div class="step-d">3 visitas quincenales con horario variable. Informe fotografico en menos de 2 horas garantizado.</div>
+      <span class="step-tag">Siempre</span>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS — LIGHT -->
+<section class="s-light sec" id="testimonios">
+  <p class="s-eye">Lo que dicen nuestros clientes</p>
+  <h2 class="s-h">LA MEJOR<br>PRUEBA ES<br><span class="r">SU PALABRA.</span></h2>
+  <div class="testi-grid">
+    <div class="testi rv">
+      <div class="testi-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="testi-text">"Tengo una casa en el Maresme que pasa meses sin que nadie la visite. Desde que contratamos OkupaTuCasa el informe llega cada dos semanas y me da una tranquilidad que no tenia. Una vez detectaron una pequeña fuga que sin ellos hubiera costado una fortuna."</p>
+      <div class="testi-name">Montserrat R.</div>
+      <div class="testi-role">Propietaria particular · Sabadell</div>
+    </div>
+    <div class="testi rv">
+      <div class="testi-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="testi-text">"Gestionamos 12 pisos en el Valles para diferentes propietarios. Antes era imposible hacer un seguimiento real. Ahora recibo el informe fotografico de cada propiedad y lo mando directamente al propietario. Un servicio que deberia ser estandar en el sector."</p>
+      <div class="testi-name">Jordi M.</div>
+      <div class="testi-role">Agencia inmobiliaria · Terrassa</div>
+    </div>
+    <div class="testi rv">
+      <div class="testi-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="testi-text">"Yo ya tenia alarma con camaras. Lo que no tenia era a nadie que fuera si algo pasaba. Con OkupaTuCasa tengo los dos. Cuando salta la alarma ellos llegan antes que la policia y me mandan video en tiempo real. No tiene precio."</p>
+      <div class="testi-name">Albert P.</div>
+      <div class="testi-role">Segunda residencia · Granollers</div>
+    </div>
+  </div>
+  <div style="margin-top:16px;display:flex;align-items:center;gap:16px;padding:14px 16px;background:var(--w2);border:1px solid var(--bk);flex-wrap:wrap">
+    <div><div style="font-size:1.4rem;font-weight:900;font-family:var(--head);color:var(--k);line-height:1">5.0</div><div style="display:flex;gap:2px;margin-top:2px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div></div>
+    <div style="border-left:1px solid var(--bk);padding-left:16px"><div style="font-size:.76rem;color:var(--g3);font-weight:600">Valoracion Google Reviews</div><div style="font-size:.7rem;color:var(--g);margin-top:2px">Media de todos nuestros clientes activos en el Valles</div></div>
+    <a href="#contacto" style="margin-left:auto;background:var(--k);color:var(--w);padding:10px 20px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;transition:background .2s" onmouseover="this.style.background='var(--r)'" onmouseout="this.style.background='var(--k)'">Unirme →</a>
+  </div>
+</section>
+
+<!-- INMOBILIARIAS — DARK -->
+<section class="s-dark sec" id="inmobiliarias">
+  <p class="s-eye">Colaboracion B2B</p>
+  <h2 class="s-h">INMOBILIARIAS<br>Y <span class="r">FONDOS:</span><br>GESTIONAMOS<br>TU CARTERA.</h2>
+  <p class="s-body">Cada piso vacio de tu cartera es un riesgo activo y una oportunidad perdida. Nosotros lo convertimos en un activo supervisado, documentado y listo para enseñar. <strong>Precio por volumen. Una sola factura mensual.</strong></p>
+  <div style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);margin-top:32px">
+    <div style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.06)">
+      <div id="inmo-packs"></div>
+    </div>
+  </div>
+  <div style="margin-top:14px;padding:14px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);font-size:.76rem;color:rgba(255,255,255,.4)">
+    Comision de <strong style="color:var(--w)">50€ por cliente referido</strong> activo para inmobiliarias y profesionales del sector. Acuerdo de colaboracion en 24h.
+  </div>
+</section>
+
+<!-- PRECIOS — LIGHT -->
+<section class="s-light sec" id="precio">
+  <p class="s-eye">Planes de servicio</p>
+  <h2 class="s-h">ELIGE TU<br><span class="r">NIVEL DE</span><br>TRANQUILIDAD.</h2>
+  <p class="s-body">Como los menus de hamburgueseria: tres opciones, misma calidad, diferente intensidad. El 70% de nuestros clientes elige el del medio. Lo han diseñado ellos solos.</p>
+  <div class="price-wrap rv">
+    <div class="pr-card basic">
+      <span class="pr-badge">Plan Esencial</span>
+      <div class="pr-label">Para propiedades de bajo riesgo</div>
+      <div class="pr-price">55<span style="font-size:1.6rem">€</span></div>
+      <div class="pr-per">/mes · sin permanencia</div>
+      <span class="pr-anchor">Prueba el servicio sin compromiso</span>
+      <div class="pr-feats">
+        <div class="pr-feat">1 visita mensual completa</div>
+        <div class="pr-feat">Informe 4 fotos con GPS</div>
+        <div class="pr-feat">Buzon vaciado</div>
+        <div class="pr-feat">Alerta de incidencias</div>
+        <div class="pr-feat">Seguro RC incluido</div>
+      </div>
+      <a href="#contacto" class="pr-cta">Elegir Esencial</a>
+      <div class="pr-note">Solo 20€ menos que el siguiente. Muchos clientes suben al Tranquilidad al mes siguiente.</div>
+    </div>
+    <div class="pr-card main">
+      <span class="pr-popular-tag">70% lo eligen</span>
+      <span class="pr-badge">Plan Tranquilidad</span>
+      <div class="pr-label">El más elegido del Valles</div>
+      <div class="pr-price">75<span style="font-size:1.6rem">€</span></div>
+      <div class="pr-per">/mes — o 800€/año (ahorras 100€)</div>
+      <span class="pr-anchor" style="color:var(--r)">Solo 20€ mas que el Esencial. El doble de servicio.</span>
+      <div class="pr-feats">
+        <div class="pr-feat"><strong>Todo lo del Esencial</strong></div>
+        <div class="pr-feat">3 visitas quincenales al mes</div>
+        <div class="pr-feat">Informe 8 fotos con GPS y timestamp</div>
+        <div class="pr-feat">Inspeccion interior completa</div>
+        <div class="pr-feat">Gestion directa entre visitas</div>
+        <div class="pr-feat">Respuesta en menos de 30 min</div>
+        <div class="pr-feat">Compatible con tu alarma actual</div>
+        <div class="pr-feat">Pago anual disponible: 800€</div>
+      </div>
+      <a href="#contacto" class="pr-cta">Elegir Tranquilidad →</a>
+    </div>
+    <div class="pr-card premium">
+      <span class="pr-badge">Plan Premium</span>
+      <div class="pr-label">Para quien quiere cero preocupaciones</div>
+      <div class="pr-price" style="font-size:3rem">110<span style="font-size:1.4rem">€</span></div>
+      <div class="pr-per">/mes · tu casa perfecta al volver</div>
+      <span class="pr-anchor">Para propiedades de alto valor o total ausencia</span>
+      <div class="pr-feats">
+        <div class="pr-feat"><strong style="color:rgba(255,255,255,.7)">Todo lo del Tranquilidad</strong></div>
+        <div class="pr-feat">Informe extendido 12 fotos</div>
+        <div class="pr-feat">Riego de plantas incluido</div>
+        <div class="pr-feat">Check-up suministros mensual</div>
+        <div class="pr-feat">Welcome Home pre-llegada</div>
+        <div class="pr-feat">Coordinar compra / Nevera Lista</div>
+        <div class="pr-feat">Gestor personal exclusivo asignado</div>
+      </div>
+      <a href="#contacto" class="pr-cta">Elegir Premium</a>
+      <div class="pr-note" style="color:rgba(255,255,255,.3)">Incluye visita extraordinaria si la alarma salta y el propietario no puede ir.</div>
+    </div>
+  </div>
+  <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
+    <div style="padding:11px 14px;background:var(--w2);border:1px solid var(--bk);font-size:.72rem;color:var(--g2)"><strong style="color:var(--k)">Servicios adicionales:</strong> Riego plantas +12€ · Arrancada vehiculo +15€ · Puesta a punto pre-llegada +30€ · Nevera Lista +30€+compra · Coordinacion reparaciones +25€</div>
+    <div style="padding:11px 14px;background:var(--w2);border:1px solid var(--bk);font-size:.72rem;color:var(--g2)"><strong style="color:var(--k)">Inmobiliarias y fondos:</strong> Pack 5 pisos 38€/visita · Pack 10 pisos 30€ · Pack 20+ precio negociado</div>
+  </div>
+</section>
+
+<!-- ZONA — DARK -->
+<section class="s-dark sec" id="zona">
+  <p class="s-eye">Zona operativa</p>
+  <h2 class="s-h">VALLES<br><span class="r">OCCIDENTAL.</span><br>PRIMERO.</h2>
+  <p class="s-body">Concentramos el servicio en el Valles porque conocemos el territorio. Las zonas calientes, los tecnicos de confianza, los tiempos de respuesta reales. <strong>El Valles primero. La escala despues.</strong></p>
+  <div class="zone-grid">
+    <div class="zone-map rv">
+      <div class="zone-head">Cobertura operativa 2025</div>
+      <div class="zone-row"><div class="zdot on"></div>Sabadell — Cobertura total<span class="zbadge on">Activo</span></div>
+      <div class="zone-row"><div class="zdot on"></div>Terrassa — Cobertura total<span class="zbadge on">Activo</span></div>
+      <div class="zone-row"><div class="zdot on"></div>Sant Cugat, Cerdanyola, Rubi<span class="zbadge on">Activo</span></div>
+      <div class="zone-row"><div class="zdot on"></div>Barbera, Ripollet, Montcada<span class="zbadge on">Activo</span></div>
+      <div class="zone-row"><div class="zdot soon"></div>Mollet, Granollers — Valles Oriental<span class="zbadge soon">Pronto</span></div>
+      <div class="zone-row"><div class="zdot soon"></div>Barcelona y Barcelones<span class="zbadge soon">2026</span></div>
+      <div class="zone-row"><div class="zdot soon"></div>Maresme y Bages<span class="zbadge soon">2026</span></div>
+    </div>
+    <div class="zone-why">
+      <div class="zw rv"><div class="zw-bar"></div><div><h4>Respuesta en menos de 45 min</h4><p>Al estar en la zona, llegamos antes de que cualquier servicio centralizado pueda planificar la ruta.</p></div></div>
+      <div class="zw rv"><div class="zw-bar"></div><div><h4>Sin coste de desplazamiento</h4><p>Las rutas optimizadas en el Valles nos permiten ofrecer 75€ planos sin suplementos.</p></div></div>
+      <div class="zw rv"><div class="zw-bar"></div><div><h4>Red de tecnicos locales</h4><p>Fontaneros, electricistas y cerrajeros de la zona que llegan ese mismo dia. No una empresa anonima a 50km.</p></div></div>
+      <div class="zw rv"><div class="zw-bar"></div><div><h4>Conocimiento del territorio</h4><p>Sabemos cuales son las zonas calientes, los edificios con historial y las urbanizaciones de mayor riesgo en el Valles.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ — WARM -->
+<section class="s-warm sec" id="faq">
+  <p class="s-eye">Preguntas frecuentes</p>
+  <h2 class="s-h">LAS DUDAS<br>QUE TODOS<br>TIENEN.</h2>
+  <div class="faq-list" id="faq-list"></div>
+</section>
+
+<!-- TRABAJA — DARK -->
+<section class="s-dark sec" id="trabaja">
+  <p class="s-eye">Trabaja con nosotros</p>
+  <h2 class="s-h">QUIERES SER<br>PARTE DE<br><span class="r">OkupaTuCasa?</span></h2>
+  <p class="s-body">Estamos construyendo el equipo que va a proteger las propiedades del Valles. Si eres una persona de confianza con coche propio y ganas de trabajar bien, sigue leyendo.</p>
+  <div class="careers-grid">
+    <div class="career-item rv">
+      <div class="career-icon">V</div>
+      <div style="flex:1">
+        <div class="career-name">Visitador de propiedades</div>
+        <div class="career-desc">Visitas presenciales con protocolo, informe fotografico y seguimiento de incidencias. Formacion interna completa. Sin experiencia previa necesaria — solo confianza y rigor.</div>
+        <div class="career-tags"><span class="career-tag open">Posicion abierta</span><span class="career-tag">Valles Occidental</span><span class="career-tag">Vehiculo propio</span></div>
+      </div>
+    </div>
+    <div class="career-item rv">
+      <div class="career-icon">C</div>
+      <div style="flex:1">
+        <div class="career-name">Colaborador tecnico</div>
+        <div class="career-desc">Fontanero, electricista, cerrajero o cristalero. Clientes recurrentes garantizados sin buscarlos. Sin exclusividad. Tu eres autonomo — nosotros te mandamos el trabajo.</div>
+        <div class="career-tags"><span class="career-tag open">Posicion abierta</span><span class="career-tag">Autonomos</span><span class="career-tag">Sin exclusividad</span></div>
+      </div>
+    </div>
+    <div class="career-item rv">
+      <div class="career-icon">Z</div>
+      <div style="flex:1">
+        <div class="career-name">Responsable de zona — Expansion</div>
+        <div class="career-desc">Cuando abramos Barcelona, Maresme o Bages necesitamos lideres locales. Si tienes perfil de coordinador y conoces tu comarca, esta posicion es para ti en 2026.</div>
+        <div class="career-tags"><span class="career-tag">Plan expansion 2026</span><span class="career-tag">Crecimiento interno</span></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:20px;background:rgba(200,40,30,.07);border:1px solid rgba(200,40,30,.22);border-top:2px solid var(--r);padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div>
+      <div style="font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--r);margin-bottom:4px">Primer paso</div>
+      <div style="font-family:var(--head);font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:.04em;color:var(--w)">Mandanos un WhatsApp y cuentanos quien eres.</div>
+    </div>
+    <a href="https://wa.me/34711286406?text=Hola%2C%20me%20interesa%20trabajar%20con%20OkupaTuCasa" target="_blank" rel="noopener" style="background:var(--r);color:#fff;padding:12px 22px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;flex-shrink:0;transition:background .2s" onmouseover="this.style.background='var(--r2)'" onmouseout="this.style.background='var(--r)'">Contactar por WhatsApp →</a>
+  </div>
+</section>
+
+<!-- LEAD MAGNET -->
+<div class="lm-wrap">
+  <div class="lm-inner">
+    <div style="font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--r);margin-bottom:12px">Guia gratuita — Sin compromiso</div>
+    <h3 class="lm-h">7 SENALES DE QUE TU<br>CASA VACIA <span class="r">ESTA EN PELIGRO</span></h3>
+    <p style="font-size:.8rem;color:rgba(255,255,255,.38);line-height:1.7;margin-top:10px">Las señales que los propietarios ignoran hasta que es demasiado tarde. PDF gratuito. Descarga directa.</p>
+    <div class="lm-row">
+      <a href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNiAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YxIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKMyAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYS1Cb2xkIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMiAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL0NvbnRlbnRzIDE0IDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDEzIDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago1IDAgb2JqCjw8Ci9Db250ZW50cyAxNSAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCAxMyAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKNiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYS1PYmxpcXVlIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMyAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjcgMCBvYmoKPDwKL0NvbnRlbnRzIDE2IDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDEzIDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago4IDAgb2JqCjw8Ci9Db250ZW50cyAxNyAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCAxMyAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKOSAwIG9iago8PAovQ29udGVudHMgMTggMCBSIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NiA4NDEuODg5OCBdIC9QYXJlbnQgMTMgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjEwIDAgb2JqCjw8Ci9Db250ZW50cyAxOSAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCAxMyAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKMTEgMCBvYmoKPDwKL1BhZ2VNb2RlIC9Vc2VOb25lIC9QYWdlcyAxMyAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjEyIDAgb2JqCjw8Ci9BdXRob3IgKE9rdXBhVHVDYXNhKSAvQ3JlYXRpb25EYXRlIChEOjIwMjYwNTAyMjIxNjU2KzAwJzAwJykgL0NyZWF0b3IgKFwodW5zcGVjaWZpZWRcKSkgL0tleXdvcmRzICgpIC9Nb2REYXRlIChEOjIwMjYwNTAyMjIxNjU2KzAwJzAwJykgL1Byb2R1Y2VyIChSZXBvcnRMYWIgUERGIExpYnJhcnkgLSBcKG9wZW5zb3VyY2VcKSkgCiAgL1N1YmplY3QgKEd1aWEgcGFyYSBwcm9waWV0YXJpb3MgXDI2NyAyMDI1KSAvVGl0bGUgKDcgU2VuYWxlcyBkZSBxdWUgdHUgY2FzYSB2YWNpYSBlc3RhIGVuIHBlbGlncm8pIC9UcmFwcGVkIC9GYWxzZQo+PgplbmRvYmoKMTMgMCBvYmoKPDwKL0NvdW50IDYgL0tpZHMgWyA0IDAgUiA1IDAgUiA3IDAgUiA4IDAgUiA5IDAgUiAxMCAwIFIgXSAvVHlwZSAvUGFnZXMKPj4KZW5kb2JqCjE0IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDE3MTEKPj4Kc3RyZWFtCkdhdG08OWxvJkkmQUBDMmxxQidMZy1QM3MhNSk8UydwIzhhZldqTS1FXjshQEA3ajFNLW9xLCE+bkAsQTZMbjN0UUE2YE8ldVxFRSIwYG1NTUVmWnRrQj9vVWMvQHROIylwSWQxR0RCR2JWITxaKWdyWTtXcGllT0lidWJKLyQqUDgtXypkPDc5TDIpJE8qN01hcVJnbFtYdWhEN1JTMUVRaXQ4NUFYJ3RsZG4xXDVCMXJrRiRCcyoxLDMtSVAoRSldJV9HS2NYNTRDR3FxZ3I2NC9bdGV1J0c5JzdsamVLWHFXSVF1ciM8a29fWCo4X3BkZEJCPj1vZnFyJ1VYbmdWaXVnWV9yIT5YZ0BPU05OL21gUEpYXzVwLlo0TjtrRGcjcldSP08uWVtqWmQ6Rks0InVLI1M6STZlajwlVFhOcHBSQTZbdGhNMi9fbyorRDR0XWdHWmhrW0M/am8oJUEsVms1MllDaU5TV1QqXUFEJmZjPk1yaiRfNmMzLTFQdExkIjwvcC1WQTBPZSVydE9cbUNnUjE0OFRrX2lBXyhLTiZSRzdMQ1Y7VSZCTkBcKTVpa3JsZk1cJFtITGVbPlYmIXJkXic8RVA6YkBeQyhAOjNAQ0lGOyEiZmRlckJXTG02J2IvTlhBW2xCdCY/RVNhO3ItLU9OZ0xiKGE+MWdMXCgoXl8xaTVTdDgoTzthck5POVBJZm1EMTZOWmRETyZkJUpSWzlJV0lbcyFsIkU6bXAkOXBAS1RPYyRWO2BzRk9AZF1LYWFhY1RuN1BgR2c3RT9dN3JLLypAO1BCT0FKS0VuPGoyOExNMDtZMlZNWS0rVGltQ0tVMSRrJ0ZRb2woaEEzb0xnaE00Qmo7W2duc0tEOkI4QSVTLGtEVmVfQF9jbCxXLDRLKjJOTzprPFlmJ0pMJjMqOiJgc2xFdDQ+R04maldcajwxUTFrTDwhOSRRNW1OUF0zPUQ3J1ZpK1VhM1Y6MSZaLydkMD9NPnAoPjgxIzRgK1tkXGtKNEFYQyZoW0skWkc5LyswcitBbTpnLUpCWkJmM085dTliQSJLUVhZT3VKPjJCQzpwYFlmT0JpMiNbS3UvQFFYWTg+QTE1TU9BTFExQDIibjNvZCtJKHMuKisiRSJeOnMxaCdKRnJNTkFzbSdHRzlwJ1AqUF5KaDtNSWxrMy4lNzhVMiInW3JOcSxmaFVXIkMiaWZnTkpQbmFzYm1kODdJQmQzRzoidSVYT3IzODw7VUErPCM7PyttOiZDQlQiImREM3REcWQyIyQmJztUK0w7NyRMJ2FBYGRHMEtEWnBQWlg4IyNuZy40YSllO2tJa2pAJiZeZDxoTXFeSkJEX0srTDRoZWJVYy4yTCtBMl8wNFw9MzgiNDNLaGFrKFJnImJDWlpfRWwtSXJkXlhuPUxqYS50R3NCJDU5XT5IXjFdNHRrPkRlYixePEVLYCspV0dbXTdqMkpoRmkybChlKSJGZ1xMZS01IiElMmUoSmZ0XjlAXUozazA+W24pOFM1SCNcOlM3QG9XMEB1ZT5ZTCZLbHEjSmg/MDg0YTJlOHQ2ZnE5QmAqJVdYOFBzSUlgOnA4QS1HT05AZF5ITTw3XzQxaVxPSWhSbTB1VFBnZCtEJFtmLzA1Vil0Mi5qYjxDOy4iXmdDZDB0PHQhZDRtRzQzPk0qMUs8Om5qclpvTnUnJl1XSjVYTTBHOmhZTyYiJ3I0N0xGYS81aiEoQDVmIW9Cbyc/ZVNfIiJOSDdhWF1eL201UDN1OTtLakZJSVNLJi5wMCdHaWs/cD9hRyI8SjtSVGpGTVxYWi9NJUY7Y1Y+NlciLWAjUG48IXMxRlIhaD4/SSEnKCs3b1YxaiptSCFAREIrRz82RDpxXT1KPSQmP1dKPC9INT5OPDdgWEJwbCNjTU1sRStAVl9QWT0pIlQ1OVQmL3FkZjY0MF0xR0MtUSUnaTNtR2dASWBkUD1uK0xxWmttWi0vbGBcPGJgKkIzSkFdRGhGbSQvdVVtS1x1SGZxISFSaDRZUlBIO1FnbmFKIWNMODBlNiEqTS4hbm1EYT1QZFVlPjY8W249THJQVy1HK1Q/J0tpa3M5TUBiPCt1XCRBL0BUYmtXXUw/a0ssSU0kc20tW2UvUldJY2ozRGNsRSFbdSxSazc2Zl9gclA4WENGMjM1ZHJgQ2k+YGllKVVNOVdKRC8sLlEnbCRkIXNmK2tJN0VVaTd1SmI1MVZTL0U8UydZYiFjVk9tYGRecVktYDk+UUFxTjthJWQqQyZgfj5lbmRzdHJlYW0KZW5kb2JqCjE1IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDI2ODAKPj4Kc3RyZWFtCkdhdTBEPkJBT1coNFEiXTMlbUFSbUZqKWwmQTdYTFs5Z282WHI4W21nbVFJWyJYNFBIL2slN2NrVlcsLnFdMWNtLio1KkpOcERUTyQoI110cGNcdVNuTE5DMVxnNy11Ti4tLiE4NF0xdCxTPjglYyksU0M0OEYhWHEmdDIyZzQuXDNQN2lkYD9bQy0yLDE7PkFBPkRSak0mNDFjJiNjci9uVjdjMk0/Pi4rbnE3TTU6dU5qdDBLPDtqS15yKkRqOEpYRzFKLEgtUmBTa2hXLz1zS0pSUXNcIWp0SW1VblV0RVNyLiFHL2E7b2lJczo/LnMubjxNYyRuVCloYmBLTThMIjdlSHBZWDhEUkI6PkM/YWY5PD5Va1JZdVxSOCw+WVo0VV9pRVBeISQvQV1ERitwKlhrRiYrKmdfWFBuT19WWG8yT1pfQSdHUGJnTkU/ZF5sOikxa20mR1JOJlFXKUQ8RD1DbHBDOU1MTG9FcVBxTlViMShbOFgmWCZoVlR1NXNVYkREbk07UVNiSiIkakVIPTdNRUJIMF51YV0/REtQMlQuMFtxaEBpNFZgVk4lLmdqMCZmI05pck0qWWQ9YVJ1PjMwZUYsZ2dtaUFjS0o+LllkTm9SSiNSckJfNCs3PE88OFonaEgsRixHSnVZRj5CWV41UyQ/LCUyZVZUaShKYzxUbnBSZERlaVU0WjkxKmEsaDBXLElPPy9hW090YFJYO1AnMU9Mb05ObCtsI2lmb1VVKD02UFs1K0Y3cVpIRVhHVTllJy8sRElzNEpOXCRIQkhoLUVnIlBeP1RGZFVWT15qOD85K09nJylwQz9LXUlQQVhyIzdGYFxpRCwlOkJqaz4jOy4ySGNcLFYwQChvPl1AQmBkPGAvQFNsV19LMEVPS2g8LXNCUV9dPyg4Sk9qRi4tVUJHW1NoSGM1akUjcl9IOyxhVCllJSZwSSJpKCI2VGZYRzZCM3RIKSIvTEcqIikoPT1BRlwxXHNDUWIsaD5HZ189KCwxOVQ8U1RRbHFVN0UvcjBta1VWOzxPNT9XZT5icEYoVChOK2swLEVqXCRbZW5EM3FXNGJxYFgxKmhaTmlfIkhlLTdANywjUXV0OkleIUg4JyhNRlFJYVFfLVBkRl5sbEFmUm0hY2FtRFFHaSRGSF5xTGRfQlQ7YFZmRzo8Y2JyZFpNPz82VkBkWDglWlM1JVhRLWNoIixYal9aWCUhWiJEQlE9SU9HVnVCLFhCWDVATkpBQkdjRHVdOWBsdC0vclI3UVhqKVc4YFNAOzQtbD1abmhXOG5OVWYqR3NHI0QpOzBILSVNTGknKD8hWnMnW1kpTytmQzlAbyltQ1Q7IXUrXGNfW1IkMDJHV1x1YGopcj8zW10mcFtfOiFTNC1qTk1uLlJMMCkobStcMC1ySmgtWVpyJjtwXGk7dWY/K1dlaHI+SCdHPGxnMl42Y2QubmRFOCFrMCQtKVAtbmpyKFRWJ2ZjXVY3JmkqXEBMUFsmRU10Z1pJP0ZaLGpfVHIkdVImZ0QsLzpoJHJPQVJXQTgrOiU9YVAjZGV0IioqL2EhLVlPNSknK2hTdG9NUFVwSTs1L1FAWG81Nz5QQDdUZCxVNjZPVExxNz4zJFVCRyoua0dMTk9nKTRHXVc5ODg9LWUnOG4pTkk6cEomP1xqLFgwc1pyRHMoLEojZl5ySjJwL0xIRiJjYzMmTCZxJyVVSmxdJzVfXjY4VEM3ZF1LTDBXbkFjNXQpJ3EnPDY0SyZuNklnZ1lpJU5YYVYpKVxacHJza0FkaHQpOXJcTHBhIWE7QENcTltiQ1FlQXJzK3JMaDQhY3NgMjlwcCtjQD5jOVVbV15pP3EwWWZwbmBCWm5gJU9mWWhxZzdAYFE+SVNGNlhMRj1HPWIkclo8OCVNL0BqdHEkXFBTXGRMM3AjZ1osOis+JVNuMEZKKS05ZCg3QkhRRjonLlthX10qPjY5JzBNYipTOC9lJVNTbGA6dSojUWJPUXA6bSlhWTgzKDFtJ1RkSGVtMUA0V3M0QDVkVXAkT3A0Y0NXUGQ7OFpmUGZMKEApVTAsMVBWXVMyKUUkNkBNcyUsR2lZLyQnVHB1QjNfcDNGTVI+T2ckQUxBIV40al1LPDxIPjthR2lMWjpFOTEpWk9JMDNlOilNLDwnVEZDaVBeWSRBQGhMPHF1YFNUbi9pIVUiOUB0SyZSYC5kZVZrI28mKlchLm5CZl4yR2hoO2pAMjZ1MkpOUSZCKGwkajQxNk9bOkdRTm5DXkBvJi03UGJPYEglNS9cZV1NT3FIa2FEMzNLLDNGXHJaT0BGJEpnLTZAU2QuQWAzNHBySzxMLU9xZ08tN0pPSDltcV5NcWNHMmdJYUsiWmw1LDQoQUIqV21janInN0dxXVc7XWohRnI3KlteZGdeNGElNTp1aSVSOj9fQ3RGdVF0QV4zTkE8cG1dXjhQTmhgMVE+UzwtWTVga0VGdUdiOz9mYU5XQHVbJ189aE9ZPFxqWUVpX0FCNSlRUSlHYD5BMlAxby46UUdmdCcoOUEnWDtUZXNSdSVKRygvdS1wa0xZKE04KGIrNTIic2o4JF4yck4qbzlCc2ZkP2xKQGFHSSxFcmo7M0xfQFpkOCdwQkg1YWhES1FAVm5nUTsuWlE7Z00kXmxWdV0zLzdRaV85SGhdNFNMPWZhW1VmN2JqYiFnWEBDLV5yJjZwWy5XND1ebkVuNyFgPlcySSQjNWJPVlNMXXI2WU1hMCdbVyFCKi45cGt0bC8uQS1GO2hnbSJdNExicVQxYiNsWFIwdDAjJEU4JGM/JzAnYT8tImFhcEdKcWZnPGBJPGMvMmxSdF1scU9fI1B0R1txJFRiPVAmRFU/WDlNOVVYVzIuYVtkIWBTcCI0O2EvTjRRRzw0VSU/IzpeN2ZLIT9NOUFBM1k3JlAsXWVqZWhcRGQhcysjJmEkT2EsQ2hQKCk0U086Z0JGWC1qL1tgbjpvNjBdQzNSYWwzYmxWWmAtKnVlMHM5XjczSnRDS14iNicqLHAtdDFZZT8zR1IuOUVmRkAjTUgrZSEucnE8KHFxJ181YFZJVGJcTFJeIWg2aFZHWDwxQVBtLzZkczVaYWBSUW9EViNWTiMnPlhCYkFwPEhnS11aV1UtMGZlPGNPST5MOE9ZUGg3K1pIXE0mREI+cHFBQjYqaUpXMWUlSnArODRXczM9aVZUaWNyJzxXcltWW2YubyMsJUJwKl1eTHVballNSiRPQHVeVVpRVDNgOT1dPnBEPHNlJj9xOz9tUSlvX09ZWFtVN18jRmkwQ0kuMU1oTm1LQyVdO0FQWGgvWCpMOGE1Rm42ZkwuNlUtVVdXK00lZTxhNWhHWDtwOU5sYS9VaCMvI05EXyxYaXJOOjVqMiUxK1shbkJrVFE+QWAzVzJlXUdLV1JzIVBhUnE7ckxoVy0pOiFkL1p0cStjWEdFdE10aDVsJjErWDRtWzgqYVtGVylnJj4jLmJIK0VmSCokbl5Hby9lTV9nXlpOJmRKXlpudTlhVGNXaFlqcihuamEjcThQZD5ZdFszbTlyPXJzKCEiM0xwfj5lbmRzdHJlYW0KZW5kb2JqCjE2IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDMwNTEKPj4Kc3RyZWFtCkdiIi8pPkJBUT0pMUMsP3BhLmVmOyxbVyVHJmJjKkJwaFFCZFpQaFBSQzg8Ry0rS1xDSmxpcC1gcSQ+JXElYil0R0dXcTo6R2ZJaEpKOG0zaHQ/PXJmUWNLOllAaT9eRi51YEdxV2VZNUglTyVbalM9ZzNpdDJhQC1nc2hOMm9NPkVHLUMjb1Vxam1RLmlkT0UmSHRiYUxhV08jLTtHQl9ZInRta101TEs4Li8nTSNQTilnVCooakpMLi5tOCtwSDddXTMvRGROXCFAP2s+XGZia20iMjUzTWBHYjJsWzQ5Oj82azYjZkYmXTtgQUYxOGwuJiI5aFtdV1pqKk1cb2I3Qic9U0FRam8vRHVFZyRdSyFfQWo5ZyxPO3JOMUh1UUUrPD5ZWVUkJGJqNT5NOUNxT1JIR2BrRWQ1WzBGVFtjaj91UV5tL2RtVWtbLm9iV0VgTF1lYiRUJzwmXiZBOSRwUDVSM0dxZXBlZkMpa0xscG5vVyxkVzU7cCRYOmFMUlRBcyk9XVEnblVCXDBCUTZpaHBTLz5vLywpOilIRStbJGFWX2FeMnU4T2w4XClobVIjPUcsLTVWRTZKVm5SRTI9JGteVCVUKUU2akdMYyt1dDoiMy8qcSYwLipFcVwpYHArT2psYVEjaT9vWjdRc2huQ25XcU8/Rl1sQHFbYmtcQVF1ZENIVCloOHEjTzw0XTZBRDpWb0tiNmdbWUElSjtbNGFsUiZZYToiTDc/TVpuJlZdR1ttL15aUjVePDZYcEYhLFddZGNjcVtsRSFjW3VKVzFSUm1FRl1AVW1JPms2UWFZJzMrbS4wRFlDbG0tUiFnXTcpaDtgXSc3UHJtbD9obSkkVFJORGwsTC1ndVRUOkkhcENwXlNqRWIxIlgkTUpDK1ZgMk46XyRJTVclazY0aWtiMGxJb3BXcWVvJ2kqPlsjOVpeZEddbWZoPls8Ok9wOipZRGYvJkkza3I4PypvPVFDXHBRWlI0TU1hMjpJRjNjTnI/cG5NLSxAclsqYSYrbCxhMnNPXjQmRjgtM0NmMUhONG5ROSsycC9NZ1xXYmtFczhDVUxZRmNUPSVkJFopU2VOXCw+TixHK2U3bGRcISFUJ0haLEoxaXE9KjE+QGMqMidYblg0dTBUMEw/SmIhUV1yXFdjLigzUVxoalI0XEFvRSIsSTElLmBfNFYiQUxmUiU+aTJAZFgza1QrSCRmIjdARERDOFFkZG07RGc+LmBPO1lobydFLCRXKWM/KC1zK21HJ0ghSTJcWTZSRmJFUl1IUEc3ZyMlISxSNTkyMERtUSNrTCNKSGZGbWI9aWAkNTJcJXRfIzU8dGBXMEo2TVBgTS5UaDxYMkpQVDlIaSxhYVFYL28/I2pqNE1CIilDMCI4dDEpLkYlZ11cb0ldQkhGSytULWA0P0pkQkk4ImpBbENRNVtFKCUiOy5ZIWBfST5IIjNRXWw0QUlVXGtsM2NEL246Mzc+Pi1FZ1whM1ItNilFYzFLTnRIUj9oR0tgWj1tJ0pzWSZiRjgzNj9TZmwzR0QnKzdSby5hKFdnWGFgN1BsKEFKbjckIkhaSm1YMCohYWZWJUhMNyJEOTJOJ1NJMmA4LjZbPTU0S1FLPEZpRWVMQEhoM0BSUTw+ITMiaWRqKlYlVi5MVm8+b3VfUnEvI0I0JnRQJC4kQnVARHAqPD1JKzpaRmA/aXE2LEFpVUs2WyJBZVx1dXFMJ2lNOUUkOldTN1pSVydyPEJCIyIsMXFLL2IyO1pkZVA2Wy8/OWRAPjQkaGcoOidhVkc7a0V0PGAsWHVFZHI9K2tObi1pZCg0IUkmZ1AxZCRMMldGRUhiQWFMSC8jSmZSZmRPRjkzVEpcIzU7cj5ALklRT3BJZnE7aGBuKEYxaGheW1gnWHRgQSJbPnUxNFk4Wi9AUGYnQVtjPnBIIWlqPTA4NDpqWHNpcDhJO1RgZ2duZVNdWCtgIiIvVTFEOFZ1VkFhQW5lNkRgQjsoLUojRzU8QyYqVC5MaERXc3BzS1VaR3JeOENRa0ZhdCE+S1pmNXM9RzQ8MHBDUiJAM1NbPzYmOzVjJCc2MytcNiZhUGgnK0w/aWg0XzB1VTAuInNXVE4ndEcsKFRMWk1QKnNwLiZHL1hDLWtfJ28mZHJIWzYmSkhbQ2U8Ll1AWCNGKjpcdFxmTj00XWdGNj5xN2AsSFM8dSZyO1MzNnIuPkJhLShWa102MWFNRipoZT5QSDc9SGsvI1dMS2U/bUsuXSg+WSIpIm04ISlyZFVSS1BVZ2MrbCw3UkBaJkM/OCorYkMzbGQpL1ttXnRoVltrbHJiK1xjcFopUDdaVDJpWWhRX1k1VjJrTG5ZQDd0T0U4biVbR0hQJF9aJEk+MyRwNGokKi9XXGBdO1BgaDhyZGVYSUx1LFJeOkpcKT9XQjpIa0VTaTxfJSIndT9KZXVyMChKMD1JNXVRRCQ9REdDW29ZTClrOC4zZElnY1hrPVtRT202TVooXmcjRCZZZzM1biw7I0RTXnJAJiRmVVpBcElfL3NUU1VlUW1xPDkkKDA3QC4iZEFQQy1ia0RgZzVfUCpIMlUpQyFZbDxZNCw/S01wUChQalNvPj80a2tIY0FqW3FaYVlKTWpATWBJIUpwWmBJP2VPTTcpQjcuQCVrPG4yYz9NKWNaa1NSQExhaVJvZmYxI1Y5VFUzTmQtKj47ZVtrLldGbTJXQTcsXG9gcV49RmJaSTlAKSpFOUpTLzQ6S1Bla01WJT5BVExbUzNBOE06K2VnY1JuSWFYIjBxST8jWE9MLk9WZkYhVkdhL1Y1O19YW1g0WytqUzQ3RE5jTV5XZHJsWVduXldGXWFWPiNATU9MJichL0M9TDFbUV1TL3BVYD1HN00+U1hYMyEnPFB0SVpFZG82PXRydSJabEAvV0V0MnAvak1WQ0JoIUEwa0AzMjFxQUFDcHUrK0dAWlArV29kaWA0Pz1YNFY4OidJdGFMRDxmTzklWDtFTkJQYVI0NG9QSjpsRi0uY0dqLSVXQzJGIWpVdW4sKCc0ZEpFJ1lmXl5eJmFVMlhdMnRmWiNqXTFpKHNUV2JoQXJPZGcsODUrVTY+b2MzZiReYDQwJFJKRzJMc1ZOS1teOSkrNVJyIUgtIlwkM25rcScoQGskM1U9PDdNO0VQTzgtSVxIQVk4KUNzXWtsaUBWYyVXUUBsPE5IMkYoYFJATy5uYzdMQVxWbWAvWGxPcy4/NmlmTC9oaU5LP2ZZWzo+WTcwMC5KTFk3I1VCdWYtUGctPFBRYms1cGxZXE1wXnJJR05bbHBFSF1CMmdxWy4pR1Q2Yk0qJiw+RGs4VWFaaixiSi1cNW5hLFFwX09DYmB0dUtxXUg0X19pP1xxJ1hJMV10JSotdCQyI1FNUlQ8R0U0VWU6Ml9BREpJUSZWbDlAP2pwImk8Uk1oN0JRSC9lIklrWnVDbjlILFBJdCFZMSQxWidpaCNVIlo1YDk6QTxRLDMjaEgvJFAoIS8zVVFIWlFUVW05JV44Slg+YT5oW0onQWQ/aUZLK1g2SkRGa2FMb0U1JzUxSElpQ0dnMHRPM2Y7NT5oS1JzZTItNTxCM1RjPDZbSl4wPEQnNV5obUVcTnAqSnBUNGR0UypxbzEoNkJBVnBwVmAmWmpwTnFPLGBTaFVBVStALjNfbXE0Lm0/JiswUitLdVFDZmhdPSRLUiU+Nm0uVFoyLmc+JCM3UDg9cnM8cSc8OlY7JWQ9RENbSVhpc0chTT1lLyxRZkhrVWYwbDpGU09AZmhjUisuWmlPV1ZkVl8sLW1NOGA/ND43Klw9bkJKIj4sVzwualw7YXBVWFo5MkJuISJFMy1NMVRGI2IjLVFAaTBvN2xOLlFgUytRSWZvZ2oqPDsnKGJtNU8pP0VBaGxvV0UrQjMla1EkSixGXT42Jk8vOS5TLD9ZV2koNVgmN2hjQFAsT1JWIWFHUUJLYiYnNUlEaC40MmdEOzFEN1FuYjVkZjV0Plo6MTlYP146Y1daRzF0JDthKWpcUV9kRG9cdF8pPVpGXHBYNClGWEwzcihHRTNIJFx+PmVuZHN0cmVhbQplbmRvYmoKMTcgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMzA0Nwo+PgpzdHJlYW0KR2IiLylnTiI1bCZxL0E1VE5ubSk4bGhOKEAuJjtEUlxoK244dSpcL0lhU1RgS0lEKSMxXD1vZEI+OG1rQGtKXFYnSXFcVmpdIUwwNlAzJTdVVXROVyVqOS82SHVubTg/ODsuY2ByPkxnMUc3PkhRPnRNc2ckRzVnQWdhM0gvREozSF5wXW0ybmcpMjA2WCpbMEZwJGtxU2c9SGFCMjMiNVRrQ3RnPTcjWSQnLlg+b0xWKGRpU2ZkZT1TaWxNdWg5VTAxPUFKKDZnUmdFaiQtJGdsUjp0cj1XVkZJUSkhOShIP29BTjhpTlNGQFE0bnBmW1VRL2BJcFtbQnI0bHA6Zl4pLSlpJDdDTmZAM2FXTUVNO1lmPWZsM1JINmthNHVGPGJvclZ1YSsnOVRLTlotSDZobWUoIlxOLkZCYWIuPGdxI2AuJzROQWlVZlRqJGZIbkgoNFlfP1BZLyZmWWdgTmtUbD9ILS8oPEwhOUBaRio8czE9K1U0XnNxZydOMyRUTisqazxHV2coJz4kNzlUSm9wdGwmOj1wKiErR0FoXSE+IyVDYCZfVXRAQChNTDs/LEJVUWo+OmFvaicsbW5uXVtvSmldUylXUmMpaiU7QCEqaj08NlckXkR1TW0lWzZmW0g/O1s0Il5uIzl1OzpFZm1gbmY/J2BRXUFpKWtYT1hodF9vVHBrbWpfUiloaWVbZVxDbiNAM29nKDNRLltmJVxtTUc1XT9LdWJ0bmZucUZOYilQOC5oKDBFXEJSMU5TVTFtPlwhYTBablRiJHNMbW9yZ0ZILkRTNE07PU5mSidPSiwtbzd0Sy51TEcqPWhZOy07KiFXMGdEYzJcJ11ATyRhcmZAPiJaclFLVy1XJDY4bXBQbzI4VTs3IkFpYjxOLXJeNCpMUy5BWTBwTTAoY0FENyxYOHNJPV11TzQySGhBIlEmKy4iO1ZYRz07UDVuNFpzQ2ZdWmpMOV9zUD1MZ2QjNlNeV0chIyxEMVIqQnFaLUBfYU0scUJsWjFMMzUoXWJvLWtWYl5VWT09SzNZYksvWXEla00kTFlIaiw7MWNhKmIvWmtLdSNyZF00aHU0Q2ZtbGBdQDFUOGRSJVo+aj9ZPChVNzNGNiQvZW5xJUppOGY6QjlAZTRRUGBpMWMyZjJJaF1OXS4+PEhXTVNiYSxhaHRJbVktTlVJXlNsI21wR2tpbChDTyJoayltcGYqNiJrRlVTcSxvZ202QDpIWFRFMU01T1MnZlA8am9uNihibDlWRGkpcVdpKGxAJS1VLGlNYUI9S2BgS1ZVZlNsWnVGdU5JT0ZWMVw/T2BDRFw/TEVcWGE6TFJ1cVNaO2dOJnVkIyguc2ZILyVGJFstOS9pOl9KPEExJnNXQERPYU8zTCFjdSUoOmNFXjo1KFUjM1JdMW0+KWQ7WT8hJCNkITcwbVs1dGouUGtwQmYpYjlENnE8M18ucmQ5LEtIOTZBcFZYMy42SSEuTGVOaSpQTEhsUUxRaGEkN0hYYEBVP0Z1PyRjNXAsPk1ZITs4JUZ1biVGXmVucFU+Y1Y+JXJQWEgkL3AvXythM0ssdDRnTV1wJywwM3IzOyprYEVbXT1kXV1lV3FKTEE2dGdTLlpzVFRpKnFGOCI9ckQhbE5Kbl8oKmdUb28oNyopZ088PlpSIiZeYEUzTUZxZS5QNkQ9UDZQUyZYTS43KVYiPHA/QENMK0lNLXBNUiUuQTgtY2k4ZW1acUZHaFY9IUUxQ0kvIic5dVgrNEJVXTU+dVZTU0U0M2dCTnJwPE46UmxDYSNlUCtzXF9eXVNdQSs2Q2VFP0BKPnIjWkBKSlBgWjxRNlMpJFskYD1nWDVSNVwqMUI+a2A9RkBsT2otSGxtQVpiZ0JAQjo5UFNRQ1BydFU5UG9wPkg5TyFWUTtYKT0pZkVjIy1LKmwoUmVabT8yRlZILnQvbkk8cDlEOl8jU2g1aCRHJj9pIjJCYyVePURLUjp1dF1qYW4pO0Q1MFA1KUM8SVdeVGtkZUUvPnA+UCZKZiVMZGA/J1UxbDMiPFMmcThhUWErI0pVUFYhTjg8Y3BiWmRsPWZxb18ja2BfYzdYXUZgclRocm8+SldqJ2lCSEkiNWE4RUopTCglV0JQS0dgO2V1TCVObCFxSTJKTi9KX0RBNzBvOlZxUCtJXikpQTt0W1BYaWU6KGRdL2ktImVPaEZTSm09MFVnaCJ0WEpyVXQ3JGUnNEFDSD1pO1ZlbjEhKUpcZCVWND5yNHFIQE4qJzZNPSRGK2Q1U1NFQ2RqK0RGJzg7ZUA/Oz5YY1I/Yj9uZCwqTlFiSUhjLWBRQytuXCw6PVt0bWlpT1w+UGxlOjdXa1BQSjwnJkprVlc8XD9CamVAJ2UyTzkwXXM2O3UhX1JWLF9eIUolcmxFVWRTQixxQCs6Yz03S1NMTilLMC0pMiJTTzZKIkZiRi1UO19oMnBCNUA6W1VdViloPTFUPiFqNl9bSis5TTluPlVEMlhCIiUyLFliaDtadXRRQF0kRyRwMmVwYmZkQl9DSTBqPmA1Y29bUjsuNTdwOSwhImw7RkJZQSVdYD1bRjRrSlxCajtfdEBxPyMhYlcqSGZHbWdrP2EuczEsYF49QU5MLWFHZ2JEYmQ0Q0RiP3E/UV9kWEQiODpcb3FJKzJCZTc/XjZqM19EVS9rPkEiUV9WWkE0Q0VnI0QjQTpnN01AW0BCNVwhQFFmST1PWjc5YDohQjowMk9sbVBvTkJoOERYMUQsYzRmLmYvQic6Vm0rWyg9KjtgVVAsL107a1ojISlkTz5DSWdkJSVQSXRDdEo/U1JTYSlhKU4lc2onRzJaS0BBX10uOD5PXl0xcVplS2NfcUd0K0k6ckBBcWNgV1FEYnVSbTMvY0xrX1MzQWpYOCxLTz0rO1ZkW0c9KzYwcSZHYz0rPTxDLm1pdUMqSCFEOjcmQC9bam5SV1Y0KkZLNGw7UklaSTNsPkUzR1RoVGVnUkEwJVAoUS83JGBQQSZAR2MuUyRuKlpXNSNEPzdxJF5hPjswTlJVcVpqQCpyITAvbkhadTNtaz0nRDIkbkpNQUcpRyM5KEQ1QnBQcjVFV2ohcCo4bS5QX28mMVZoK2xtRGZwMVpSOzorZ189IVBWR0lDbk5AI1kmKXFaRkYpaTdzZDlvOSwqdCYncFZDSXM1XDIwMEAzaURKcSZdVSdMSFpGSG1YVVtdZWpHZDtpRXErQCsyLyc9I3BXcCUhYE1TVUxmdVdHUCYxXjA5aHJSLDUuSEk2YSZuMlhsQlNzS3FiW09fVnEnJFQ6VEBgYmY0P0A3ImRIdTZtIztcTjgxV0JGMlNXVj1sIjM3PWwkKnJITFo/UGlkOWBmJz1sSkU2aEklJTBeRDlOcU5FWTg4VlhxUD5ESz1MRihgIkJYTGlwMWtoSUoicVU8RG44YjJoIlhhXXFZWjMpLFkva1lbSVcmVDtrV1FTPzAkVVFAYj4rIWpcOnJnJFQ2P24lQEU5QTUpSlU2aTdsNlFBJz87STgkckpQLEcvIStubWhxcFY2MWFTP0M6KUlSMnFDPlhqLlpvIXRQXEwxc0k0O0wvNUk6Rz4wPlBBSihnPl5TRnRRKVQkOVRbPGouU18pZzR1WEwoMWNnRSQ+PTMuKFR1PEUiRk9cZGsncDs6ay5ga1opYmpxMks9P0pmSTtOOzFOQC1MajpbLXRLMyNsM2UvLGY9Wj8+Qi1nbDVCJnQzMDE6cHBgbC03VCZqSjtHcVQoMmZcQ09xZGlgIz00S149UWkjNEdjWiU4QTMjbCdBI2d0VyhUczQ2b2U8L3NxTDk9aDhlMU1qMmpbNjVMZzI4LkpDKmNsayFlYjxJZS89Q0FnWWgtPiZLa0U/ckNOUCsvImo6Xi4lRGVgKkdILGdTJSNeWkAxMjw8UDQoK2VWTSEsSzghNE80OkdgO21LMyomSVtZcSUiN2tsUytyUihqQDloVk4kaF1pQW5lRlNgZEJKRGYsOTBLIU8+X0AzNEVOQDdJPiRYXD4wMFhKb2cjLlRgUD85WmBZJWRgP01QRl9VXkNHQlNDfj5lbmRzdHJlYW0KZW5kb2JqCjE4IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDIzMDQKPj4Kc3RyZWFtCkdiIi8nPkJBT2UnUm5CMzM1Wi5cIUV1MlFlXWczYmdwQF9jajNmbkwwUl9WRilnQDQ5Rlg+X2ZyZCk6YT8jMiQ3ODpdcTUqS25FP1hrYy8nSS0zUk0xJU9rWGdoMGUlck5NcjVULzBySCg6VjNgMDstOGZTTG1VblQ2UGc8VDohWE1DM2BdZEY1aDglcWEhcDcsa1E9JDdPMDxlUF89S05RKG0kOjpWOFhuIjpOOlxAP2EuXTx1KzxCaD5OOT06RidAKGhYPDtdYC1lSSNuKzs0M3ByKytxYlc4dCQyTiVfVFBkJjRCRUMsUzg6P09pSV5SQlU/TWcpUSdnMj1QblNccFY2IjllWFFKQXEzLGwlZGFxLU80aD5WSDpCNUZuIUZYQk9zdCNkOWI8ZzUuXjBTMDo1MF5NSyIlMmBLTytYIUFSbFoyXjJdZD0jRlFIaFFJWU9DSiYuaUJkNlAuOF8iODY4bTgzITAuVEQuMzAmSG1gZmxbaG41NVU9PGZPMmZXSlVMN2ddZDRzOkFBJEtFOi0vN2JpMm9AX0c0bFgxNjtvJ21EIihlR2lGUSYkPUs1O3FJMVouZXRLalw9KXRSOz1bU18lPTdTZ20uYU9hNjAvQyNmXG81PXEhUUU4KDY7XiFzZTouO0dqUlJZLTpNQTtwJDtdM2FCKD0wOmQ8NE1HJjYvRWdnSzNeKz5qPjU4L2tTPlFIM1dZQjBxMVFFTUY2TzpTJF1FOS0vOSNqWVBTcUdAWkU+JzRyNkBEKkhZKSpjT1VZWTg7bEJpb1NeJkcpUWVtXlRnRT5FXnBhYkw/XklTMyM1Py1jNWMxTlxtOVFMODdWN0I9QCJCU2UhZzZOUFAxMicpa2ApRW8/L000c1lSSCs+L1NoQERRKTslPUdFUWA8YjdxNyhFXGdqRkY8TWc3P0UpR0Y9ZkxMRFFQR2xnJ3RSOFVvWkMmQ2pPLlY6O3AtcCY0VTg5bTNYJ18jbXUnPXMlcT9NMzBCQCtgMSM2J0xdKjRrY1lpLEo6bWlNMyhjYy0iI2glKFMoU1ksPnApVmFxWkZWRDUtZ2BMaDxMQGIyPSZWc1RJTy09Zj1sP0kuNE1tQm1mRSFAUylnPz9JTC8qUi04LDdwdFZXZyxxT2sqPShnQWgmXlcvaCdlIy0qcV8/TyhuazJfJ2NSPCZHOGkkN2g/Qj84a2lzXEM5OHRdM0M9YiQrQTgzVDwsSFIwLmFaakhYbFdpJj5ZO1lralpTXEomM2dtVEs7YTgsYWkwOkxEMidHUk47aWwpISIqIVYyOnVYRF8iPWEoZi9eLDxhP2lPKmFtJ29pcGE8dDFzJT4lTl90dVMpOU1aJ1YqPiY/bC1xMGozQDEkOVZOWzpbLUQ9NVAtSEpIcD5rQDwwbk1PQjVgN1o9XCQ7aVgwYjo2TCxPK2JnXmNDX0ZRWjVXRSI5NHBiPXU5RWhgOmNbQEkmM0JiPzJnLVlZbyovNF5naic5UU0hLiFJX2ZZW2FKRCNTSE0oTlokTnM3I2xEPlt0MU8qXTVfTVIiV2hVTWhobG40Sy4mbzAwSkM4bzUuSm4yOjcrbS5aY01GYEA9cis0LVJlcUlZUkc0bC1WOmtDIXQ6ZjZfMj44ITBoZWBVPyVubyE5InE7RkQzN21gI1Q/REJuNU9XT0NLRUxXRV9CWjZFLy4tbTJgRzE4LFUlXiRNYHAnLVw/ZzkzaS9RbkVEQlUwMFQqSi8oPmwqMExERywrKEVdRCZVXVNaP2ZUOjZpbk41XWJjOixlPT40SkE+KTdsND1EOll1Nylxc19oPk9cVDZnSzI5YWEtPXRvYmE+JyRDbG05bzZbKikjOXAxPjBUbCFeYDNxXDg9bzV0I1MqU3M5QCIjOmpWIUckWzVjYyV0c0YqMlhkXXRjU1FjS0tNZWxYZEIoYl9LZkM/NyQ9XEJdT2hRYz1xOUlHJ1M3ImNmVlMiUVkyWUNsME5lSDheSFJYcTI8a1JrTkIwIzlrVENNbCxFSiVkcT9eMkdlZyVUbGBQJzYoRDxoUyVYXW9BOVovaiM0M1oldEYoZVEqVHA9SzVnXWgvXzxQOjZIZDFjY0lpT08pdDo8MTsna2o0RW8lbXNJPmc0RlpyIT1uWVE6bHVpZWBeSjAkWXQ6OyMhZGhVJ2pvbiRmTTcuPnBVOmNHUkUxTyYrYCdBdDNdZVZNTmpVLTQ+L3FJLyhSNCNGPEFRVzZqQz9ARzBSYDZtL00jdU5MMSxTTj4tKmwqIlJHPUhyZWZWLiw/KGlaYD9fPk5UcloxTEg1cmBsLFhLJlw+Wi08ayFJP1BubltDdT5XW1NRRFY4bjNAQmI5dWRlQEEmUEdpSCpVL0A/YSUpZ3V1S0JnPzh1LCVJQkZgSDFaIlFFSltba1M+aWc2ODpaYD1UXlt0ck0mWml1VjVcN15eIjBWNl84LWE/OExnalU4RTYoVkM0MjtINl5gL2IyXXFpRU5xbFBtIyZaSl9xO11JTF8lMk44Pzc6Qy5vNEM0RyJsWWRYJHM4KlZaYFE8ISskNF4lNUc/YGpWSGhnbTkiS11YX2MuKFBlVFAzLzsvVDNzKCFPLkBMaTAnLix1YVxpNnAoYD5HNFBDbE9vOXV0XmFTNSIpMSJPVk1PNTNlKlJhTlg+bGAiZi4jIkdJUWx0Oy8pcjdUKEpHJkJGI0kxIkVwLVhTRCtAJ29AbmA0P2kmUDRyNXEhPGRGOUBKKEpbMHU2VCFSQ1BnJWU9OicuZE1nUl0lXyxKa3JuWyxOSDVvQTgmRHNUQzghKDxPUio+W09CT1BaQ3BjalwqKFlDSmhgdXI2ZV0jJCpvWCFAWyFiaGxWXW1QR1hydGJoNm4nLHQvRSddMm81bFhsJyUoVyg/T0pqIi4ydFFGN11TSDUkLCtiSVg4RkYscmc8T2FgQClJbSVrSUYrLUYwazhATDpBZk1xTE4yM2MlKnBFUyhVOixNY1ghJElBIj1JQnNJNUJnQS9DTiE6PSFMSD1dXycqazg8a1IzUDUxViYkc1BULkZ1dHA8RDMnMl9HJFBLLGdIWyQvQl9aR1F+PmVuZHN0cmVhbQplbmRvYmoKMTkgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMjYzMQo+PgpzdHJlYW0KR2IhU24+QmVpMyZVc0pYXmdqczgmX29cR1dFclkjZGxOTkBQNHRnOyImLU5kWjRuYU9VOlxPTm1mOS8uT1tbSWFkMm5vWWdDWm02MkRhNzdpIz0/YSZicjNdMUticG9vKmcnQjQlNUMtZmM/ZGckVCxJXFBNKydxI3BwIi4xdG9ZWk1qIlBSN3RiOz9LTFJfX1F0YE4yTzBPUWYmWkRxdG1cXmAiLEpnP0VRcUEpQiVUZlpxR1dNRW9OZDJuRm1JPEl0TCshQGtZc3A+VyduMFIkQlZwYkErPyVjP0U+MjkoXFc1JFFNO0VbVmY/TWshVD91cERSZjI6UDRzU0FAUSROZkRbVVhtQTlsS2AyQGBgbDhXOlI/MD9gTS1EKUdAaGdnYW5GYkErSGJmRS4xUXEiZE9dODI6ZiVuQDApQGJwKyc0b1VwYFs0TV1PQCtlZUxlTkMhYFZIUzNhU2dfYWZHXjJLYXAlN3BkLS1yTlVzP1BwdFhkYUItWmk6I1lYVTB1QEpZTHNQciRsKCE7WlhMK2s5JWpwTilbPlw5OksubG9UOmJgX28vc0hAVFlUdT9uXGQlZjlDMVYjLVxROiY0ND5qVFtEVVw1QHFVTUJKZ1tPal0+VGNjPixZLzUwPDtsR1E6WCo2ZjVKdCknVlNLWSxYMlEhIltdV2haSnFKKTFrWVM/MlpaKTx1V10vYGUmM1svXTVcRCI5KGhxNyJBNk06S05IQSEmTFBKJVw5JXRhKFRSNiw6VlkpUWhKX2pbLlZEaytwUU5OQG5ZSzpAKmMjSWlMWT1XNj0tanBYWW1fWTIyNytqV1k/VmtjXVBNXTg+WSMvVi5EUCNKWkFbNklHUkJCWkhRXFwxOiZdXWlOcj1SJ0pbcks1MVAqQkBvJ25fdGk5aDInbCojJU5tJUw3USc5YTw/XSVtT2IpXG5yP2dSdGRaSU5iQ3NYMTBFXlVVXDNEazFQTG4yM21RbCI/QUlXaExtMUQyZiY4V3IsWHRdO2o0Ni1ZL0xGYiYpMEBnWl0nPEY+Qm87IS5KNF05W1MjVFRMOC4sPmFILkkpIUtYO2FAXSZfdV8lLjBVOjpdNFJfbVVKWmMqbjRJQU1vRWFrI2dSYkdFLCQtVGxFYkRANjImVjU9b0lpWGlROGZqalxEck9iZmIxMDhISzBlbT4sWHU3aWIyLzsoWi5DLHA0b0hZT24kcW1MXiRLRUcxdWhkNiJyMFMndGZgJy90Tzg+YzJgViIzVWRGI0NbOi80Tiw4YzdDVWcuNEtFWlIqdF5PME5qOVlcUyp0I2poNTJmRStdX2s0REgjbHFZTE4jTWxiXmxqMUVJKDwwSHRpWlA+KSRxPyswdFApX2k5S0sjSmpJP20iIXBaLlFoPUlwLzxOUyI5bGVRaVNhLmEsRCUhUkYiSUFiXC1qPS9QOVkycG0uPC9YYi1iS3EvIUZcOSlvQ1kvRjkqJzlzRmhzK0Bpc0I9UXIsK1hFQFV0aVsqNmJRP3RGU0AmI2VFRzVRPUdCUkRaJ3JXLUhoRzdtLkRqby9JKlF0IzxHJ2gkWlJZYmZTRz1vPFxiSkkqKTVlQFdAcVJMUHVFXm9iI3U+TiRASGoyMzJSTCtUOG02Z18yKUxaTydGaGNJdWQsO1AmQj5STCNfIXRVaF9gQWBMQV9jTExRcDJIWGpxYl8tR3AvW2g4SVhLTidfNFonL0lPKjlYMUEjNW4jQ0A+PVEvcFU9ak5BVkxRMCxOWGM8cV8lZVFLTlUpOytjOSY9PTU1KTlNczhAUGAqOFViQ1ZkQDtFYGhfTj1jdXInVlFhK1s3IzJcSCVTKSFGMkJMND89cFVgWzQ4biQhNHBNOjcjYktxTSgtQzFtcVE2Wj49XiRgLEMuT1Byb00ncjJtTlArMkNrSl88O28jVnAnTj4hP2NZY0dvZmwkRUwzbSM3OkdVaEBkNmlARlsoQ0shYzJTLGAtSS8hTHM4SGEjaWY4WTE+ZHRkciJLJ1g0MkZkKFN1akxXYS1cZzlaKjFCWG9zKTopKCVTNVxsOEskdDIqaGkmRGg/XzwnLDNDPSg6YCpVNVtpL1hKQGVNWCliQGImIWpxLFo/QWVIcj0saEA3ZCZLIjBEZjlQUG01UkgqVDMjJzJQYDVvJ0ZFP2gzLS5rPSxdb0tjWTQhc2Y4WExvO1xwYEdjSW9QP2dsVzlzKUMwR0Q5MEZBMydaLUleWkBRUlRNVzM0a1xTZEdIOWEzaz43X2Urb21wcVtXYV0hX1olSk5aSj1CJyImYlIqWFBhbzVVcUFaazEwRUZwcGwlOFtmPiI8a0ViMVxebmFmXE49NmwiIU8wRFYiYWY0RTdGWCFBM1NTbGQrT3IiLUdxUU8jPic5dWlHO0hvJ0UyMGJfUyRTI01SKS4iK0Qtb0Mpa0syaVhcSjtWTiUwM1M7aVRiYVtxOiFVT2QxcTJNTW8zRCJDdDwoU1NIZSFcTXQlJygraDtMPUMuLSxKaiowZFM5VXVaP044KFdRa0NwT3I6MnBFVVJSYUo+PigwUnMjTF1OZmVvQEgsYSJlOFhgYGM0ZixtLjspYytFMSM0KUVORFhQOVZBZixqVWEyOS90QlhXMHNII0BsSmZhQGUvc1o0RTRJIkNDMk4mXktmY1RPSjBiLShuUEdXMTttTWJAV15GWkJZVHIlJGBESlYqTjc0aiJGaSVuKz4lcTk8ZlJWRmw5LFxWQihcPTZzMWJqZUc2Uiw6ZVlNRU9hVixRYDsyNGhHUjlYS21TJzo3azBdSGJLOUgzSmolYVNONENWIiJUL0ltY2tGVUhFTzhgKWBcRjJQTW1LQi1ZJl9LdWZLUyhFSUEwXDhsPTpzQmtAWGgyJVdjWDttNSM+WjopRio3YlsmXVsnR2wjXWg5cW45YyU9LihkQGlDbFZULGRfIUYpV0QvRnRKJlNxTlVmLiUxP1ouLVomYVwqcXNfOFBsMEIiJklGTkU7SGxEbyJ1RWY4R2U+bk1DKT5nPmtrX3NbSVVzOVQnUVlsLUxXaydecGU4ajBzJiROJ21gSyddSic/dGlARSkoZTNfcXE1SiQpOTZrSDRfWClWRVVeX0o0bCZmP1EhOCgjVW0oKydrci1oZUpdX1gwdXFML1JATV0yNUk1Vm00K0BrIy1GbkEqTkkkKzFwcjd1NiQ1P2o4RUBGRGZzO2pUQUtCSGAjKWtYJHAyVF9qODlyY0ppK0kxWmJJVyl1SjpgYlpFQjBzMl0iLk4zbltASGAnbFZlcldBb2VaY08yKS8kMTk4NkdxVEI1YHRXNjdsdCpcZ1hYSVRcJGdsJy81Klk8Wm49TCtxX05YZzFUK15QZSEsWExVPFQwNVQ1YEpEXVcrIjtDczcuMXFZY1QySEVgTTJEcmwtWjRzITZHSDwqUWFiKXB1W1xENyJiT10zOltaIVMybypXTCE0cjBCO0FRaChSdGZMUWFuMk83Ql1yVUElXEpUW3UxMzNyJ2siTF1Eb34+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgMjAKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDYxIDAwMDAwIG4gCjAwMDAwMDAxMTIgMDAwMDAgbiAKMDAwMDAwMDIxOSAwMDAwMCBuIAowMDAwMDAwMzMxIDAwMDAwIG4gCjAwMDAwMDA1MzYgMDAwMDAgbiAKMDAwMDAwMDc0MSAwMDAwMCBuIAowMDAwMDAwODU2IDAwMDAwIG4gCjAwMDAwMDEwNjEgMDAwMDAgbiAKMDAwMDAwMTI2NiAwMDAwMCBuIAowMDAwMDAxNDcxIDAwMDAwIG4gCjAwMDAwMDE2NzcgMDAwMDAgbiAKMDAwMDAwMTc0NyAwMDAwMCBuIAowMDAwMDAyMDc2IDAwMDAwIG4gCjAwMDAwMDIxNjcgMDAwMDAgbiAKMDAwMDAwMzk3MCAwMDAwMCBuIAowMDAwMDA2NzQyIDAwMDAwIG4gCjAwMDAwMDk4ODUgMDAwMDAgbiAKMDAwMDAxMzAyNCAwMDAwMCBuIAowMDAwMDE1NDIwIDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPGE1MTkxMjJmMTQ4NTk4YWE3OTVlYTU1ODhmYjIzOWJiPjxhNTE5MTIyZjE0ODU5OGFhNzk1ZWE1NTg4ZmIyMzliYj5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQREYgZG9jdW1lbnQgLS0gZGlnZXN0IChvcGVuc291cmNlKQoKL0luZm8gMTIgMCBSCi9Sb290IDExIDAgUgovU2l6ZSAyMAo+PgpzdGFydHhyZWYKMTgxNDMKJSVFT0YK" download="Guia_OkupaTuCasa.pdf" id="lm-pdf-btn" class="lm-btn">Descargar guia PDF →</a>
+    </div>
+    <p style="font-size:.6rem;color:rgba(255,255,255,.18);margin-top:10px">Sin registro. Sin email. Descarga inmediata.</p>
+  </div>
+</div>
+
+<!-- CONTACTO — DARK -->
+<section class="s-dark sec" id="contacto">
+  <div class="contact-grid">
+    <div>
+      <p class="s-eye">Contacto</p>
+      <h2 class="s-h">PRIMERA<br>VISITA<br><span class="r">GRATIS.</span></h2>
+      <p class="s-body">Vamos a tu propiedad, evaluamos los riesgos reales y te explicamos exactamente que hariamos. Sin compromiso. Sin instalaciones. En menos de una semana tu propiedad tiene un equipo detras.</p>
+      <div class="contact-info">
+        <div class="ci"><div class="ci-bar"></div><div><div class="ci-lbl">Telefono y WhatsApp</div><div class="ci-val">+34 711 28 64 06</div></div></div>
+        <div class="ci"><div class="ci-bar"></div><div><div class="ci-lbl">Email</div><div class="ci-val">hola@okupatucasa.es</div></div></div>
+        <div class="ci"><div class="ci-bar"></div><div><div class="ci-lbl">Zona operativa</div><div class="ci-val">Valles Occidental y Oriental</div></div></div>
+        <div class="ci"><div class="ci-bar"></div><div><div class="ci-lbl">Atencion</div><div class="ci-val">Lun-Vie 9-19h · Urgencias 24h</div></div></div>
+      </div>
+      <div class="trust-badges">
+        <div class="tb"><div class="tb-lbl">Seguro RC</div><div class="tb-val">Activo en cada visita</div></div>
+        <div class="tb"><div class="tb-lbl">Sin permanencia</div><div class="tb-val">Cancelas cuando quieras</div></div>
+        <div class="tb"><div class="tb-lbl">Informe garantizado</div><div class="tb-val">2h o esa visita es gratis</div></div>
+        <div class="tb"><div class="tb-lbl">Google Reviews</div><div class="tb-val">5.0 valoracion media</div></div>
+      </div>
+    </div>
+    <div>
+      <form class="cform" id="cform" onsubmit="doSubmit(event)">
+        <div class="cf-row">
+          <input type="text" id="fn" placeholder="Nombre y apellidos" required>
+          <input type="tel" id="ft" placeholder="Telefono" required>
+        </div>
+        <input type="email" id="fe" placeholder="Email (opcional)">
+        <input type="text" id="fd" placeholder="Direccion de la propiedad">
+        <div class="cf-label">Tu situacion</div>
+        <div class="cf-radios">
+          <label class="cf-radio"><input type="radio" name="perfil" value="particular"><span class="cf-radio-label">Propietario particular — segunda residencia o piso vacio</span></label>
+          <label class="cf-radio"><input type="radio" name="perfil" value="alarma"><span class="cf-radio-label">Tengo alarma y quiero añadir OkupaTuCasa</span></label>
+          <label class="cf-radio"><input type="radio" name="perfil" value="alquiler"><span class="cf-radio-label">Alquiler turistico / Airbnb</span></label>
+          <label class="cf-radio"><input type="radio" name="perfil" value="inmobiliaria"><span class="cf-radio-label">Inmobiliaria o agencia — cartera de propiedades</span></label>
+          <label class="cf-radio"><input type="radio" name="perfil" value="fondo"><span class="cf-radio-label">Fondo de inversion, patrimonio o sociedad</span></label>
+        </div>
+        <select id="fpisos" style="display:none">
+          <option value="">Cuantas propiedades aproximadamente?</option>
+          <option value="1-4">1 a 4 propiedades</option>
+          <option value="5-9">5 a 9 — Pack basico</option>
+          <option value="10-19">10 a 19 — Pack profesional</option>
+          <option value="20+">20 o mas — Precio negociado</option>
+        </select>
+        <textarea id="fm" placeholder="Algo mas que debamos saber?" rows="3"></textarea>
+        <button type="submit" id="fsub" class="cf-submit">Quiero la visita gratuita →</button>
+        <div class="cf-note">Te contactamos en menos de 24 horas. Aaron o Guillem directamente.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">OKUPA<em>TU</em>CASA</div>
+  <div class="f-copy" style="font-style:italic">«La victoria suprema es ganar sin combatir.» Sun Tzu · Valles 2025</div>
+  <div class="f-links">
+    <a href="#servicio">Servicio</a>
+    <a href="#precio">Precios</a>
+    <a href="#trabaja">Empleo</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</footer>
+
+<!-- WA BTN -->
+<a id="wabtn" href="https://wa.me/34711286406?text=Hola%2C%20me%20interesa%20OkupaTuCasa%20para%20mi%20propiedad%20en%20el%20Vall%C3%A8s" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- EXIT INTENT POPUP -->
+<div class="exit-popup" id="exit-popup">
+  <div class="exit-box">
+    <button class="exit-close" onclick="closeExit()">x</button>
+    <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--r);margin-bottom:10px">Espera un momento</div>
+    <h3 class="exit-h">ANTES DE<br><span class="r">IRTE</span></h3>
+    <p class="exit-sub">Dejanos tu numero y te enviamos la guia gratuita "7 señales de que tu casa esta en peligro" por WhatsApp. Sin spam. Sin compromiso.</p>
+    <input class="exit-tel" type="tel" id="exit-tel" placeholder="Tu numero de WhatsApp">
+    <button class="exit-btn" onclick="sendExitLead()">Enviar la guia por WhatsApp →</button>
+    <span class="exit-skip" onclick="closeExit()">No, gracias — continuar sin la guia</span>
+  </div>
+</div>
+
+<style>
+.tab-btn{flex:1;min-width:120px;padding:12px 14px;background:var(--w);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--g);display:flex;align-items:center;gap:6px;transition:background .15s,color .15s;cursor:pointer;font-family:var(--body);border:none;white-space:nowrap}
+.tab-btn.on{background:var(--k);color:var(--r)}
+.tab-btn:hover{background:var(--w2);color:var(--g3)}
+.tab-panel{display:none;background:var(--w2);border:1px solid var(--bk);border-top:none;padding:28px 20px}
+.tab-panel.on{display:grid;grid-template-columns:1fr}
+@media(min-width:900px){.tab-panel.on{grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}}
+.tp-h{font-family:var(--head);font-weight:900;text-transform:uppercase;font-size:clamp(1.6rem,4vw,2.8rem);line-height:.92;color:var(--k);margin-bottom:12px}
+.tp-h span{color:var(--r)}
+.tp-desc{font-size:.84rem;color:var(--g2);line-height:1.76;margin-bottom:16px}
+.tp-li{display:flex;gap:9px;font-size:.78rem;color:var(--g2);line-height:1.4;margin-bottom:8px}
+.tp-li::before{content:'→';color:var(--r);flex-shrink:0;font-weight:700}
+.tp-stats{display:flex;flex-direction:column;gap:12px}
+.tp-stat{border-left:3px solid var(--r);padding:12px 14px;background:var(--w)}
+.tp-sn{font-family:var(--head);font-weight:900;font-size:1.9rem;color:var(--r);line-height:1;margin-bottom:3px}
+.tp-sl{font-size:.7rem;color:var(--g2);line-height:1.4}
+</style>
+
+<script>
+// ── DATA ──
+var VSTABLE_DATA=[
+  ['Alarma salta a las 2am — tu estas de viaje','Central te llama. Si no coges, llaman a policia. Nadie va a ver que pasa.','Llamada en 10 min. Llegamos en 45 min. Te mandamos video en tiempo real.'],
+  ['Fuga de agua activa durante 2 semanas','La camara lo graba perfectamente. El agua sigue saliendo.','Detectamos en la visita. Cerramos llave de paso. Avisamos ese dia.'],
+  ['Buzon lleno — señal de abandono visible','La alarma no detecta correo acumulado. Sigue anunciando que no hay nadie.','Vaciado en cada visita. La casa siempre parece habitada.'],
+  ['Cristal roto — acceso potencial comprometido','La camara lo graba. Nadie lo arregla hasta que el propietario aparezca.','Detectado. Cristalero colaborador coordinado en 24h.'],
+  ['Ocupacion ilegal — entran y se quedan','Mossos llegan pero sin orden judicial no pueden hacer mucho. Proceso largo.','Documentacion legal con GPS desde el dia 1. Ventana de 48h aprovechada.'],
+  ['Propietario viaja 2 meses sin contacto cercano','La central monitoriza. Pero nadie cuida, nadie gestiona, nadie actua.','Gestor personal que actua en tu nombre. Tus estas en Berlín — nosotros aquí.'],
+];
+
+var TAB_DATA=[
+  {label:'Particulares',h:'SEGUNDA<br>RESIDENCIA<br>Y <span>PARTICULAR</span>',desc:'Casa de playa, de montaña, piso vacío en vacaciones largas o herencia en proceso de venta. Si no puedes estar, alguien de confianza tiene que estar por ti.',lis:['Segunda residencia vacía meses al año','Piso principal vacío en vacaciones o trabajo fuera','Herencia o propiedad en trámite de venta','Casa de familiares que ya no la habitan'],stats:[['73%','de robos ocurren cuando la vivienda lleva más de 2 semanas sin presencia visible'],['48h','ventana crítica para actuar ante una ocupación antes de que se consolide legalmente']]},
+  {label:'Airbnb',h:'ALQUILER<br><span>TURISTICO</span>',desc:'Entre estancias tu propiedad está vacía y vulnerable. Revisamos el estado, coordinamos limpieza y preparamos la llegada perfecta del siguiente huésped.',lis:['Revisión del estado entre estancias','Detección de desperfectos antes de la siguiente llegada','Coordinación de limpieza y pequeñas reparaciones','Informe fotográfico post-estancia para tu registro'],stats:[['+22%','valoración media en plataformas para pisos con estado impecable documentado'],['0€','en reclamaciones por desperfectos con informe fotográfico de cada cambio']]},
+  {label:'Locales',h:'LOCAL<br><span>COMERCIAL</span>',desc:'Un local vacío entre contratos es objetivo prioritario. Nadie pasa por él regularmente, nadie detecta el vandalismo ni la avería hasta que es demasiado grande.',lis:['Locales entre contratos de arrendamiento','Oficinas cerradas temporalmente','Naves o almacenes sin actividad','Detección de vandalismo y daños externos'],stats:[['3x','más probabilidad de vandalismo en un local sin presencia regular documentada'],['5k€+','coste medio de reparación por vandalismo en un local sin supervisión activa']]},
+  {label:'Inmobiliarias',h:'AGENCIA<br><span>INMOBILIARIA</span>',desc:'Cada propiedad de tu cartera vacía es un riesgo activo. La mantenemos en estado de enseñar y te mandamos el informe para tu expediente.',lis:['Mantenimiento entre visitas de compradores','Informe fotográfico actualizado para fichas online','Puesta a punto antes de visitas importantes','Reporting mensual para toda la cartera'],stats:[['38%','de compradores descarta propiedades con señales visibles de abandono'],['4.7m','meses de media que tarda en venderse un piso — todo ese tiempo en riesgo']]},
+  {label:'Fondos',h:'FONDOS E<br><span>INVERSORES</span>',desc:'Carteras con múltiples propiedades necesitan gestión operativa de presencia. Reporting consolidado, protocolo documentado y respuesta antes de que el problema escale.',lis:['Fondos con activos inmobiliarios en el Vallès','Family offices con patrimonio heredado','Sociedades patrimoniales con pisos y locales vacíos','Reporting adaptado al estándar corporativo'],stats:[['1/4','de propiedades en cartera patrimonial sufre algún incidente anual no detectado'],['20k€+','coste medio de una ocupación no detectada en las primeras 48h']]},
+];
+
+var FAQ_DATA=[
+  ['Ya tengo alarma con camaras. Para que necesito OkupaTuCasa?','Tu alarma detecta intrusiones y las graba. OkupaTuCasa detecta fugas, averias, señales de abandono, correo acumulado y simula presencia habitual. Cuando la alarma salta y tu estas de viaje, nosotros llegamos en 45 minutos. La alarma es el hardware. Nosotros somos la capa humana que lo hace util cuando no hay nadie que responda.'],
+  ['Como es exactamente el 4 servicio de gestion directa?','Tu gestor personal tiene tu numero y conoce tu propiedad. Si ves algo raro por tus camaras a las 11 de la noche, nos escribes. Respondemos ese dia. Si hace falta ir, vamos. Si hace falta coordinar un tecnico, lo hacemos. No es guardia 24h — es tener a alguien de confianza al otro lado que actua en tu nombre.'],
+  ['Cuanto tarda en activarse el servicio?','Una vez firmado el contrato, la primera visita de evaluacion se hace en la misma semana. Desde la segunda semana, el servicio esta activo con el calendario de visitas establecido.'],
+  ['Quien entra exactamente en mi propiedad?','Solo Aaron Plasencia, Guillem Simon o personal de OkupaTuCasa que hayamos formado y que presentamos previamente. Nunca subcontratamos sin avisarte. Todo firma confidencialidad y el acceso queda registrado.'],
+  ['Que pasa si hay una ocupacion ilegal?','Protocolo inmediato: no entramos bajo ningun concepto, llamamos a Mossos (112) y te avisamos en el mismo momento. Las primeras 48h son criticas para el desahucio express. Nuestro informe fotografico con fecha y GPS es la prueba legal mas solida que existe.'],
+  ['Cuanto tiempo de permanencia?','Ninguno. Cancelas cuando quieras con 15 dias de aviso. Sin penalizacion. Sin contratos anuales obligatorios.'],
+  ['Teneis seguro si algo sale mal?','Si. Poliza de Responsabilidad Civil activa que cubre cualquier incidencia causada durante nuestra intervencion. El seguro RC esta incluido en todos los planes sin coste adicional.'],
+  ['Como funcionan los precios para inmobiliarias?','Pack 5 pisos a 38€/visita/propiedad, pack 10 pisos a 30€/visita, y para mas de 20 pisos negociamos precio personalizado. Una sola factura mensual consolidada. Las altas y bajas de propiedades se gestionan en 48h sin coste.'],
+];
+
+var INMO_PACKS=[
+  {n:'5',label:'pisos activos',price:'38€',per:'por propiedad / visita',feats:['Visita quincenal por propiedad','Informe fotografico 8 fotos GPS','Alerta de incidencias','Reporting mensual basico'],cta:'Solicitar pack 5'},
+  {n:'10',label:'pisos activos',price:'30€',per:'por propiedad / visita',feats:['Visita quincenal o semanal','Informe extendido con estado','Puesta a punto pre-visita comprador','Reporting mensual completo','Tecnico de referencia asignado'],cta:'Solicitar pack 10',best:true},
+  {n:'+20',label:'pisos — precio a medida',price:'A medida',per:'presupuesto personalizado',feats:['Todo lo del pack 10','Precio negociado por volumen','Informe con tu logo (white-label)','SLA de respuesta garantizado','Reunion mensual de seguimiento'],cta:'Hablar por WhatsApp'},
+];
+
+// ── BUILD VS TABLE ──
+(function(){
+  var el=document.getElementById('vstable');
+  if(!el)return;
+  var h='';
+  VSTABLE_DATA.forEach(function(r,i){
+    var bg=i%2===0;
+    h+='<div style="display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.05)">'
+      +'<div style="background:'+(bg?'rgba(255,255,255,.04)':'rgba(255,255,255,.02)')+';padding:11px 12px;font-size:.74rem;color:rgba(255,255,255,.58);font-weight:500;line-height:1.4">'+r[0]+'</div>'
+      +'<div style="background:'+(bg?'rgba(255,255,255,.025)':'rgba(255,255,255,.015)')+';padding:11px 12px;font-size:.72rem;color:rgba(255,255,255,.32);line-height:1.4">'+r[1]+'</div>'
+      +'<div style="background:'+(bg?'rgba(40,200,64,.05)':'rgba(40,200,64,.03)')+';padding:11px 12px;font-size:.72rem;color:#28c840;font-weight:500;line-height:1.4">'+r[2]+'</div>'
+      +'</div>';
+  });
+  el.innerHTML=h;
+})();
+
+// ── BUILD TABS ──
+(function(){
+  var c=document.querySelector('#clientes');
+  if(!c)return;
+  var panels=TAB_DATA.map(function(t,i){
+    var lis=t.lis.map(function(l){return '<div class="tp-li">'+l+'</div>';}).join('');
+    var stats=t.stats.map(function(s){return '<div class="tp-stat"><div class="tp-sn">'+s[0]+'</div><div class="tp-sl">'+s[1]+'</div></div>';}).join('');
+    return '<div class="tab-panel'+(i===0?' on':'')+'" id="tp'+i+'"><div><div class="tp-h">'+t.h+'</div><p class="tp-desc">'+t.desc+'</p>'+lis+'</div><div class="tp-stats">'+stats+'</div></div>';
+  }).join('');
+  var existing=c.querySelector('#tab-panels');
+  if(existing)existing.innerHTML=panels;
+})();
+
+function setTab(n){
+  document.querySelectorAll('.tab-btn').forEach(function(b,i){b.classList.toggle('on',i===n)});
+  document.querySelectorAll('.tab-panel').forEach(function(p,i){p.classList.toggle('on',i===n)});
+}
+
+// ── BUILD FAQ ──
+(function(){
+  var el=document.getElementById('faq-list');
+  if(!el)return;
+  el.innerHTML=FAQ_DATA.map(function(f){
+    return '<div class="faq-item"><button class="faq-q" onclick="faqT(this)"><span class="faq-qt">'+f[0]+'</span><span class="faq-ch">↓</span></button><div class="faq-a"><p>'+f[1]+'</p></div></div>';
+  }).join('');
+})();
+
+function faqT(btn){
+  var item=btn.parentElement;
+  var was=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(e){e.classList.remove('open')});
+  if(!was)item.classList.add('open');
+}
+
+// ── BUILD INMO PACKS ──
+(function(){
+  var el=document.getElementById('inmo-packs');
+  if(!el)return;
+  el.innerHTML='<div style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.06)">'
+    +INMO_PACKS.map(function(pk){
+      var bg=pk.best?'rgba(200,40,30,.08)':'var(--k2)';
+      var border=pk.best?'border-top:2px solid var(--r);':'';
+      var feats=pk.feats.map(function(f){return '<div style="display:flex;gap:8px;font-size:.74rem;color:rgba(255,255,255,.5);margin-bottom:7px"><span style="color:var(--r);font-weight:700;flex-shrink:0">—</span>'+f+'</div>';}).join('');
+      var href=pk.n==='+'?'https://wa.me/34711286406?text=Quiero+hablar+de+un+pack+de+20+pisos':'#contacto';
+      return '<div style="background:'+bg+';padding:22px 18px;'+border+'">'
+        +'<div style="font-family:var(--head);font-weight:900;font-size:2.4rem;color:var(--r);line-height:1;margin-bottom:2px">'+pk.n+'</div>'
+        +'<div style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:14px">'+pk.label+'</div>'
+        +'<div style="font-family:var(--head);font-weight:900;font-size:1.8rem;color:var(--w);line-height:1;margin-bottom:3px">'+pk.price+'</div>'
+        +'<div style="font-size:.66rem;color:rgba(255,255,255,.35);margin-bottom:16px">'+pk.per+'</div>'
+        +feats
+        +'<a href="'+href+'" '+(pk.n==='+20'?'target="_blank"':'')+' style="display:inline-block;margin-top:12px;background:var(--r);color:#fff;padding:9px 18px;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;transition:background .2s" onmouseover="this.style.background=\'var(--r2)\'" onmouseout="this.style.background=\'var(--r)\'">'+pk.cta+' →</a>'
+        +'</div>';
+    }).join('')
+    +'</div>';
+})();
+
+// ── CALCULATOR ──
+var calcData={
+  tipo:{piso:{base:8000,occ:12000},chalet:{base:15000,occ:25000},local:{base:6000,occ:10000},segunda:{base:18000,occ:30000}},
+  tiempo:{15:.3,30:.55,90:.75,365:1},
+  zona:{alta:1.4,media:1,baja:.65}
+};
+function calcUpdate(){
+  var tipo=document.getElementById('calc-tipo').value;
+  var tiempo=document.getElementById('calc-tiempo').value;
+  var zona=document.getElementById('calc-zona').value;
+  if(!tipo||!tiempo||!zona)return;
+  var base=calcData.tipo[tipo].base;
+  var occ=calcData.tipo[tipo].occ;
+  var tf=calcData.tiempo[tiempo];
+  var zf=calcData.zona[zona];
+  var result=Math.round((base*tf*zf)/1000)*1000;
+  var msgs={
+    piso:'Un piso vacio sin supervision durante ese periodo tiene un riesgo estimado de averia o intrusión con coste de ',
+    chalet:'Un chalet sin supervision es uno de los objetivos preferidos en el Valles. El coste estimado de una incidencia es de ',
+    local:'Los locales vacios entre contratos son muy vulnerables al vandalismo. El coste estimado de una incidencia es de ',
+    segunda:'Las segundas residencias son el perfil de mayor riesgo en el Valles. El coste estimado de una incidencia es de ',
+  };
+  document.getElementById('calc-cost').textContent=result.toLocaleString('es')+'€';
+  document.getElementById('calc-msg').innerHTML=msgs[tipo]+result.toLocaleString('es')+'€. <strong>OkupaTuCasa cuesta '+Math.round(result/75)+' meses de servicio para cubrir ese riesgo.</strong>';
+  var res=document.getElementById('calc-result');
+  res.classList.add('show');
+}
+
+// ── SCROLL REVEAL ──
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')});
+},{threshold:.06});
+document.querySelectorAll('.rv,.rv2').forEach(function(el){obs.observe(el)});
+
+// ── STICKY CTA ──
+var stickyHidden=false;
+function hideStickyBar(){stickyHidden=true;document.getElementById('sticky-cta').classList.remove('show');}
+window.addEventListener('scroll',function(){
+  if(stickyHidden)return;
+  var show=window.scrollY>600;
+  document.getElementById('sticky-cta').classList.toggle('show',show);
+});
+
+// ── EXIT INTENT ──
+var exitShown=false;
+document.addEventListener('mouseleave',function(e){
+  if(e.clientY<=0&&!exitShown){
+    exitShown=true;
+    setTimeout(function(){document.getElementById('exit-popup').classList.add('show');},300);
+  }
+});
+function closeExit(){document.getElementById('exit-popup').classList.remove('show');}
+function sendExitLead(){
+  var tel=document.getElementById('exit-tel').value.trim();
+  if(!tel)return;
+  var wa='https://wa.me/34711286406?text='+encodeURIComponent('Hola, quiero la guia gratuita de OkupaTuCasa. Mi numero es: '+tel);
+  window.open(wa,'_blank');
+  closeExit();
+}
+
+// ── INTRO ──
+var _ic=false;
+function closeIntro(){
+  if(_ic)return;_ic=true;
+  document.body.style.overflow='';
+  var i=document.getElementById('intro');
+  i.classList.add('out');
+  setTimeout(function(){i.style.display='none';},700);
+}
+try{
+  document.body.style.overflow='hidden';
+  setTimeout(closeIntro,7000);
+}catch(ex){}
+
+// ── FORM SUBMIT ──
+try{
+  document.querySelectorAll('input[name=perfil]').forEach(function(r){
+    r.addEventListener('change',function(){
+      var show=this.value==='inmobiliaria'||this.value==='fondo';
+      document.getElementById('fpisos').style.display=show?'block':'none';
+    });
+  });
+
+  function gv(id){var e=document.getElementById(id);return e?e.value.trim():'';}
+
+  async function doSubmit(e){
+    e.preventDefault();
+    var btn=document.getElementById('fsub');
+    btn.textContent='Enviando...';btn.disabled=true;
+    var perfil=document.querySelector('input[name=perfil]:checked');
+    var payload={
+      access_key:'TU_CLAVE_WEB3FORMS',
+      subject:'Nueva solicitud OkupaTuCasa — '+(gv('fn')||''),
+      from_name:'OkupaTuCasa Web',
+      nombre:gv('fn'),telefono:gv('ft'),email:gv('fe')||'',
+      perfil:perfil?perfil.value:'No indicado',
+      pisos:gv('fpisos')||'N/A',
+      direccion:gv('fd'),mensaje:gv('fm')
+    };
+    try{
+      var r=await fetch('https://api.web3forms.com/submit',{
+        method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(payload)
+      });
+      var res=await r.json();
+      if(res.success){
+        var form=document.getElementById('cform');
+        form.style.display='none';
+        var ok=document.createElement('div');
+        ok.style.cssText='background:rgba(255,255,255,.03);border:1px solid rgba(40,200,100,.2);border-top:3px solid #28c840;padding:24px 20px';
+        ok.innerHTML='<div style="font-family:var(--head);font-size:1.5rem;font-weight:900;text-transform:uppercase;color:#28c840;margin-bottom:8px">Mensaje recibido</div><p style="font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.75">Te contactamos en menos de 24 horas. Aaron o Guillem directamente.<br><br>Si hay urgencia: <strong style="color:#fff">+34 711 28 64 06</strong></p>';
+        form.parentNode.appendChild(ok);
+      }else{throw new Error(res.message);}
+    }catch(err){
+      btn.textContent='Quiero la visita gratuita →';btn.disabled=false;
+      alert('Error al enviar. Escribenos directamente al +34 711 28 64 06');
+    }
+  }
+}catch(ex){console.warn('OTC:',ex)}
+</script>
+
+
+<!-- 
+     PORTAL DE CLIENTE — OkupaTuCasa v2.0
+     Panel completo con gráficas, visitas, noticias y admin
+ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<style>
+/*  PORTAL OVERLAY  */
+#otc-portal{
+  position:fixed;inset:0;z-index:9000;
+  background:#0A0A0A;
+  transform:translateX(100%);
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column;overflow:hidden;
+  font-family:'DM Sans',sans-serif;
+}
+#otc-portal.open{transform:translateX(0)}
+
+/*  TOP NAV  */
+#pnav{
+  height:56px;background:#111;border-bottom:1px solid rgba(255,255,255,.07);
+  display:flex;align-items:center;justify-content:space-between;padding:0 20px;flex-shrink:0;gap:12px;
+}
+#pnav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;text-transform:uppercase;letter-spacing:-.01em;color:#fafafa}
+#pnav-logo em{color:#C8281E;font-style:normal}
+#pnav-right{display:flex;align-items:center;gap:10px}
+#pnav-user{font-size:.68rem;color:rgba(255,255,255,.35);display:none}
+@media(min-width:600px){#pnav-user{display:block}}
+#pnav-close{background:none;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);padding:7px 14px;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;transition:border-color .2s,color .2s}
+#pnav-close:hover{border-color:#C8281E;color:#C8281E}
+
+/*  LAYOUT  */
+#pbody{flex:1;overflow:hidden;display:flex}
+#psidebar{width:196px;flex-shrink:0;background:#111;border-right:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;overflow-y:auto}
+@media(max-width:759px){#psidebar{display:none}}
+#pmain{flex:1;overflow-y:auto;background:#0A0A0A}
+
+/*  MOBILE TABS  */
+#pmobile-tabs{display:none;overflow-x:auto;background:#111;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0}
+@media(max-width:759px){#pmobile-tabs{display:flex}}
+.pmt{padding:11px 13px;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);background:none;border:none;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.pmt.on{color:#fafafa;border-bottom-color:#C8281E}
+
+/*  SIDEBAR  */
+.ps-section{font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);padding:14px 16px 4px}
+.ps-item{display:flex;align-items:center;gap:9px;padding:10px 16px;font-size:.75rem;color:rgba(255,255,255,.4);cursor:pointer;background:none;border:none;width:100%;text-align:left;font-family:'DM Sans',sans-serif;transition:background .15s,color .15s;position:relative}
+.ps-item:hover{background:rgba(255,255,255,.04);color:rgba(255,255,255,.72)}
+.ps-item.on{color:#fafafa;background:rgba(200,40,30,.1)}
+.ps-item.on::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:#C8281E}
+.ps-icon{font-size:.8rem;width:16px;text-align:center;flex-shrink:0;opacity:.7}
+.ps-badge{margin-left:auto;background:#C8281E;color:#fff;font-size:.5rem;padding:2px 5px;font-weight:700;letter-spacing:.04em}
+.psb-footer{padding:12px 16px;border-top:1px solid rgba(255,255,255,.07);margin-top:auto}
+.psb-name{font-size:.78rem;color:#fafafa;font-weight:500}
+.psb-email{font-size:.64rem;color:rgba(255,255,255,.28);margin-top:1px}
+.psb-logout{background:none;border:none;color:rgba(255,255,255,.22);font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:8px;padding:0;font-family:'DM Sans',sans-serif;transition:color .2s}
+.psb-logout:hover{color:#C8281E}
+
+/*  PAGE  */
+.pp{padding:22px 16px;max-width:1100px}
+@media(min-width:600px){.pp{padding:28px 26px}}
+@media(min-width:900px){.pp{padding:32px 36px}}
+
+/*  GREETING  */
+.pg-h{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(1.4rem,3.5vw,2rem);text-transform:uppercase;letter-spacing:-.01em;color:#fafafa;line-height:.95;margin-bottom:3px}
+.pg-h span{color:#C8281E}
+.pg-sub{font-size:.76rem;color:rgba(255,255,255,.3);margin-bottom:20px}
+
+/*  NEXT VISIT  */
+.pnv{background:rgba(200,40,30,.07);border:1px solid rgba(200,40,30,.22);border-top:2px solid #C8281E;padding:14px 16px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.pnv-lbl{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:#C8281E;margin-bottom:3px}
+.pnv-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;text-transform:uppercase;letter-spacing:.04em;color:#fafafa}
+
+/*  STATS  */
+.pstat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);margin-bottom:18px}
+@media(min-width:580px){.pstat-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:960px){.pstat-grid{grid-template-columns:repeat(6,1fr)}}
+.pstat{background:#111;padding:14px 12px;position:relative;overflow:hidden}
+.pstat::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:#C8281E;transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.pstat:hover::after{transform:scaleX(1)}
+.pstat-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.9rem;color:#C8281E;line-height:1;margin-bottom:3px}
+.pstat-l{font-size:.6rem;color:rgba(255,255,255,.3);line-height:1.3}
+
+/*  CARD  */
+.pc{background:#111;border:1px solid rgba(255,255,255,.07);margin-bottom:16px}
+.pc-head{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.pc-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;color:#fafafa}
+.pc-tag{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.38)}
+.pc-body{padding:16px}
+
+/*  CHART  */
+.chart-wrap{position:relative;height:200px}
+@media(min-width:600px){.chart-wrap{height:240px}}
+
+/*  VISITS  */
+.pv-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.pv-item:last-child{border-bottom:none}
+.pv-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.pv-dot.ok{background:#28c840}
+.pv-dot.inc{background:#C8281E}
+.pv-date{font-size:.68rem;color:rgba(255,255,255,.3);margin-bottom:2px;font-family:'Barlow Condensed',sans-serif;letter-spacing:.04em}
+.pv-addr{font-size:.8rem;color:#fafafa;margin-bottom:3px;font-weight:500}
+.pv-txt{font-size:.74rem;color:rgba(255,255,255,.42);line-height:1.5}
+.pv-badge{font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;margin-left:auto;flex-shrink:0;align-self:flex-start}
+.pv-badge.ok{border:1px solid rgba(40,200,64,.3);color:#28c840}
+.pv-badge.inc{border:1px solid rgba(200,40,30,.3);color:#C8281E}
+.pv-expand{font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:#C8281E;background:none;border:none;cursor:pointer;margin-top:5px;padding:0;font-family:'DM Sans',sans-serif}
+.pv-expand:hover{text-decoration:underline}
+.pv-detail{margin-top:9px;padding:11px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05)}
+.pv-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:9px}
+.pv-ph{aspect-ratio:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;font-size:.52rem;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.06em}
+
+/*  NEWS  */
+.pnews-item{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.pnews-item:last-child{border-bottom:none}
+.pnews-meta{display:flex;align-items:center;gap:7px;margin-bottom:5px;flex-wrap:wrap}
+.pnews-tag{font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;border:1px solid}
+.pnews-tag.urg{border-color:rgba(200,40,30,.4);color:#C8281E}
+.pnews-tag.nor{border-color:rgba(255,255,255,.14);color:rgba(255,255,255,.38)}
+.pnews-tag.new{border-color:rgba(40,140,200,.4);color:#4a9fd4}
+.pnews-date{font-size:.62rem;color:rgba(255,255,255,.26)}
+.pnews-h{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.02em;text-transform:uppercase;color:#fafafa;margin-bottom:5px;line-height:1.1}
+.pnews-b{font-size:.76rem;color:rgba(255,255,255,.42);line-height:1.6}
+
+/*  MESSAGES  */
+.pmsg-item{display:flex;gap:10px;margin-bottom:12px}
+.pmsg-av{width:30px;height:30px;background:#C8281E;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;color:#fff}
+.pmsg-av.client{background:rgba(255,255,255,.1)}
+.pmsg-bubble{background:#181818;padding:10px 13px;flex:1;border:1px solid rgba(255,255,255,.06)}
+.pmsg-bubble.client{background:rgba(200,40,30,.07);border-color:rgba(200,40,30,.18)}
+.pmsg-from{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:#C8281E;margin-bottom:2px}
+.pmsg-from.client{color:rgba(255,255,255,.45)}
+.pmsg-date{font-size:.58rem;color:rgba(255,255,255,.22);float:right;margin-top:1px}
+.pmsg-txt{font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.55}
+.pmsg-input-row{display:flex;gap:7px;margin-top:14px}
+.pmsg-input{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:#fafafa;padding:10px 12px;font-size:.79rem;outline:none;font-family:'DM Sans',sans-serif}
+.pmsg-input:focus{border-color:#C8281E}
+.pmsg-input::placeholder{color:rgba(255,255,255,.22)}
+.pmsg-send{background:#C8281E;color:#fff;border:none;padding:10px 16px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-family:'DM Sans',sans-serif;flex-shrink:0;cursor:pointer;transition:background .2s}
+.pmsg-send:hover{background:#a31d15}
+
+/*  PROPERTY  */
+.pprop{background:#181818;border:1px solid rgba(255,255,255,.07);padding:16px;margin-bottom:10px;display:flex;align-items:flex-start;gap:14px}
+.pprop-icon{width:40px;height:40px;background:rgba(200,40,30,.1);border:1px solid rgba(200,40,30,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;color:#C8281E}
+.pprop-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.92rem;letter-spacing:.04em;text-transform:uppercase;color:#fafafa;margin-bottom:2px}
+.pprop-addr{font-size:.73rem;color:rgba(255,255,255,.38);margin-bottom:5px}
+.pprop-status{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;border:1px solid rgba(40,200,64,.3);color:#28c840;display:inline-block}
+.pprop-meta{display:flex;gap:12px;margin-top:7px;flex-wrap:wrap}
+.pprop-m{font-size:.66rem;color:rgba(255,255,255,.28)}
+.pprop-m span{color:rgba(255,255,255,.58);font-weight:500}
+
+/*  PROGRESS  */
+.pprog{margin-bottom:14px}
+.pprog-lbl{display:flex;justify-content:space-between;font-size:.65rem;color:rgba(255,255,255,.38);margin-bottom:4px}
+.pprog-bar{height:3px;background:rgba(255,255,255,.07)}
+.pprog-fill{height:100%;background:#C8281E;transition:width 1s ease}
+
+/*  SETTINGS  */
+.pset-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.pset-lbl{font-size:.78rem;color:rgba(255,255,255,.55)}
+.pset-val{font-size:.74rem;color:rgba(255,255,255,.3)}
+.ptoggle{width:34px;height:18px;background:rgba(255,255,255,.1);border-radius:9px;position:relative;cursor:pointer;transition:background .2s;flex-shrink:0}
+.ptoggle.on{background:#C8281E}
+.ptoggle-k{position:absolute;top:3px;left:3px;width:12px;height:12px;background:#fff;border-radius:50%;transition:left .2s}
+.ptoggle.on .ptoggle-k{left:19px}
+
+/*  INNER TABS  */
+.ptabs{display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:16px;overflow-x:auto}
+.ptab{padding:9px 16px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);cursor:pointer;border:none;background:none;font-family:'DM Sans',sans-serif;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s}
+.ptab.on{color:#fafafa;border-bottom-color:#C8281E}
+
+/*  ADMIN TABLE  */
+.pa-table{width:100%;border-collapse:collapse}
+.pa-table th{background:#0A0A0A;padding:9px 11px;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);text-align:left;border-bottom:1px solid rgba(255,255,255,.07)}
+.pa-table td{padding:10px 11px;font-size:.75rem;color:rgba(255,255,255,.58);border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top}
+.pa-table tr:hover td{background:rgba(255,255,255,.02)}
+.pa-badge{font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border:1px solid}
+.pa-badge.ok{border-color:rgba(40,200,64,.3);color:#28c840}
+.pa-badge.admin{border-color:rgba(200,40,30,.3);color:#C8281E}
+
+/*  AUTH SCREENS  */
+.pauth{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:32px 20px}
+.pauth-box{width:100%;max-width:420px}
+.pauth-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;text-transform:uppercase;color:#fafafa;letter-spacing:-.01em;margin-bottom:28px}
+.pauth-logo em{color:#C8281E;font-style:normal}
+.pauth-h{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(1.6rem,4vw,2.4rem);text-transform:uppercase;letter-spacing:-.01em;color:#fafafa;line-height:.94;margin-bottom:6px}
+.pauth-sub{font-size:.79rem;color:rgba(255,255,255,.38);margin-bottom:24px;line-height:1.6}
+.pf{display:flex;flex-direction:column;gap:4px;margin-bottom:12px}
+.pf label{font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.pf input{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fafafa;padding:11px 13px;font-size:.83rem;outline:none;transition:border-color .2s;font-family:'DM Sans',sans-serif}
+.pf input:focus{border-color:#C8281E}
+.pf input::placeholder{color:rgba(255,255,255,.22)}
+.pauth-btn{background:#C8281E;color:#fff;border:none;padding:13px;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%;margin-top:6px;transition:background .2s}
+.pauth-btn:hover{background:#a31d15}
+.pauth-btn:disabled{opacity:.5;cursor:default}
+.pauth-err{background:rgba(200,40,30,.1);border:1px solid rgba(200,40,30,.28);color:#f88;padding:9px 12px;font-size:.76rem;margin-bottom:12px;line-height:1.5}
+.pauth-switch{font-size:.76rem;color:rgba(255,255,255,.35);margin-top:16px;text-align:center}
+.pauth-switch span{color:#C8281E;cursor:pointer;font-weight:600}
+.pauth-switch span:hover{text-decoration:underline}
+.ppriv-check{display:flex;gap:9px;align-items:flex-start;margin-top:10px;font-size:.73rem;color:rgba(255,255,255,.38);line-height:1.5;cursor:pointer}
+.ppriv-check input{accent-color:#C8281E;width:14px;height:14px;flex-shrink:0;margin-top:2px;cursor:pointer}
+.ppriv-link{color:#C8281E;cursor:pointer}
+.ppriv-link:hover{text-decoration:underline}
+
+/*  MODAL  */
+.pmodal-bg{position:absolute;inset:0;background:rgba(0,0,0,.82);z-index:100;display:flex;align-items:center;justify-content:center;padding:20px}
+.pmodal{background:#111;border:1px solid rgba(255,255,255,.12);border-top:3px solid #C8281E;width:100%;max-width:520px;max-height:80vh;overflow-y:auto;padding:24px}
+.pmodal h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;text-transform:uppercase;color:#fafafa;margin-bottom:14px}
+.pmodal p{font-size:.77rem;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:9px}
+
+/*  AI SUMMARY  */
+.pai-wrap{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);padding:14px;border-left:3px solid #C8281E}
+.pai-loading{display:flex;gap:6px;align-items:center;font-size:.75rem;color:rgba(255,255,255,.35)}
+.pai-dot{width:6px;height:6px;border-radius:50%;background:#C8281E;animation:paidot 1.2s ease infinite}
+.pai-dot:nth-child(2){animation-delay:.2s}
+.pai-dot:nth-child(3){animation-delay:.4s}
+@keyframes paidot{0%,80%,100%{opacity:.2;transform:scale(.8)}40%{opacity:1;transform:scale(1)}}
+
+/*  GRID 2  */
+.pgrid2{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:900px){.pgrid2{grid-template-columns:1fr 1fr}}
+
+/*  RESPONSIVE OVERFLOW  */
+@media(max-width:759px){.pa-table{font-size:.7rem}.pa-table th,.pa-table td{padding:7px 8px}}
+</style>
+
+<!--  PORTAL HTML  -->
+<div id="otc-portal" role="dialog" aria-modal="true" aria-label="Portal de cliente OkupaTuCasa">
+  <!-- NAV -->
+  <div id="pnav">
+    <div id="pnav-logo">OKUPA<em>TU</em>CASA <span style="font-size:.62rem;opacity:.35;font-weight:400;font-family:'DM Sans',sans-serif;letter-spacing:0;margin-left:6px">Portal cliente</span></div>
+    <div id="pnav-right">
+      <div id="pnav-user"></div>
+      <button id="pnav-close" onclick="portalClose()">Volver a la web ×</button>
+    </div>
+  </div>
+  <!-- MOBILE TABS -->
+  <div id="pmobile-tabs"></div>
+  <!-- BODY -->
+  <div id="pbody">
+    <div id="psidebar"></div>
+    <div id="pmain"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+/*  CONFIG  */
+var R='#C8281E';
+var ADMINS=['aaron@okupatucasa.es','guillem@okupatucasa.es'];
+var ADMIN_PASS='OTC2025admin';
+
+/*  DATA  */
+var VISITS=[
+  {id:1,date:'2025-04-21',time:'11:34',addr:'C/ del Vallès, 42 — Sabadell',status:'ok',tech:'Guillem Simon',report:'Todo en orden. Buzón vaciado. Sin incidencias detectadas.',photos:8,services:['Inspección completa','Buzón vaciado','Simulación presencia'],duration:28},
+  {id:2,date:'2025-04-07',time:'10:12',addr:'C/ del Vallès, 42 — Sabadell',status:'ok',tech:'Guillem Simon',report:'Visita realizada. Pequeña mancha de humedad en techo del baño. Informado al cliente.',photos:8,services:['Inspección completa','Check-up suministros','Buzón vaciado'],duration:35},
+  {id:3,date:'2025-03-24',time:'14:20',addr:'C/ del Vallès, 42 — Sabadell',status:'inc',tech:'Aaron Plasencia',report:'Ventana trasera con cristal fisurado. Cristalero colaborador contactado. Presupuesto enviado.',photos:10,services:['Inspección completa','Gestión incidencia','Buzón vaciado'],duration:42},
+  {id:4,date:'2025-03-10',time:'09:45',addr:'C/ del Vallès, 42 — Sabadell',status:'ok',tech:'Guillem Simon',report:'Sin novedades. Propiedad en perfecto estado.',photos:8,services:['Inspección completa','Buzón vaciado','Simulación presencia'],duration:27},
+  {id:5,date:'2025-02-24',time:'12:00',addr:'C/ del Vallès, 42 — Sabadell',status:'ok',tech:'Guillem Simon',report:'Visita de invierno. Todo correcto. Sin daños por lluvia.',photos:8,services:['Inspección completa','Buzón vaciado'],duration:30},
+  {id:6,date:'2025-02-10',time:'10:30',addr:'C/ del Vallès, 42 — Sabadell',status:'ok',tech:'Aaron Plasencia',report:'Primera visita del mes. Propiedad en buen estado general.',photos:8,services:['Inspección completa','Buzón vaciado','Simulación presencia'],duration:32}
+];
+
+var NEWS=[
+  {id:1,date:'03 Abr 2025',tag:'Nueva ley',type:'urg',title:'La Ley Antiokupas 2025 entra en vigor: desahucio en 15 días',body:'La Ley Orgánica 1/2025 incluye el allanamiento y la usurpación en los juicios rápidos. Si el ocupante ilegal no acredita ningún derecho sobre la vivienda, el desalojo se produce de forma inmediata sin necesidad de esperar meses. La clave sigue siendo denunciar antes de las primeras 48 horas para activar el procedimiento urgente.'},
+  {id:2,date:'20 Mar 2025',tag:'Cataluña',type:'urg',title:'Cataluña concentra el 42% de todas las denuncias por ocupación de España en 2024',body:'En 2024 se registraron 16.426 denuncias por ocupación ilegal en España — un 7.4% más que en 2023. Cataluña suma 7.009 casos, más que Andalucía, Valencia y Madrid juntas. El Vallès Occidental y el Barcelonès encabezan la lista por municipios.'},
+  {id:3,date:'01 Mar 2025',tag:'Jurisprudencia',type:'nor',title:'El Tribunal Supremo confirma que el propietario puede cortar suministros a un piso ocupado ilegalmente',body:'La STS 445/2024 establece que el propietario puede interrumpir agua y electricidad en un inmueble ocupado sin contrato válido, previa notificación a las compañías suministradoras. La sentencia refuerza la posición de los propietarios frente a ocupaciones ilegales.'},
+  {id:4,date:'10 Feb 2025',tag:'Seguridad',type:'nor',title:'Las mafias de ocupas apuntan ahora a chalets y segundas residencias vacías en el Vallès',body:'Según datos del Ministerio del Interior, el perfil del inmueble ocupado ha cambiado: las villas con piscina y las segundas residencias vacías son el nuevo objetivo de grupos organizados. El Vallès Occidental registró un incremento del 34% en este tipo de ocupaciones respecto a 2023.'},
+  {id:5,date:'20 Ene 2025',tag:'Estadísticas',type:'nor',title:'Más de 23.000 viviendas afectadas por procesos de ocupación activos en España',body:'Un informe de Sekdoor cifra en 23.010 las viviendas con procesos de ocupación activos a inicio de 2025. El coste medio para el propietario — incluyendo honorarios jurídicos, obras de recuperación y pérdida de renta — supera los 20.000 euros por caso.'},
+  {id:6,date:'08 Ene 2025',tag:'Legal',type:'new',title:'Nueva instrucción de la Fiscalía para agilizar desahucios express en propiedades particulares',body:'La Fiscalía General del Estado ha emitido una instrucción para que los fiscales de guardia prioricen los casos de allanamiento de morada de particulares. Si hay prueba del domicilio habitual o segunda residencia habitual, el desahucio puede ejecutarse en 24-72 horas.'}
+];
+
+var MOCK_MSGS=[
+  {id:1,from:'OkupaTuCasa',fromType:'otc',date:'21 Abr 2025 · 13:12',text:'Informe de visita enviado. Todo en orden en su propiedad. Adjunto 8 fotos con metadatos GPS. Proxima visita: semana del 5 de mayo.'},
+  {id:2,from:'OkupaTuCasa',fromType:'otc',date:'07 Abr 2025 · 11:58',text:'Visita realizada. Detectamos una pequeña mancha de humedad en el techo del baño. Le recomendamos revision tecnica. Quiere que gestionemos el tecnico?'},
+  {id:3,from:'OkupaTuCasa',fromType:'otc',date:'24 Mar 2025 · 15:30',text:'INCIDENCIA: Cristal fisurado en ventana trasera. Contactado cristalero colaborador. Presupuesto en breve. Ningun acceso comprometido. La propiedad esta segura.'}
+];
+
+/*  STORAGE  */
+var STORE={};
+function pSet(k,v){try{localStorage.setItem('otc_'+k,JSON.stringify(v));}catch(e){STORE[k]=v;}}
+function pGet(k){try{var v=localStorage.getItem('otc_'+k);return v?JSON.parse(v):null;}catch(e){return STORE[k]||null;}}
+
+/*  STATE  */
+var P={
+  user:null,page:'overview',expanded:null,adminTab:'clients',
+  showModal:false,aiText:'',aiLoading:false,msgText:'',
+  charts:{}
+};
+
+/*  PORTAL OPEN/CLOSE  */
+window.portalOpen=function(){
+  document.getElementById('otc-portal').classList.add('open');
+  document.body.style.overflow='hidden';
+  render();
+};
+window.portalClose=function(){
+  document.getElementById('otc-portal').classList.remove('open');
+  document.body.style.overflow='';
+};
+
+/*  NAV  */
+function navItems(){
+  if(!P.user) return [];
+  if(isAdmin()) return [
+    {id:'admin',label:'Panel admin',icon:'A'},
+    {id:'overview',label:'Vista general',icon:'H'},
+    {id:'visits',label:'Visitas',icon:'V'},
+    {id:'messages',label:'Mensajes',icon:'M'}
+  ];
+  return [
+    {id:'overview',label:'Panel general',icon:'H'},
+    {id:'property',label:'Mi propiedad',icon:'P'},
+    {id:'visits',label:'Visitas e informes',icon:'V',badge:'6'},
+    {id:'stats',label:'Estadisticas',icon:'G'},
+    {id:'news',label:'Alertas y noticias',icon:'A',badge:'2'},
+    {id:'messages',label:'Mensajes',icon:'M'},
+    {id:'settings',label:'Ajustes',icon:'S'}
+  ];
+}
+function isAdmin(){return P.user&&(ADMINS.indexOf(P.user.email)>=0||P.user.role==='admin');}
+
+function goPage(pg){
+  // destroy existing charts
+  Object.keys(P.charts).forEach(function(k){try{P.charts[k].destroy();}catch(e){}});
+  P.charts={};
+  P.page=pg;P.expanded=null;
+  render();
+}
+
+/*  RENDER ROOT  */
+function render(){
+  renderSidebar();
+  renderMobileTabs();
+  renderMain();
+}
+
+function renderSidebar(){
+  var sb=document.getElementById('psidebar');
+  if(!P.user){sb.innerHTML='';return;}
+  var items=navItems();
+  var html='<div class="ps-section">Menu</div>';
+  items.forEach(function(it){
+    html+='<button class="ps-item'+(P.page===it.id?' on':'')+'" onclick="goPage(\''+it.id+'\')">'
+      +'<span class="ps-icon">'+it.icon+'</span>'+it.label
+      +(it.badge?'<span class="ps-badge">'+it.badge+'</span>':'')+'</button>';
+  });
+  html+='<div class="psb-footer"><div class="psb-name">'+P.user.name+'</div>'
+    +'<div class="psb-email">'+P.user.email+'</div>'
+    +(isAdmin()?'<div style="font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:#C8281E;margin-top:4px">Admin · OkupaTuCasa</div>':'')
+    +'<button class="ps-logout" onclick="doLogout()">Cerrar sesion</button></div>';
+  sb.innerHTML=html;
+}
+
+function renderMobileTabs(){
+  var mt=document.getElementById('pmobile-tabs');
+  if(!P.user){mt.innerHTML='';return;}
+  var items=navItems();
+  mt.innerHTML=items.map(function(it){
+    return '<button class="pmt'+(P.page===it.id?' on':'')+'" onclick="goPage(\''+it.id+'\')">'+it.label+'</button>';
+  }).join('');
+}
+
+function renderMain(){
+  var el=document.getElementById('pmain');
+  document.getElementById('pnav-user').textContent=P.user?(P.user.name+(isAdmin()?' · Admin':'')):'';
+  if(!P.user){el.innerHTML='';renderAuth();return;}
+  if(P.page==='overview') renderOverview(el);
+  else if(P.page==='property') renderProperty(el);
+  else if(P.page==='visits') renderVisits(el);
+  else if(P.page==='stats') renderStats(el);
+  else if(P.page==='news') renderNews(el);
+  else if(P.page==='messages') renderMessages(el);
+  else if(P.page==='settings') renderSettings(el);
+  else if(P.page==='admin') renderAdmin(el);
+}
+
+/*  AUTH  */
+function renderAuth(){
+  var el=document.getElementById('pmain');
+  var mode=P.authMode||'login';
+  var err=P.authErr||'';
+  el.innerHTML='<div class="pauth"><div class="pauth-box">'
+    +(P.showModal?privacyModal():'')
+    +'<div class="pauth-logo">OKUPA<em>TU</em>CASA</div>'
+    +'<div class="pauth-h">'+(mode==='login'?'Acceder al<br>portal':'Crear<br>cuenta')+'</div>'
+    +'<div class="pauth-sub">'+(mode==='login'?'Introduce tus credenciales para acceder a tu area personal de cliente.':'Rellena tus datos para activar tu panel de cliente y recibir alertas.')+'</div>'
+    +(err?'<div class="pauth-err">'+err+'</div>':'')
+    +'<div class="pf"><label>Email</label><input type="email" id="pf-email" placeholder="tu@email.com" value="'+(P._fe||'')+'" oninput="P._fe=this.value" onchange="P._fe=this.value" onkeydown="if(event.key==='Enter'){event.preventDefault();doAuth()}"></div>'
+    +'<div class="pf"><label>Contrasena</label><input type="password" id="pf-pw" placeholder="••••••••" value="'+(P._fpw||'')+'" oninput="P._fpw=this.value" onchange="P._fpw=this.value" onkeydown="if(event.key==='Enter'){event.preventDefault();doAuth()}"></div>'
+    +(mode==='register'?[
+      '<div class="pf"><label>Nombre completo *</label><input type="text" id="pf-name" placeholder="Tu nombre y apellidos" value="'+(P._fname||'')+'" oninput="P._fname=this.value"></div>',
+      '<div class="pf"><label>Confirmar contrasena *</label><input type="password" id="pf-pw2" placeholder="••••••••" value="'+(P._fpw2||'')+'" oninput="P._fpw2=this.value"></div>',
+      '<div class="pf"><label>Telefono *</label><input type="tel" id="pf-tel" placeholder="+34 600 000 000" value="'+(P._ftel||'')+'" oninput="P._ftel=this.value"></div>',
+      '<div class="pf"><label>Direccion de la propiedad</label><input type="text" id="pf-addr" placeholder="C/ Ejemplo, 1 — Sabadell" value="'+(P._faddr||'')+'" oninput="P._faddr=this.value"></div>',
+      '<label class="ppriv-check"><input type="checkbox" id="pf-priv" '+(P._fpriv?'checked':'')+' onchange="P._fpriv=this.checked"><span>He leido y acepto la <span class="ppriv-link" onclick="P.showModal=true;renderMain()">politica de privacidad</span> de OkupaTuCasa y autorizo el tratamiento de mis datos.</span></label>'
+    ].join(''):'')
+    +'<button class="pauth-btn" id="pauth-submit" onclick="doAuth()" onkeydown="if(event.key===\'Enter\')doAuth()">'+( mode==='login'?'Acceder al portal':'Crear mi cuenta')+'</button>'
+    +'<div class="pauth-switch">'+(mode==='login'?'Sin cuenta? <span onclick="P.authMode=\'register\';P.authErr=\'\';renderMain()">Registrarse</span>':'Ya tienes cuenta? <span onclick="P.authMode=\'login\';P.authErr=\'\';renderMain()">Iniciar sesion</span>')+'</div>'
+    +'</div></div>';
+}
+
+function privacyModal(){
+  return '<div class="pmodal-bg" onclick="P.showModal=false;renderMain()"><div class="pmodal" onclick="event.stopPropagation()">'
+    +'<h2>Politica de Privacidad</h2>'
+    +'<p><strong style="color:#fafafa">Responsable:</strong> OkupaTuCasa — Aaron Plasencia Caparros y Guillem Simon Bosch. Sabadell, Catalunya. hola@okupatucasa.es</p>'
+    +'<p><strong style="color:#fafafa">Finalidad:</strong> Los datos proporcionados (nombre, email, telefono, propiedad) se usan exclusivamente para la prestacion del servicio de vigilancia, emision de informes y comunicacion sobre el estado de la propiedad.</p>'
+    +'<p><strong style="color:#fafafa">Legitimacion:</strong> Ejecucion del contrato de servicio y consentimiento expreso del usuario.</p>'
+    +'<p><strong style="color:#fafafa">Destinatarios:</strong> Los datos no se ceden a terceros salvo obligacion legal. Acceso exclusivo de OkupaTuCasa y el propio usuario.</p>'
+    +'<p><strong style="color:#fafafa">Conservacion:</strong> Durante la vigencia del contrato y hasta 5 anos despues, conforme a obligaciones legales.</p>'
+    +'<p><strong style="color:#fafafa">Derechos:</strong> Puede ejercer derechos de acceso, rectificacion, supresion y portabilidad escribiendo a hola@okupatucasa.es indicando "Proteccion de Datos".</p>'
+    +'<p><strong style="color:#fafafa">Normativa:</strong> RGPD (UE) 2016/679 y Ley Organica 3/2018 (LOPDGDD).</p>'
+    +'<button class="pauth-btn" style="margin-top:14px" onclick="P.showModal=false;renderMain()">Entendido — Cerrar</button>'
+    +'</div></div>';
+}
+
+function gv(id,fallback){
+  var el=document.getElementById(id);
+  var v=el?el.value.trim():'';
+  return v||(fallback||'')||v;
+}
+function doAuth(){
+  var mode=P.authMode||'login';
+  P.authErr='';
+  // Always read fresh from DOM, fallback to stored state
+  var email=gv('pf-email',P._fe);
+  var pw=gv('pf-pw',P._fpw);
+  // Update stored state
+  P._fe=email;P._fpw=pw;
+
+  if(!email||!pw){P.authErr='Por favor introduce tu email y contrasena.';renderMain();return;}
+
+  // Admin check — both aaron and guillem
+  if(ADMINS.indexOf(email)>=0 && pw===ADMIN_PASS){
+    P.user={name:email===ADMINS[0]?'Aaron Plasencia':'Guillem Simon',email:email,role:'admin',plan:'Administrador'};
+    P.page='admin';P.authErr='';P._fe='';P._fpw='';render();return;
+  }
+
+  if(mode==='login'){
+    var users=pGet('otc_users')||[];
+    var found=null;
+    for(var i=0;i<users.length;i++){
+      if(users[i].email===email&&users[i].password===pw){found=users[i];break;}
+    }
+    if(!found){P.authErr='Email o contrasena incorrectos. Si eres Aaron o Guillem, usa la contrasena de administrador.';renderMain();return;}
+    P.user=found;P.page='overview';P._fe='';P._fpw='';render();return;
+  }
+
+  // Register
+  var name=gv('pf-name',P._fname);
+  var pw2=gv('pf-pw2',P._fpw2);
+  var tel=gv('pf-tel',P._ftel);
+  var addr=gv('pf-addr',P._faddr);
+  var privEl=document.getElementById('pf-priv');
+  var priv=privEl?privEl.checked:(P._fpriv||false);
+  P._fname=name;P._fpw2=pw2;P._ftel=tel;P._faddr=addr;P._fpriv=priv;
+
+  if(!name||!email||!pw||!tel){P.authErr='Completa todos los campos obligatorios (nombre, email, contrasena, telefono).';renderMain();return;}
+  if(pw!==pw2){P.authErr='Las contrasenas no coinciden.';renderMain();return;}
+  if(pw.length<6){P.authErr='La contrasena debe tener al menos 6 caracteres.';renderMain();return;}
+  if(!priv){P.authErr='Debes aceptar la politica de privacidad para continuar.';renderMain();return;}
+  var users=pGet('otc_users')||[];
+  var exists=false;
+  for(var j=0;j<users.length;j++){if(users[j].email===email){exists=true;break;}}
+  if(exists){P.authErr='Ya existe una cuenta con este email.';renderMain();return;}
+  var nu={id:Date.now(),name:name,email:email,password:pw,phone:tel,address:addr,
+    role:'client',created:new Date().toLocaleDateString('es-ES'),
+    plan:'Pack Base 75euros/mes',messages:[],notifs:{news:true,visits:true,incidents:true}};
+  users.push(nu);pSet('otc_users',users);
+  P.user=nu;P.page='overview';P._fe='';P._fpw='';render();
+}
+function doLogout(){P.user=null;P.page='overview';P.authMode='login';P._fe='';P._fpw='';render();}
+
+/*  OVERVIEW  */
+function renderOverview(el){
+  var h=new Date().getHours();
+  var gr=h<13?'Buenos dias':h<20?'Buenas tardes':'Buenas noches';
+  var firstName=P.user.name.split(' ')[0];
+  var users=pGet('otc_users')||[];
+  var html='<div class="pp">'
+    +'<div class="pg-h">'+gr+', <span>'+firstName+'.</span></div>'
+    +'<div class="pg-sub">Panel de control de tu propiedad · OkupaTuCasa</div>'
+    +'<div class="pnv"><div><div class="pnv-lbl">Proxima visita programada</div><div class="pnv-val">Semana del 5 de mayo de 2025</div></div>'
+    +'<div style="font-size:.7rem;color:rgba(255,255,255,.35);text-align:right">Plan activo<br><span style="color:#fafafa;font-weight:500">'+(P.user.plan||'Pack Base 75€/mes')+'</span></div></div>'
+    +'<div class="pstat-grid">'
+    +'<div class="pstat"><div class="pstat-n">6</div><div class="pstat-l">Visitas realizadas</div></div>'
+    +'<div class="pstat"><div class="pstat-n">1</div><div class="pstat-l">Incidencias detectadas</div></div>'
+    +'<div class="pstat"><div class="pstat-n">48</div><div class="pstat-l">Fotos en el archivo</div></div>'
+    +'<div class="pstat"><div class="pstat-n">70</div><div class="pstat-l">Dias bajo vigilancia</div></div>'
+    +'<div class="pstat"><div class="pstat-n">100%</div><div class="pstat-l">Informes a tiempo</div></div>'
+    +'<div class="pstat"><div class="pstat-n">&lt;2h</div><div class="pstat-l">Tiempo medio informe</div></div>'
+    +'</div>'
+    // Chart + last visit split
+    +'<div class="pgrid2">'
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">Visitas este ano</div><div class="pc-tag">2025</div></div><div class="pc-body"><div class="chart-wrap"><canvas id="pc-visitas"></canvas></div></div></div>'
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">Estado del servicio</div></div><div class="pc-body">'
+    +'<div class="pprog"><div class="pprog-lbl"><span>Visitas realizadas</span><span>6 / 6</span></div><div class="pprog-bar"><div class="pprog-fill" style="width:100%"></div></div></div>'
+    +'<div class="pprog"><div class="pprog-lbl"><span>Informes a tiempo</span><span>100%</span></div><div class="pprog-bar"><div class="pprog-fill" style="width:100%"></div></div></div>'
+    +'<div class="pprog"><div class="pprog-lbl"><span>Incidencias resueltas</span><span>1/1</span></div><div class="pprog-bar"><div class="pprog-fill" style="width:100%"></div></div></div>'
+    +'<div style="margin-top:12px;padding:11px 13px;background:rgba(40,200,64,.05);border:1px solid rgba(40,200,64,.18)">'
+    +'<div style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#28c840;margin-bottom:3px">Servicio operativo al 100%</div>'
+    +'<div style="font-size:.75rem;color:rgba(255,255,255,.42)">Tu propiedad ha estado bajo vigilancia presencial durante los ultimos 70 dias sin ningun problema.</div>'
+    +'</div></div></div>'
+    +'</div>'
+    // Last visits
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">Ultimas visitas</div><div class="pc-tag">Historico</div></div><div class="pc-body">'
+    +VISITS.slice(0,3).map(function(v){return visitHTML(v,false);}).join('')
+    +'<button onclick="goPage(\'visits\')" style="margin-top:12px;background:none;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.45);padding:8px 16px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:\'DM Sans\',sans-serif;width:100%;transition:border-color .2s,color .2s" onmouseover="this.style.borderColor=\'#C8281E\';this.style.color=\'#C8281E\'" onmouseout="this.style.borderColor=\'rgba(255,255,255,.12)\';this.style.color=\'rgba(255,255,255,.45)\'">Ver historial completo ('+VISITS.length+' visitas) →</button>'
+    +'</div></div>'
+    // News preview
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">Alertas recientes</div><div class="pnews-tag urg">Urgente</div></div><div class="pc-body">'
+    +NEWS.slice(0,2).map(function(n){return newsHTML(n);}).join('')
+    +'<button onclick="goPage(\'news\')" style="margin-top:12px;background:none;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.45);padding:8px 16px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:\'DM Sans\',sans-serif;width:100%;transition:border-color .2s,color .2s" onmouseover="this.style.borderColor=\'#C8281E\';this.style.color=\'#C8281E\'" onmouseout="this.style.borderColor=\'rgba(255,255,255,.12)\';this.style.color=\'rgba(255,255,255,.45)\'">Ver todas las alertas →</button>'
+    +'</div></div>'
+    +'</div>';
+  el.innerHTML=html;
+  // Chart
+  setTimeout(function(){
+    var ctx=document.getElementById('pc-visitas');if(!ctx)return;
+    P.charts.visitas=new Chart(ctx,{type:'bar',
+      data:{labels:['Ene','Feb','Mar','Abr','May','Jun'],datasets:[{label:'Visitas',data:[0,2,2,2,0,0],backgroundColor:'rgba(200,40,30,.5)',borderColor:'rgba(200,40,30,1)',borderWidth:1,borderRadius:2},{label:'Incidencias',data:[0,0,1,0,0,0],backgroundColor:'rgba(200,40,30,.15)',borderColor:'rgba(200,40,30,.5)',borderWidth:1,borderRadius:2}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'rgba(255,255,255,.38)',font:{size:10,family:"'DM Sans'"}}},tooltip:{backgroundColor:'rgba(10,10,10,.95)',borderColor:'rgba(255,255,255,.1)',borderWidth:1}},scales:{x:{ticks:{color:'rgba(255,255,255,.3)',font:{size:10}},grid:{color:'rgba(255,255,255,.05)'}},y:{ticks:{color:'rgba(255,255,255,.3)',font:{size:10},stepSize:1},grid:{color:'rgba(255,255,255,.05)'}}}}});
+  },80);
+}
+
+/*  VISITS  */
+function visitHTML(v,full){
+  var exp=P.expanded===v.id;
+  return '<div class="pv-item"><div class="pv-dot '+(v.status==='ok'?'ok':'inc')+'"></div>'
+    +'<div style="flex:1"><div class="pv-date">'+v.date+' · '+v.time+'h — '+v.tech+'</div>'
+    +'<div class="pv-addr">'+v.addr+'</div>'
+    +'<div class="pv-txt">'+v.report+'</div>'
+    +'<button class="pv-expand" onclick="P.expanded='+(exp?'null':v.id)+';renderMain()">'+(exp?'Cerrar detalle':'Ver informe completo y fotos')+'</button>'
+    +(exp?'<div class="pv-detail">'
+      +'<div style="font-size:.68rem;color:rgba(255,255,255,.38);margin-bottom:6px">Servicios realizados: '+v.services.join(' · ')+'</div>'
+      +'<div style="font-size:.66rem;color:rgba(255,255,255,.3);margin-bottom:6px">Duracion visita: '+v.duration+' min · '+v.photos+' fotografias con metadatos GPS y timestamp</div>'
+      +'<div style="font-size:.66rem;color:rgba(255,255,255,.28);margin-bottom:8px">Todas las fotos estan archivadas y disponibles para uso legal ante aseguradoras o juzgados.</div>'
+      +'<div class="pv-photos">'+['Exterior','Buzon','Salon','Cocina','Bano','Terraza','Ventana','Cuadro'].slice(0,v.photos).map(function(l){return '<div class="pv-ph">'+l+'</div>';}).join('')+'</div>'
+      +'</div>':'')
+    +'</div><div class="pv-badge '+(v.status==='ok'?'ok':'inc')+'">'+(v.status==='ok'?'OK':'Incidencia')+'</div></div>';
+}
+
+function renderVisits(el){
+  el.innerHTML='<div class="pp">'
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">Historico completo de visitas</div><div class="pc-tag">'+VISITS.length+' visitas registradas</div></div>'
+    +'<div class="pc-body">'+VISITS.map(function(v){return visitHTML(v,true);}).join('')+'</div></div></div>';
+}
+
+/*  STATS  */
+function renderStats(el){
+  el.innerHTML='<div class="pp">'
+    +'<div class="pgrid2">'
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">Visitas por mes</div><div class="pc-tag">2025</div></div><div class="pc-body"><div class="chart-wrap"><canvas id="pc-mes"></canvas></div></div></div>'
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">Tipos de servicio realizados</div><div class="pc-tag">Acumulado</div></div><div class="pc-body"><div class="chart-wrap"><canvas id="pc-tipo"></canvas></div></div></div>'
+    +'</div>'
+    +'<div class="pgrid2">'
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">Tiempo medio de informe (min)</div><div class="pc-tag">Por visita</div></div><div class="pc-body"><div class="chart-wrap"><canvas id="pc-tiempo"></canvas></div></div></div>'
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">Resumen de actividad</div></div><div class="pc-body">'
+    +'<div class="pprog"><div class="pprog-lbl"><span>Visitas completadas</span><span>6/6</span></div><div class="pprog-bar"><div class="pprog-fill" style="width:100%"></div></div></div>'
+    +'<div class="pprog"><div class="pprog-lbl"><span>Informes en menos de 2h</span><span>100%</span></div><div class="pprog-bar"><div class="pprog-fill" style="width:100%"></div></div></div>'
+    +'<div class="pprog"><div class="pprog-lbl"><span>Incidencias detectadas</span><span>1 detectada</span></div><div class="pprog-bar"><div class="pprog-fill" style="width:17%"></div></div></div>'
+    +'<div class="pprog"><div class="pprog-lbl"><span>Incidencias resueltas</span><span>100%</span></div><div class="pprog-bar"><div class="pprog-fill" style="width:100%"></div></div></div>'
+    +'<div style="margin-top:14px;font-size:.72rem;color:rgba(255,255,255,.32)">Duracion media por visita: <span style="color:#fafafa;font-weight:500">32 min</span></div>'
+    +'<div style="font-size:.72rem;color:rgba(255,255,255,.32);margin-top:4px">Total fotos archivadas: <span style="color:#fafafa;font-weight:500">48 fotografias</span></div>'
+    +'<div style="font-size:.72rem;color:rgba(255,255,255,.32);margin-top:4px">Dias de servicio activo: <span style="color:#fafafa;font-weight:500">70 dias</span></div>'
+    +'</div></div>'
+    +'</div></div>';
+  setTimeout(function(){
+    var opts={responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'rgba(255,255,255,.38)',font:{size:10,family:"'DM Sans'"}}},tooltip:{backgroundColor:'rgba(10,10,10,.9)',borderColor:'rgba(255,255,255,.1)',borderWidth:1}},scales:{x:{ticks:{color:'rgba(255,255,255,.3)',font:{size:10}},grid:{color:'rgba(255,255,255,.05)'}},y:{ticks:{color:'rgba(255,255,255,.3)',font:{size:10}},grid:{color:'rgba(255,255,255,.05)'}}}};
+    var c1=document.getElementById('pc-mes');if(c1)P.charts.mes=new Chart(c1,{type:'bar',data:{labels:['Ene','Feb','Mar','Abr'],datasets:[{label:'Visitas',data:[0,2,2,2],backgroundColor:'rgba(200,40,30,.55)',borderColor:'#C8281E',borderWidth:1,borderRadius:3}]},options:opts});
+    var c2=document.getElementById('pc-tipo');if(c2)P.charts.tipo=new Chart(c2,{type:'doughnut',data:{labels:['Inspeccion','Buzon','Simulacion','Incidencia'],datasets:[{data:[6,6,5,1],backgroundColor:['rgba(200,40,30,.8)','rgba(200,40,30,.5)','rgba(200,40,30,.3)','rgba(200,40,30,.15)'],borderColor:'#111',borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'rgba(255,255,255,.38)',font:{size:10,family:"'DM Sans'"}},position:'right'},tooltip:{backgroundColor:'rgba(10,10,10,.9)',borderColor:'rgba(255,255,255,.1)',borderWidth:1}}}});
+    var c3=document.getElementById('pc-tiempo');if(c3)P.charts.tiempo=new Chart(c3,{type:'line',data:{labels:['V1','V2','V3','V4','V5','V6'],datasets:[{label:'Minutos hasta informe',data:[85,72,95,60,78,68],borderColor:'#C8281E',backgroundColor:'rgba(200,40,30,.08)',fill:true,tension:.4,pointBackgroundColor:'#C8281E',pointRadius:4}]},options:opts});
+  },80);
+}
+
+/*  NEWS  */
+function newsHTML(n){
+  return '<div class="pnews-item"><div class="pnews-meta"><div class="pnews-tag '+n.type+'">'+n.tag+'</div><div class="pnews-date">'+n.date+'</div>'+(n.type==='urg'?'<div style="font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:#C8281E">Importante</div>':'')+'</div>'
+    +'<div class="pnews-h">'+n.title+'</div><div class="pnews-b">'+n.body+'</div></div>';
+}
+
+function renderNews(el){
+  var aiHtml=P.aiText
+    ?'<div class="pai-wrap"><div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#C8281E;margin-bottom:8px">Resumen IA — Actualizado</div><div style="font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.75">'+P.aiText+'</div></div>'
+    :P.aiLoading
+    ?'<div class="pai-wrap"><div class="pai-loading"><div class="pai-dot"></div><div class="pai-dot"></div><div class="pai-dot"></div><span style="margin-left:4px">Generando resumen legal con inteligencia artificial...</span></div></div>'
+    :'<div class="pai-wrap"><div style="font-size:.77rem;color:rgba(255,255,255,.28);font-style:italic">Pulsa el boton para generar un resumen actualizado de la situacion legal para propietarios en Cataluna, elaborado por IA a partir de la normativa vigente en 2025.</div></div>';
+
+  el.innerHTML='<div class="pp">'
+    +'<div class="pc" style="margin-bottom:16px"><div class="pc-head"><div class="pc-title">Resumen legal inteligente</div>'
+    +'<button onclick="fetchAi()" style="background:#C8281E;color:#fff;border:none;padding:7px 14px;font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:\'DM Sans\',sans-serif;transition:background .2s" onmouseover="this.style.background=\'#a31d15\'" onmouseout="this.style.background=\'#C8281E\'" '+(P.aiLoading?'disabled':'')+'>'+( P.aiLoading?'Generando...':'Actualizar con IA')+'</button>'
+    +'</div><div class="pc-body">'+aiHtml+'</div></div>'
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">Noticias y alertas para propietarios</div><div class="pc-tag">'+NEWS.length+' alertas</div></div>'
+    +'<div class="pc-body">'+NEWS.map(function(n){return newsHTML(n);}).join('')+'</div></div></div>';
+}
+
+window.fetchAi=function(){
+  if(P.aiLoading)return;
+  P.aiLoading=true;P.aiText='';renderMain();
+  fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      model:'claude-sonnet-4-20250514',max_tokens:800,
+      messages:[{role:'user',content:'Eres el asistente legal de OkupaTuCasa, servicio de vigilancia presencial de viviendas vacias en Cataluna. Redacta un resumen informativo de 3 parrafos cortos (sin emojis, sin titulos, sin markdown, texto plano) sobre: 1) Estado actual de la Ley Antiokupas 2025 en Espana y Cataluna, 2) Derechos y recursos del propietario para actuar en las primeras 48 horas ante una ocupacion ilegal, 3) Consejos practicos para proteger una segunda residencia vacia en el Valles. Tono: directo, util, claro. Fecha referencia: abril 2025.'}]
+    })
+  }).then(function(r){return r.json();}).then(function(d){
+    P.aiText=d.content&&d.content[0]?d.content[0].text:'No se pudo obtener el resumen.';
+    P.aiLoading=false;renderMain();
+  }).catch(function(){
+    P.aiText='Error al conectar con el servicio. Intenta de nuevo mas tarde.';
+    P.aiLoading=false;renderMain();
+  });
+};
+
+/*  MESSAGES  */
+function renderMessages(el){
+  var userMsgs=P.user.messages||[];
+  var allMsgs=MOCK_MSGS.concat(userMsgs);
+  el.innerHTML='<div class="pp"><div class="pc"><div class="pc-head"><div class="pc-title">Mensajes con OkupaTuCasa</div><div class="pc-tag">Respuesta media &lt;2h</div></div><div class="pc-body">'
+    +allMsgs.map(function(m){
+      var isClient=m.fromType!=='otc';
+      return '<div class="pmsg-item'+(isClient?' style="flex-direction:row-reverse"':'')+'"><div class="pmsg-av'+(isClient?' client':'')+'">'+(isClient?P.user.name.charAt(0):'OTC')+'</div>'
+        +'<div class="pmsg-bubble'+(isClient?' client':'')+'"><div class="pmsg-from'+(isClient?' client':'')+'">'+m.from+'<span class="pmsg-date">'+m.date+'</span></div><div class="pmsg-txt">'+m.text+'</div></div></div>';
+    }).join('')
+    +'<div class="pmsg-input-row"><input class="pmsg-input" id="pmsg-in" placeholder="Escribe un mensaje a OkupaTuCasa..." value="'+(P.msgText||'')+'" oninput="P.msgText=this.value" onkeydown="if(event.key===\'Enter\')sendMsg()"><button class="pmsg-send" onclick="sendMsg()">Enviar</button></div>'
+    +'<div style="font-size:.64rem;color:rgba(255,255,255,.2);margin-top:7px">Horario de atencion: Lun-Vie 9-19h · Urgencias 24h al +34 711 28 64 06</div>'
+    +'</div></div></div>';
+}
+
+window.sendMsg=function(){
+  var txt=P.msgText||(document.getElementById('pmsg-in')||{}).value||'';
+  if(!txt.trim())return;
+  var msg={id:Date.now(),from:P.user.name,fromType:'client',date:new Date().toLocaleString('es-ES'),text:txt.trim()};
+  P.user.messages=(P.user.messages||[]).concat([msg]);
+  P.msgText='';
+  // persist
+  var users=pGet('otc_users')||[];
+  var idx=users.findIndex(function(u){return u.id===P.user.id;});
+  if(idx>=0){users[idx]=P.user;pSet('otc_users',users);}
+  renderMain();
+};
+
+/*  PROPERTY  */
+function renderProperty(el){
+  el.innerHTML='<div class="pp">'
+    +'<div class="pc" style="margin-bottom:16px"><div class="pc-head"><div class="pc-title">Mis propiedades</div><div class="pc-tag">Plan activo</div></div><div class="pc-body">'
+    +'<div class="pprop"><div class="pprop-icon">H</div><div style="flex:1">'
+    +'<div class="pprop-name">Propiedad principal</div>'
+    +'<div class="pprop-addr">'+(P.user.address||'C/ del Valles, 42 — Sabadell')+'</div>'
+    +'<div class="pprop-status">Bajo vigilancia activa</div>'
+    +'<div class="pprop-meta">'
+    +'<div class="pprop-m">Plan: <span>'+(P.user.plan||'Pack Base 75€/mes')+'</span></div>'
+    +'<div class="pprop-m">Frecuencia: <span>Quincenal</span></div>'
+    +'<div class="pprop-m">Tecnico: <span>Guillem Simon</span></div>'
+    +'<div class="pprop-m">Alta: <span>'+(P.user.created||'2025')+'</span></div>'
+    +'</div></div></div>'
+    +'<div style="margin-top:14px;padding:12px;background:rgba(40,200,64,.05);border:1px solid rgba(40,200,64,.18)">'
+    +'<div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#28c840;margin-bottom:3px">Servicio operativo</div>'
+    +'<div style="font-size:.76rem;color:rgba(255,255,255,.4)">Tu propiedad ha estado bajo vigilancia presencial durante los ultimos 70 dias sin ninguna interrupcion del servicio. Seguro RC activo en cada intervencion.</div>'
+    +'</div></div></div>'
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">Progreso del servicio</div></div><div class="pc-body">'
+    +'<div class="pprog"><div class="pprog-lbl"><span>Visitas realizadas este cuatrimestre</span><span>6/6</span></div><div class="pprog-bar"><div class="pprog-fill" style="width:100%"></div></div></div>'
+    +'<div class="pprog"><div class="pprog-lbl"><span>Informes enviados puntualmente</span><span>100%</span></div><div class="pprog-bar"><div class="pprog-fill" style="width:100%"></div></div></div>'
+    +'<div class="pprog"><div class="pprog-lbl"><span>Incidencias detectadas y gestionadas</span><span>1/1</span></div><div class="pprog-bar"><div class="pprog-fill" style="width:100%"></div></div></div>'
+    +'<div class="pprog"><div class="pprog-lbl"><span>Dias de cobertura activa</span><span>70 dias</span></div><div class="pprog-bar"><div class="pprog-fill" style="width:100%"></div></div></div>'
+    +'</div></div>'
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">Documentacion</div></div><div class="pc-body">'
+    +'<div class="pset-row"><div class="pset-lbl">Contrato de servicio</div><div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#28c840">Activo</div></div>'
+    +'<div class="pset-row"><div class="pset-lbl">Seguro de Responsabilidad Civil</div><div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#28c840">Vigente · Cada visita</div></div>'
+    +'<div class="pset-row"><div class="pset-lbl">Politica de privacidad</div><div class="pset-val">Aceptada al registrarse</div></div>'
+    +'<div class="pset-row"><div class="pset-lbl">CNAE del servicio</div><div class="pset-val">6832 — Gestion inmobiliaria por cuenta de terceros</div></div>'
+    +'</div></div></div>';
+}
+
+/*  SETTINGS  */
+function renderSettings(el){
+  var n=P.user.notifs||{news:true,visits:true,incidents:true};
+  el.innerHTML='<div class="pp">'
+    +'<div class="pc" style="margin-bottom:16px"><div class="pc-head"><div class="pc-title">Mi perfil</div></div><div class="pc-body">'
+    +[['Nombre',P.user.name],['Email',P.user.email],['Telefono',P.user.phone||'No registrado'],['Propiedad',P.user.address||'No registrada'],['Plan activo',P.user.plan||'Pack Base 75€/mes'],['Cliente desde',P.user.created||'2025']].map(function(r){
+      return '<div class="pset-row"><div class="pset-lbl">'+r[0]+'</div><div class="pset-val">'+r[1]+'</div></div>';
+    }).join('')
+    +'</div></div>'
+    +'<div class="pc" style="margin-bottom:16px"><div class="pc-head"><div class="pc-title">Notificaciones</div></div><div class="pc-body">'
+    +[['news','Alertas de noticias y nuevas leyes'],['visits','Aviso de visitas realizadas'],['incidents','Alertas urgentes de incidencias']].map(function(r){
+      return '<div class="pset-row"><div class="pset-lbl">'+r[1]+'</div>'
+        +'<div class="ptoggle'+(n[r[0]]?' on':'')+'" id="tn-'+r[0]+'" onclick="toggleNotif(\''+r[0]+'\')">'
+        +'<div class="ptoggle-k"></div></div></div>';
+    }).join('')
+    +'</div></div>'
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">Sesion</div></div><div class="pc-body">'
+    +'<button onclick="doLogout()" style="background:none;border:1px solid rgba(200,40,30,.3);color:#C8281E;padding:10px 20px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:\'DM Sans\',sans-serif;transition:background .2s" onmouseover="this.style.background=\'rgba(200,40,30,.1)\'" onmouseout="this.style.background=\'none\'">Cerrar sesion</button>'
+    +'</div></div></div>';
+}
+
+window.toggleNotif=function(k){
+  P.user.notifs=P.user.notifs||{news:true,visits:true,incidents:true};
+  P.user.notifs[k]=!P.user.notifs[k];
+  var el=document.getElementById('tn-'+k);
+  if(el)el.classList.toggle('on',P.user.notifs[k]);
+  var users=pGet('otc_users')||[];
+  var idx=users.findIndex(function(u){return u.id===P.user.id;});
+  if(idx>=0){users[idx]=P.user;pSet('otc_users',users);}
+};
+
+/*  ADMIN  */
+function renderAdmin(el){
+  var users=pGet('otc_users')||[];
+  var mrr=users.length*75;
+  var tab=P.adminTab||'clients';
+
+  var clientsHTML=users.length===0
+    ?'<div style="text-align:center;color:rgba(255,255,255,.2);padding:28px;font-size:.78rem">Aun no hay clientes registrados. Cuando alguien se registre, aparecera aqui.</div>'
+    :'<div style="overflow-x:auto"><table class="pa-table"><thead><tr><th>Nombre</th><th>Email</th><th>Telefono</th><th>Propiedad</th><th>Plan</th><th>Alta</th><th>Estado</th></tr></thead><tbody>'
+    +users.map(function(u){return '<tr><td style="color:#fafafa;font-weight:500">'+u.name+'</td><td>'+u.email+'</td><td>'+(u.phone||'—')+'</td><td style="max-width:160px;word-break:break-all">'+(u.address||'—')+'</td><td>'+(u.plan||'Pack Base')+'</td><td>'+(u.created||'—')+'</td><td><span class="pa-badge ok">Activo</span></td></tr>';}).join('')
+    +'</tbody></table><div style="padding:10px 0;font-size:.66rem;color:rgba(255,255,255,.22)">Total: '+users.length+' clientes registrados</div></div>';
+
+  var msgsHTML=users.filter(function(u){return u.messages&&u.messages.length>0;}).map(function(u){
+    return '<div style="margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.05)">'
+      +'<div style="font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#C8281E;margin-bottom:6px">'+u.name+' · '+u.email+'</div>'
+      +u.messages.map(function(m){return '<div style="font-size:.75rem;color:rgba(255,255,255,.52);padding:7px 11px;background:rgba(255,255,255,.03);margin-bottom:3px;border-left:2px solid #C8281E"><div style="font-size:.58rem;color:rgba(255,255,255,.22);margin-bottom:2px">'+m.date+'</div>'+m.text+'</div>';}).join('')+'</div>';
+  }).join('')||'<div style="font-size:.76rem;color:rgba(255,255,255,.25);font-style:italic">No hay mensajes de clientes todavia.</div>';
+
+  el.innerHTML='<div class="pp">'
+    +'<div style="padding:10px 14px;background:rgba(200,40,30,.07);border:1px solid rgba(200,40,30,.22);border-left:3px solid #C8281E;margin-bottom:18px;font-size:.76rem;color:rgba(255,255,255,.55)">'
+    +'<strong style="color:#C8281E">Panel de Administracion OkupaTuCasa</strong> · Acceso exclusivo para Aaron Plasencia y Guillem Simon.'
+    +'</div>'
+    +'<div class="pstat-grid" style="margin-bottom:18px">'
+    +'<div class="pstat"><div class="pstat-n">'+users.length+'</div><div class="pstat-l">Clientes registrados</div></div>'
+    +'<div class="pstat"><div class="pstat-n">'+mrr+'€</div><div class="pstat-l">MRR estimado</div></div>'
+    +'<div class="pstat"><div class="pstat-n">100%</div><div class="pstat-l">Retencion de clientes</div></div>'
+    +'<div class="pstat"><div class="pstat-n">6</div><div class="pstat-l">Visitas este periodo</div></div>'
+    +'<div class="pstat"><div class="pstat-n">1</div><div class="pstat-l">Incidencias activas</div></div>'
+    +'<div class="pstat"><div class="pstat-n">0</div><div class="pstat-l">Cancelaciones</div></div>'
+    +'</div>'
+    +'<div class="pgrid2" style="margin-bottom:16px">'
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">MRR mensual (€)</div><div class="pc-tag">Evolucion</div></div><div class="pc-body"><div class="chart-wrap"><canvas id="ca-mrr"></canvas></div></div></div>'
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">Clientes por perfil</div><div class="pc-tag">Distribucion</div></div><div class="pc-body"><div class="chart-wrap"><canvas id="ca-perfil"></canvas></div></div></div>'
+    +'</div>'
+    +'<div class="pc"><div class="pc-head"><div class="pc-title">Gestion de clientes</div></div>'
+    +'<div class="pc-body" style="padding-bottom:0">'
+    +'<div class="ptabs">'
+    +'<button class="ptab'+(tab==='clients'?' on':'')+'" onclick="P.adminTab=\'clients\';renderMain()">Clientes registrados</button>'
+    +'<button class="ptab'+(tab==='msgs'?' on':'')+'" onclick="P.adminTab=\'msgs\';renderMain()">Mensajes recibidos</button>'
+    +'</div>'
+    +(tab==='clients'?clientsHTML:msgsHTML)
+    +'</div></div></div>';
+
+  setTimeout(function(){
+    var opts={responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{labels:{color:'rgba(255,255,255,.38)',font:{size:10,family:"'DM Sans'"}}},tooltip:{backgroundColor:'rgba(10,10,10,.9)',borderColor:'rgba(255,255,255,.1)',borderWidth:1}},
+      scales:{x:{ticks:{color:'rgba(255,255,255,.3)',font:{size:10}},grid:{color:'rgba(255,255,255,.05)'}},y:{ticks:{color:'rgba(255,255,255,.3)',font:{size:10}},grid:{color:'rgba(255,255,255,.05)'}}}};
+    var c1=document.getElementById('ca-mrr');
+    if(c1)P.charts.mrr=new Chart(c1,{type:'line',data:{labels:['Ene','Feb','Mar','Abr','May'],datasets:[{label:'MRR €',data:[0,0,75,75,75*(users.length||1)],borderColor:'#C8281E',backgroundColor:'rgba(200,40,30,.1)',fill:true,tension:.4,pointBackgroundColor:'#C8281E',pointRadius:4}]},options:opts});
+    var c2=document.getElementById('ca-perfil');
+    if(c2)P.charts.perfil=new Chart(c2,{type:'doughnut',data:{labels:['Particular','Inmobiliaria','Alquiler','Local','Fondo'],datasets:[{data:[users.length||1,0,0,0,0],backgroundColor:['rgba(200,40,30,.8)','rgba(200,40,30,.55)','rgba(200,40,30,.35)','rgba(200,40,30,.2)','rgba(200,40,30,.1)'],borderColor:'#111',borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'rgba(255,255,255,.38)',font:{size:10,family:"'DM Sans'"}},position:'right'},tooltip:{backgroundColor:'rgba(10,10,10,.9)',borderColor:'rgba(255,255,255,.1)',borderWidth:1}}}});
+  },80);
+}
+
+})();
+</script>
+</body>
+</html>
+
